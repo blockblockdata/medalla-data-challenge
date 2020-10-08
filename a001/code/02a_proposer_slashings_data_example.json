@@ -1,0 +1,27 @@
+                    "proposer_slashings": [
+                        {
+                            "signed_header_1": {
+                                "message": {
+                                    "slot": 138,
+                                    "proposer_index": 2329,
+                                    "parent_root": "0x9ad72edd1303a10d292bf8ad84360d30b309a85fd0ee9f4143821f5a3ec01da1",
+                                    "state_root": "0x1b067135c44e9b472608a58499f7e13561dbc0f4fd9ae3ebd9f6ddae298cebbe",
+                                    "body_root": "0xa9905d68bfe2f4bde96020c4a5b66b62ef575b8c5096bbf5d042ee4795f13f80"
+                                },
+                                "signature": "0xa5e55750045079ee500ce6176c3ea83ae1ceb415357e6019a43641cf15a961bc7cc799923a1b0d019be0a6c6138b89e7025a57cedabbd262ceefe44931052b083e99d92624a91ace8f16acd6647f7234391df2e3e3f77a68816072793e8a718d"
+                            },
+                            "signed_header_2": {
+                                "message": {
+                                    "slot": 138,
+                                    "proposer_index": 2329,
+                                    "parent_root": "0x9ad72edd1303a10d292bf8ad84360d30b309a85fd0ee9f4143821f5a3ec01da1",
+                                    "state_root": "0x0ea91fc990d9a0c2b5195c6e32d734d267f6c768c026d5205fce1a2df2fbe902",
+                                    "body_root": "0xb416fb23f89604c7191b1502f6b6f20776e2f42093b44f2a1907f1ed3294ea19"
+                                },
+                                "signature": "0xa87f4a50ed559d883b163d2b2a12db4467b7331cdd2ec0b52460bb69485191254dd84837034a698ed38dd4fdb63f203402796d7e354025cd5f57b0efaae9e34d90cb04ef46e72cd772afd9d8b1f9effe6cbabca78197fb8fa02a2492e2a2d5b4"
+                            }
+                        }
+                    ],
+					
+					
+					

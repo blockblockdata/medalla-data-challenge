@@ -1,0 +1,27 @@
+   {
+        "root": "0x2d424c3838d2b49d9c8da4e8297471f375b872ea4b250a75127e89175b44ba70",
+        "beacon_block": {
+            "message": {
+                "slot": 139,
+                "proposer_index": 2185,
+                "parent_root": "0x19c7252f6150f964fa62cc94e7ff9df79b74c552bf3d134b1f7a317c01662c1d",
+                "state_root": "0xb9739996c890b47251eecab6643b7400ff992bf76ed75b26f0b04146ea4cd640",
+                "body": {
+                    "randao_reveal": "0x820574e5514420659826e18b183d7d0478389bce4a08464427168c97e67884c5d38839675313688d4ada52259becb1a40b8ee7ccaf983c9ae56d69c0000a7114006c6bb640a515075b7610b8bdf21506d4146787550ddd89a5ed8956ce470bb6",
+                    "eth1_data": {
+                        "deposit_root": "0x53d90f778f975dcca3f30e072b5c1a85cfd7a1b977b78620d94f143d06432f9b",
+                        "deposit_count": 22637,
+                        "block_hash": "0xe0c057333355956e8fb8d88382f5676bbe083fbf8b978f0db719b4d02ae70777"
+                    },
+                    "graffiti": "0x53746566616e2333393137000000000000000000000000000000000000000000",
+                    "proposer_slashings": [...],
+                    "attester_slashings": [],
+                    "attestations": [],
+                    "deposits": [],
+                    "voluntary_exits": []
+                }
+            },
+            "signature": "0xaa4bba19b1c185002f446cc79e24bcf917808569394669b4fea9b855f2f49e6f76c2408384d8ded3d151ed5ab238951a137a777958525bdf58c6fa75d6418ae4f5e67177747040919f81a86a1065355b2d1abb1553bc94630a6c06e4a67e5fe4"
+        }
+    }
+	

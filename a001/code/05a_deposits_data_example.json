@@ -1,0 +1,22 @@
+               "deposits": [
+                    {
+                        "proof": [
+                            "0x1a681904fc274c629c0fe89054b8e15db5717e54bad61bed3ef2b0cced8772f3",
+                            ...
+                            "0x6d58000000000000000000000000000000000000000000000000000000000000"
+                        ],
+                        "data": {
+                            "pubkey": "0xa0d46f3e977da3c53d46dcff9a4f7e6b4895cf9fb66ea76d82fd5462d3ed32c378d733017640dfaa2a9012de7a71d9b9",
+                            "withdrawal_credentials": "0x00f51a03211451f1cbb0a6b609cfefdb777b837e33442141cae67ff4b9297a6f",
+                            "amount": 32000000000,
+                            "signature": "0x96155845317fcd242b38051dc873b6614601daf997691454c28d882df5b2086dde861b2357b773d2f2a9a8487296306f03269fade98b4610dbabfdbc70aba26485fa2519b55c22629aad4e93e7dd1bb1e16a80d1dc9c896134f01029540bfa69"
+                        }
+                    },
+                    {
+					  ...
+                    }
+					...
+                ],
+				
+				
+				

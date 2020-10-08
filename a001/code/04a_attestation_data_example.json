@@ -1,0 +1,25 @@
+                    "attestations": [
+                        {
+                            "aggregation_bits": "0xb37e736f29efcf36febf7dd2defde6f1f38d5e2d",
+                            "data": {
+                                "slot": 671,
+                                "index": 1,
+                                "beacon_block_root": "0x99ad36b7c857c00c461987fca2230723a31606fb8deb7686f7ba861f0bd0761c",
+                                "source": {
+                                    "epoch": 19,
+                                    "root": "0xf7f25edf9ead6eaf17d1dfaa4c3259dcc3d4897986fa4141577695793b90240f"
+                                },
+                                "target": {
+                                    "epoch": 20,
+                                    "root": "0x9f3af8c4ef4b38e82617e1d82ca868f785d015a2de45e112a398f6748ea4d6dc"
+                                }
+                            },
+                            "signature": "0x877743855735e76201f9bfd539140ea49240d9d532f89b6024f3b62fc235a62efecb1642a12698654c09b433a4f4212b01f294b6bc12f9f59450acef2540596a3f3749b4617acceee1641105dd4060139768b5b7b776a773d6ed71dd0d45c958"
+                        },
+                        {
+							...
+                        },
+						...
+                    ],
+
+

@@ -1,0 +1,30 @@
+                    "attester_slashings": [
+                        {
+                            "attestation_1": {
+                                "attesting_indices": [
+                                    183,
+									...
+                                    19387
+                                ],
+                                "data": {
+                                    "slot": 654,
+                                    "index": 0,
+                                    "beacon_block_root": "0x69f3e09fa4fdc8b6e6162588a488606175069c396d215d44f0a8fb7565d911e4",
+                                    "source": {
+                                        "epoch": 19,
+                                        "root": "0xf7f25edf9ead6eaf17d1dfaa4c3259dcc3d4897986fa4141577695793b90240f"
+                                    },
+                                    "target": {
+                                        "epoch": 20,
+                                        "root": "0x9f3af8c4ef4b38e82617e1d82ca868f785d015a2de45e112a398f6748ea4d6dc"
+                                    }
+                                },
+                                "signature": "0xb2883dffd3fd8668e410d55915ee5e72dd08a423a2c28033adec54f0178062ea9ac3f47fa0ef952ae50494c9705b911215d8c5c9da5619760004f59c09a58077eb0ba6fb2fd2135265b465d27be536eeabd40bb61df4742a438c7e6723b6c18a"
+                            },
+                            "attestation_2": ...
+                                "signature": "0xa8fdfe8aeb4febcf6b002003bbb99257e588ec53523be7629f97fc23f007b71bdb6b096605f336ac80089bcb931fd367122305b63389dd27bd01bb8741ca9c5a0d3f5989be2c68afa3889132dcc54600f9b206098eb4d95b2cdc7df7775ea643"
+                            }
+                        }
+                    ],
+					
+					
