@@ -87,6 +87,41 @@ Figure. Zoomable data schema diagram with sample data.
 ### Beacon Block 
 
 ``` yaml 
+//***********************************************************
+// sample block data from Medalla Testnet is block @ slot 139
+Table beacon_block as bb {
+root                   TINYTEXT  [pk, unique,                        note: 'ex: 0x2d424c3838d2b49d9c8da4e8297471f375b872ea4b250a75127e89175b44ba70']
+slot                   INT(255)  [                                   note: 'ex: 139']
+proposer_index         INT(255)  [ref: - validator.id,               note: 'ex: 2185']
+parent_root            TINYTEXT  [ref: - beacon_block.root,          note: 'ex: 0x19c7252f6150f964fa62cc94e7ff9df79b74c552bf3d134b1f7a317c01662c1d']
+state_root             TINYTEXT                                     [note: 'ex: 0xb9739996c890b47251eecab6643b7400ff992bf76ed75b26f0b04146ea4cd640']
+randao_reveal          TINYTEXT                                     [note: 'ex: 0x820574e5514420659826e18b183d7d0478389bce4a08464427168c97e67884c5d38839675313688d4ada52259becb1a40b8ee7ccaf983c9ae56d69c0000a7114006c6bb640a515075b7610b8bdf21506d4146787550ddd89a5ed8956ce470bb6']
+deposit_root           TINYTEXT                                     [note: 'ex: 0x53d90f778f975dcca3f30e072b5c1a85cfd7a1b977b78620d94f143d06432f9b']
+deposit_count          TINYTEXT                                     [note: 'ex: 22637']
+block_hash             TINYTEXT                                     [note: 'ex: 0xe0c057333355956e8fb8d88382f5676bbe083fbf8b978f0db719b4d02ae70777']
+graffiti               TINYTEXT                                     [note: 'ex: 0x53746566616e2333393137000000000000000000000000000000000000000000']
+proposer_slashings_id  INT(255) [ref: < proposer_slashings.id,       note: 'ex: '] 
+attester_slashings_id  INT(255) [ref: < attester_slashings.id,       note: 'ex: '] 
+attestations_id        INT(255) [ref: < attestations.id,             note: 'ex: ']
+deposits_id            INT(255) [ref: < deposits.id,                 note: 'ex: ']
+voluntary_exits_id     INT(255) [ref: < voluntary_exits.id,          note: 'ex: ']
+signature              TINYTEXT                                     [note: 'ex: 0xaa4bba19b1c185002f446cc79e24bcf917808569394669b4fea9b855f2f49e6f76c2408384d8ded3d151ed5ab238951a137a777958525bdf58c6fa75d6418ae4f5e67177747040919f81a86a1065355b2d1abb1553bc94630a6c06e4a67e5fe4']
+}
+``` 
+
+While the Lighthouse http API enables the extraction of detailed data about validators, the `/beacon/block/` endnode does not give any information.
+
+``` yaml 
+//***********************************************************
+// for now, validator is presented only as a value, the proposer to block @ slot 139 is taken as example
+Table validator {
+id                     INT(255) [pk,                                 note: 'ex: 2185']
+}
+
+``` 
+
+
+``` yaml 
    {
         "root": "0x2d424c3838d2b49d9c8da4e8297471f375b872ea4b250a75127e89175b44ba70",
         "beacon_block": {
@@ -120,7 +155,7 @@ https://www.dbml.org/docs/
 ### Proposer Slashings
 
 
-``` JSON 
+``` yaml 
                     "proposer_slashings": [
                         {
                             "signed_header_1": {
@@ -149,30 +184,30 @@ https://www.dbml.org/docs/
 
 ### Attester Slashings
 
-``` JSON 
+``` yaml 
 
 ``` 
 
 ### Attestations
 
-``` JSON 
+``` yaml 
 
 ``` 
 
 ### Deposits
 
-``` JSON 
+``` yaml 
 
 ``` 
 
 ### Voluntary Exits
 
-``` JSON 
+``` yaml 
 
 ``` 
 
 ## 
 
-``` JSON 
+``` yaml 
 
 ``` 
