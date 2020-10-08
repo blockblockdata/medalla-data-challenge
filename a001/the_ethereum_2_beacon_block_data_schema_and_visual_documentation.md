@@ -13,7 +13,7 @@ This article presents interactive visualizations and sample data to facilitate t
 
 
 ## Ethereum and Ethereum 2.0
-Ethereum is the first triple-entry ledger system () in human history to serve as an enabling platform for smart contracts and boundless tpes of other decentralized applications (dapps).
+Ethereum is the first [triple-entry ledger system](https://hackernoon.com/why-everyone-missed-the-most-important-invention-in-the-last-500-years-c90b0151c169) in human history to serve as an enabling platform for smart contracts and decentralized applications (dapps).
 Ethereum 1.0, the Ethereum blockchain that achieves consensus through proof-of-work (PoW), is already the second most powerful computing platform on the face of earth.
 The Ethereum Community and the Ethereum Foundation envison things to become much bigger. Exponentially bigger.
 
@@ -22,7 +22,7 @@ Ethereum 1.0 is also limited by the very PoW consensus protocol that makes it so
 As of October 2020, the time of this article being written, transactions fees on the Ethereum blockchain network have become substantially higher than before, even doubling at one point the previous all-time-high (ATH) costs.
 The bottleneck is the proof-of-work (PoW) protocol.
 
-An existentially inevitable milestone in Ethereum's journey to become "The Infinite Machine" (https://www.amazon.com/Infinite-Machine-Crypto-Hackers-Building-Internet/dp/B07XJ7WKXL/ref=sr_1_1?dchild=1&keywords=infinite+machine&qid=1602161947&s=books&sr=1-1) 
+An existentially inevitable milestone in Ethereum's journey to become ["The Infinite Machine"](https://www.amazon.com/Infinite-Machine-Crypto-Hackers-Building-Internet/dp/B07XJ7WKXL/ref=sr_1_1?dchild=1&keywords=infinite+machine&qid=1602161947&s=books&sr=1-1) 
 is Ethereum's version 2.0, , i.e, Ethereum 2.0. 
 Upon the completion of the three Phases of Ethereum 2.0, namely Phase 0, Phase 1, and Phase 2, Ethereum blockchain will be fully functional without any dependence to any other "Layer 2" solution.
 
