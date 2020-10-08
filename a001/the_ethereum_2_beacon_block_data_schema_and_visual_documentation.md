@@ -4,7 +4,7 @@ Gurdal Ertek and Joseph Kholodenko
 UAE University, Al Ain, UAE
 ...., New York, NY
 
-> "When I came up with Ethereum, my first first thought was, 'Okay, this thing is too good to be true.' As it turned out, the core Ethereum idea was good - fundamentally, completely sound." Vitalik Buterin
+> *"When I came up with Ethereum, my first first thought was, 'Okay, this thing is too good to be true.' As it turned out, the core Ethereum idea was good - fundamentally, completely sound."* ***Vitalik Buterin***
 
 **Summary:** Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks will be added) is to be achieved through proof-of-stake (PoS). 
 Coordination of consensus and many other processes in Ethereum 2.0 will be carried out by a chain referred to as the "beacon chain".
@@ -32,7 +32,6 @@ Specifically, the article holds the magnifier on the beacon chain block,
 
 As of October 2020, Ethereum 2.0 is being tested on the Medalla testnet, which is to run for about three months, as well as other testnets that run over few days.
 
-
 ## Beacon Chain and Beacon Block
 
 http://grabcad.com/....
@@ -55,11 +54,11 @@ When Ethereum 2.0 becomes fully active, Beacon chain will perform the following 
 ## Medalla Testnet
 Medalla is the final long-lasting testnet of Ethereum 2.0 Phase 0. 
 
-The data schema that we present here represents the data that can be retrieved by Lighthose https API (https://lighthouse-book.sigmaprime.io/http.html). 
-While the Lighthouse API allows the retrieval of an extensive array of data, our focus in this article is the /beacon/block/ endpoint (https://lighthouse-book.sigmaprime.io/http/beacon.html#beaconblock).
+The data schema that we present here represents the data that can be retrieved by [Lighthose https API](https://lighthouse-book.sigmaprime.io/http.html). 
+While the Lighthouse API allows the retrieval of an extensive array of data, our focus in this article is the ['/beacon/block/ endpoint'](https://lighthouse-book.sigmaprime.io/http/beacon.html#beaconblock).
 The Lighthouse API documentation also provides sample data, yet sample data is not complete for all the fields and data types.
 A useful information available in our diagram is the parsing of the data in /beacon/block/ into tables of a relational database. 
-The database schema also provides the data types for MySQL (https://www.javatpoint.com/sql-data-types#:~:text=SQL%20Data%20Types%201%20String%20Data%20types%202,Data%20types%203%20Date%20and%20time%20Data%20types), 
+The database schema also provides the [data types for MySQL](https://www.javatpoint.com/sql-data-types#:~:text=SQL%20Data%20Types%201%20String%20Data%20types%202,Data%20types%203%20Date%20and%20time%20Data%20types), 
 the key attributes of each table, and the foreign keys that relate the tables to each other.
 For the sake of simplicity, all bigint data types of Ethereum 2.0 have been represented as INT(255) and all hash strings -while many of them require much less memory- have been represented as TINYTEXT.
 
