@@ -65,6 +65,8 @@ For the sake of simplicity, all bigint data types of Ethereum 2.0 have been repr
 
 ## Beacon Block Data Schema
 
+<img src="./images/dbdiagram-data-schema.png" alt="Beacon Block Tables" style="width:1000px;height:531px;">
+
 https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295
 Figure. Interactive data schema diagram (dbdiagram) for Ethereum 2.0 Beacon Block. 
 
@@ -78,7 +80,7 @@ Use zooming feature and click and drag to focus on different areas of the diagra
 The next visualization is a zoomable presentation, which shows different groups of related tables as a part of the whole. 
 This presentation can help understand better the different groups of tables and the data fields in each table.
 
-<img style="border:2px grey;" src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables" style="width:1000px;height:590px;">
+<img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables" style="width:1000px;height:590px;">
 
 '
 **How to View & Interact:** Click on the play button in the intro screen. Then click the forward and back buttons at the bottom of the presentation. 
