@@ -38,14 +38,14 @@ As of October 2020, Ethereum 2.0 is being tested on the Medalla testnet, which i
 
 ## Beacon Chain and Beacon Block
 
-https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1
-Figure. Interactive 3D visualization of chains and sharding in Ethereum 2.0.
-
 `
 How to View & Interact: Click the "Load in 3D Viewer" link to view the visualization in 3D. 
 Then click a point in the 3D visualization and drag to the left, right, up, and down to obtain the angle you wish to view from.
 Click the plus (+) and minus (-) buttons on the right hand side of the window to zoom and unzoom.
 `
+<img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables" style="width:1000px;height:661px;">
+https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1
+Figure. Interactive 3D visualization of chains and sharding in Ethereum 2.0.
 
 The Beacon chain can be thought of "the chain that rules them all", it is the chain within Ethereum 2.0 which is central to the system and its processes. 
 As analogy, similar to how the spine of a human connects and holds together the body, the beacon chain will connect and hold together the many chains in Ethereum 2.0. 
@@ -69,22 +69,19 @@ For the sake of simplicity, all bigint data types of Ethereum 2.0 have been repr
 
 ## Beacon Block Data Schema
 
+`
+How to View & Interact: Simply hold your mouse cursor over any connecting line. This will show the two fields at both ends of the relation. 
+Use zooming feature and click and drag to focus on different areas of the diagram.
+`
 <img src="./images/dbdiagram-data-schema.png" alt="Beacon Block Tables" style="width:1000px;height:531px;">
-
 https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295
 Figure. Interactive data schema diagram (dbdiagram) for Ethereum 2.0 Beacon Block. 
 
 The data schema visualization is interactive and is especially ideal for exploring the relations between the tables through foreign keys. 
 
-`
-How to View & Interact: Simply hold your mouse cursor over any connecting line. This will show the two fields at both ends of the relation. 
-Use zooming feature and click and drag to focus on different areas of the diagram.
-`
-
 The next visualization is a zoomable presentation, which shows different groups of related tables as a part of the whole. 
 This presentation can help understand better the different groups of tables and the data fields in each table.
 
-<img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables" style="width:1000px;height:590px;">
 
 `
 How to View & Interact:
@@ -92,7 +89,7 @@ Click on the play button in the intro screen. Then click the forward and back bu
 At any time, to return back to the main window, move the mouse cursor towards the middle right of the window, inside black area, until you see two buttons. 
 Then, click the arrow button to return to main window.
 `
-
+<img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables" style="width:1000px;height:590px;">
 https://prezi.com/p/z5sf3nyicten/?present=1
 Figure. Zoomable data schema diagram with sample data. 
 
