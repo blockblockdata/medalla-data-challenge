@@ -86,23 +86,93 @@ Figure. Zoomable data schema diagram with sample data.
 
 ### Beacon Block 
 
-``` json 
-
+``` JSON 
+   {
+        "root": "0x2d424c3838d2b49d9c8da4e8297471f375b872ea4b250a75127e89175b44ba70",
+        "beacon_block": {
+            "message": {
+                "slot": 139,
+                "proposer_index": 2185,
+                "parent_root": "0x19c7252f6150f964fa62cc94e7ff9df79b74c552bf3d134b1f7a317c01662c1d",
+                "state_root": "0xb9739996c890b47251eecab6643b7400ff992bf76ed75b26f0b04146ea4cd640",
+                "body": {
+                    "randao_reveal": "0x820574e5514420659826e18b183d7d0478389bce4a08464427168c97e67884c5d38839675313688d4ada52259becb1a40b8ee7ccaf983c9ae56d69c0000a7114006c6bb640a515075b7610b8bdf21506d4146787550ddd89a5ed8956ce470bb6",
+                    "eth1_data": {
+                        "deposit_root": "0x53d90f778f975dcca3f30e072b5c1a85cfd7a1b977b78620d94f143d06432f9b",
+                        "deposit_count": 22637,
+                        "block_hash": "0xe0c057333355956e8fb8d88382f5676bbe083fbf8b978f0db719b4d02ae70777"
+                    },
+                    "graffiti": "0x53746566616e2333393137000000000000000000000000000000000000000000",
+                    "proposer_slashings": [...],
+                    "attester_slashings": [],
+                    "attestations": [],
+                    "deposits": [],
+                    "voluntary_exits": []
+                }
+            },
+            "signature": "0xaa4bba19b1c185002f446cc79e24bcf917808569394669b4fea9b855f2f49e6f76c2408384d8ded3d151ed5ab238951a137a777958525bdf58c6fa75d6418ae4f5e67177747040919f81a86a1065355b2d1abb1553bc94630a6c06e4a67e5fe4"
+        }
+    }
 ```
 
 https://www.dbml.org/docs/
 
 ### Proposer Slashings
 
+
+``` JSON 
+                    "proposer_slashings": [
+                        {
+                            "signed_header_1": {
+                                "message": {
+                                    "slot": 138,
+                                    "proposer_index": 2329,
+                                    "parent_root": "0x9ad72edd1303a10d292bf8ad84360d30b309a85fd0ee9f4143821f5a3ec01da1",
+                                    "state_root": "0x1b067135c44e9b472608a58499f7e13561dbc0f4fd9ae3ebd9f6ddae298cebbe",
+                                    "body_root": "0xa9905d68bfe2f4bde96020c4a5b66b62ef575b8c5096bbf5d042ee4795f13f80"
+                                },
+                                "signature": "0xa5e55750045079ee500ce6176c3ea83ae1ceb415357e6019a43641cf15a961bc7cc799923a1b0d019be0a6c6138b89e7025a57cedabbd262ceefe44931052b083e99d92624a91ace8f16acd6647f7234391df2e3e3f77a68816072793e8a718d"
+                            },
+                            "signed_header_2": {
+                                "message": {
+                                    "slot": 138,
+                                    "proposer_index": 2329,
+                                    "parent_root": "0x9ad72edd1303a10d292bf8ad84360d30b309a85fd0ee9f4143821f5a3ec01da1",
+                                    "state_root": "0x0ea91fc990d9a0c2b5195c6e32d734d267f6c768c026d5205fce1a2df2fbe902",
+                                    "body_root": "0xb416fb23f89604c7191b1502f6b6f20776e2f42093b44f2a1907f1ed3294ea19"
+                                },
+                                "signature": "0xa87f4a50ed559d883b163d2b2a12db4467b7331cdd2ec0b52460bb69485191254dd84837034a698ed38dd4fdb63f203402796d7e354025cd5f57b0efaae9e34d90cb04ef46e72cd772afd9d8b1f9effe6cbabca78197fb8fa02a2492e2a2d5b4"
+                            }
+                        }
+                    ],
+```
+
 ### Attester Slashings
+
+``` JSON 
+
+``` 
 
 ### Attestations
 
+``` JSON 
+
+``` 
+
 ### Deposits
+
+``` JSON 
+
+``` 
 
 ### Voluntary Exits
 
+``` JSON 
+
+``` 
+
 ## 
-``` SQL
-SELECT * FROM mytable;
-```
+
+``` JSON 
+
+``` 
