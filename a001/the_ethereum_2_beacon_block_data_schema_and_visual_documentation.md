@@ -86,7 +86,7 @@ Figure. Zoomable data schema diagram with sample data.
 
 ### Beacon Block 
 
-``` JSON 
+``` yaml 
    {
         "root": "0x2d424c3838d2b49d9c8da4e8297471f375b872ea4b250a75127e89175b44ba70",
         "beacon_block": {
