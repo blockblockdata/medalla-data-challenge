@@ -104,6 +104,6 @@ https://www.dbml.org/docs/
 ### Voluntary Exits
 
 ## 
-``` 
+``` SQL
 SELECT * FROM mytable;
 ```
