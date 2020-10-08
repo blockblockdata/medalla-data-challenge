@@ -78,6 +78,8 @@ Use zooming feature and click and drag to focus on different areas of the diagra
 The next visualization is a zoomable presentation, which shows different groups of related tables as a part of the whole. 
 This presentation can help understand better the different groups of tables and the data fields in each table.
 
+<img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables" style="width:1000px;height:590px;">
+
 '
 **How to View & Interact:** Click on the play button in the intro screen. Then click the forward and back buttons at the bottom of the presentation. 
 At any time, to return back to the main window, move the mouse cursor towards the middle right of the window, inside black area, until you see two buttons. 
