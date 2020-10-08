@@ -2,9 +2,9 @@
 
 Gurdal Ertek, Joseph Kholodenko
 
-*UAE University, Al Ain, UAE
+*UAE University, Al Ain, UAE*
 
-Memorial Sloan Kettering Cancer Center, New York, NY*
+*Memorial Sloan Kettering Cancer Center, New York, NY*
 
 
 > *"When I came up with Ethereum, my first first thought was, 'Okay, this thing is too good to be true.' As it turned out, the core Ethereum idea was good - fundamentally, completely sound."* ***Vitalik Buterin***
@@ -42,7 +42,7 @@ https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m
 Figure. Interactive 3D visualization of chains and sharding in Ethereum 2.0.
 
 `
-**How to View & Interact:** Click the "Load in 3D Viewer" link to view the visualization in 3D. 
+How to View & Interact: Click the "Load in 3D Viewer" link to view the visualization in 3D. 
 Then click a point in the 3D visualization and drag to the left, right, up, and down to obtain the angle you wish to view from.
 Click the plus (+) and minus (-) buttons on the right hand side of the window to zoom and unzoom.
 `
@@ -77,7 +77,7 @@ Figure. Interactive data schema diagram (dbdiagram) for Ethereum 2.0 Beacon Bloc
 The data schema visualization is interactive and is especially ideal for exploring the relations between the tables through foreign keys. 
 
 `
-**How to View & Interact:** Simply hold your mouse cursor over any connecting line. This will show the two fields at both ends of the relation. 
+How to View & Interact: Simply hold your mouse cursor over any connecting line. This will show the two fields at both ends of the relation. 
 Use zooming feature and click and drag to focus on different areas of the diagram.
 `
 
@@ -87,7 +87,8 @@ This presentation can help understand better the different groups of tables and 
 <img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables" style="width:1000px;height:590px;">
 
 `
-**How to View & Interact:** Click on the play button in the intro screen. Then click the forward and back buttons at the bottom of the presentation. 
+How to View & Interact:
+Click on the play button in the intro screen. Then click the forward and back buttons at the bottom of the presentation. 
 At any time, to return back to the main window, move the mouse cursor towards the middle right of the window, inside black area, until you see two buttons. 
 Then, click the arrow button to return to main window.
 `
