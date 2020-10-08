@@ -1,0 +1,9 @@
+               "voluntary_exits": [
+                    {
+                        "message": {
+                            "epoch": 929,
+                            "validator_index": 5194
+                        },
+                        "signature": "0x93f39045a23a8fd9818cbc0514a678415d8af96fb8f81322d4615c7398efc8a0835576aa7924be089a424ea0be1ea6470e732c3c62ac71c600981c90f7a1fe6d2856b7fa18afb46559fc449f0237bd6b07c368fefcf31ed6c5118aaefbaa7b47"
+                    }
+                ]
