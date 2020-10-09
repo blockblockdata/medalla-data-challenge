@@ -32,15 +32,10 @@ Specifically, the article holds the magnifier on the beacon chain block,
 As of October 2020, Ethereum 2.0 is being tested on the Medalla testnet, which is to run for about three months, as well as other testnets that run over few days.
 
 ## Beacon Chain and Beacon Block
+Before understanding of the data within the beacon block, we find it essential to share how it fits within Ethereum 2.0's architectural design. Figure 1 illustrates the beacon chain in relation to the other chains in Ethereum 2.0.
 
-`
-How to View & Interact: Click the "Load in 3D Viewer" link to view the visualization in 3D. 
-Then click a point in the 3D visualization and drag to the left, right, up, and down to obtain the angle you wish to view from.
-Click the plus (+) and minus (-) buttons on the right hand side of the window to zoom and unzoom.
-`
 <a href="https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1" target="_blank"><img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables"></a>
-https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1
-Figure. Interactive 3D visualization of chains and sharding in Ethereum 2.0.
+[Figure 1. Interactive 3D visualization of chains and sharding in Ethereum 2.0.](https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1)
 
 The Beacon chain can be thought of "the chain that rules them all", it is the chain within Ethereum 2.0 which is central to the system and its processes. 
 As analogy, similar to how the spine of a human connects and holds together the body, the beacon chain will connect and hold together the many chains in Ethereum 2.0. 
@@ -64,34 +59,23 @@ For the sake of simplicity, all bigint data types of Ethereum 2.0 have been repr
 
 ## Beacon Block Data Schema
 
-`
-How to View & Interact: Simply hold your mouse cursor over any connecting line. This will show the two fields at both ends of the relation. 
-Use zooming feature and click and drag to focus on different areas of the diagram.
-`
-<img src="./images/dbdiagram-data-schema.png" alt="Beacon Block Tables" style="width:1000px;height:531px;">
-https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295
-Figure. Interactive data schema diagram (dbdiagram) for Ethereum 2.0 Beacon Block. 
+<a href="https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295" target="_blank"><img src="./images/dbdiagram-data-schema.png" alt="Beacon Block Tables"></a>
+[Figure 2. Interactive data schema diagram (dbdiagram) for Ethereum 2.0 Beacon Block.](https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295)
 
 The data schema visualization is interactive and is especially ideal for exploring the relations between the tables through foreign keys. 
 
 The next visualization is a zoomable presentation, which shows different groups of related tables as a part of the whole. 
 This presentation can help understand better the different groups of tables and the data fields in each table.
 
-
-`
-How to View & Interact:
-Click on the play button in the intro screen. Then click the forward and back buttons at the bottom of the presentation. 
-At any time, to return back to the main window, move the mouse cursor towards the middle right of the window, inside black area, until you see two buttons. 
-Then, click the arrow button to return to main window.
-`
-<img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables" style="width:1000px;height:590px;">
-https://prezi.com/p/z5sf3nyicten/?present=1
-Figure. Zoomable data schema diagram with sample data. 
+<a href="https://prezi.com/p/z5sf3nyicten/?present=1" target="_blank"><img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables"></a>
+[Figure 3. Zoomable data schema diagram for Ethereum 2.0 Beacon Block with sample data.](https://prezi.com/p/z5sf3nyicten/?present=1)
 
 
 ## Data Tables and Fields within Beacon Block
 
 ### Beacon Block 
+
+![](./images/01-Beacon-Block.png)
 
 ``` javascript 
 //***********************************************************
@@ -130,6 +114,7 @@ https://www.dbml.org/docs/
 
 ### Proposer Slashings
 
+![](./images/02-Proposer-Slashings.png)
 
 ``` javascript 
 //***********************************************************
@@ -158,6 +143,8 @@ signature              TINYTEXT                                     [note: 'ex: 
 ```
 
 ### Attester Slashings
+
+![](./images/03-Attester-Slashings.png)
 
 ``` javascript 
 //***********************************************************
@@ -196,6 +183,9 @@ validator              INT(255) [ref: > validator.id,                note: 'ex: 
 
 ### Attestations
 
+![](./images/04-Attestations.png)
+
+
 ``` javascript 
 //***********************************************************
 // sample block data from Medalla Testnet is block @ slot 688
@@ -219,6 +209,9 @@ signature              TINYTEXT                                      [note: 'ex:
 ``` 
 
 ### Deposits
+
+![](./images/05-Deposits.png)
+
 
 ``` javascript 
 //***********************************************************
@@ -246,6 +239,8 @@ proof_hash            TINYTEXT                                      [note: 'ex: 
 ``` 
 
 ### Voluntary Exits
+
+![](./images/06-Voluntary-Exits.png)
 
 ``` javascript 
 //***********************************************************
