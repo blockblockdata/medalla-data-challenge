@@ -43,7 +43,7 @@ How to View & Interact: Click the "Load in 3D Viewer" link to view the visualiza
 Then click a point in the 3D visualization and drag to the left, right, up, and down to obtain the angle you wish to view from.
 Click the plus (+) and minus (-) buttons on the right hand side of the window to zoom and unzoom.
 `
-<img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables" style="width:1000px;height:661px;">
+<a href="https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1"><img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables"></a>
 https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1
 Figure. Interactive 3D visualization of chains and sharding in Ethereum 2.0.
 
