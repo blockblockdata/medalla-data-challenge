@@ -75,7 +75,7 @@ This presentation can help understand better the different groups of tables and 
 
 ### Beacon Block 
 
-![](./images/01-Beacon-Block.png)
+![](./images/01-Beacon-Block-Data-Table.png)
 
 ``` javascript 
 //***********************************************************
@@ -114,7 +114,7 @@ https://www.dbml.org/docs/
 
 ### Proposer Slashings
 
-![](./images/02-Proposer-Slashings.png)
+![](./images/02-Proposer-Slashings-Data-Table.png)
 
 ``` javascript 
 //***********************************************************
@@ -144,7 +144,7 @@ signature              TINYTEXT                                     [note: 'ex: 
 
 ### Attester Slashings
 
-![](./images/03-Attester-Slashings.png)
+![](./images/03-Attester-Slashings-Data-Table.png)
 
 ``` javascript 
 //***********************************************************
@@ -183,7 +183,7 @@ validator              INT(255) [ref: > validator.id,                note: 'ex: 
 
 ### Attestations
 
-![](./images/04-Attestations.png)
+![](./images/04-Attestations-Data-Table.png)
 
 
 ``` javascript 
@@ -210,7 +210,7 @@ signature              TINYTEXT                                      [note: 'ex:
 
 ### Deposits
 
-![](./images/05-Deposits.png)
+![](./images/05-Deposits-Data-Table.png)
 
 
 ``` javascript 
@@ -240,7 +240,7 @@ proof_hash            TINYTEXT                                      [note: 'ex: 
 
 ### Voluntary Exits
 
-![](./images/06-Voluntary-Exits.png)
+![](./images/06-Voluntary-Exits-Data-Table.png)
 
 ``` javascript 
 //***********************************************************
