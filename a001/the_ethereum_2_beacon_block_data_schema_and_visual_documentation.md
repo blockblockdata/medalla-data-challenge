@@ -265,3 +265,15 @@ signature              TINYTEXT                                     [note: 'ex: 
 
 **Joseph Kholodenko** is a freelance data science consultant. In the past he has worked as a Data Scientist at Google and taught at the Flatiron School as a Senior Lead Data Science Instructor. He is currently pursuing his MS in Computer Science with a specialization in machine learning at Georgia Institute of Technology.
 
+<table style="width:100%">
+  <tr>
+    <td>![](./images/gurdal-ertek.png)</td>
+    <td>**Gürdal Ertek** is an Associate Professor at UAE University (UAEU), Al Ain, UAE. He received his Ph.D. from Georgia Institute of Technology, Atlanta, GA, in 2001. Dr. Ertek served in educational and research organizations in Turkey, USA, Singapore, Kuwait and UAE, as well as an on-site reviewer for 50+ industrial R&D projects. His research and teaching areas include applied data science, business analytics, supply chain management, project management, and R&D management.</td>
+  </tr>
+  <tr>
+    <td>![](./images/joseph-kholodenko.png)</td>
+    <td>**Joseph Kholodenko** is a freelance data science consultant. In the past he has worked as a Data Scientist at Google and taught at the Flatiron School as a Senior Lead Data Science Instructor. He is currently pursuing his MS in Computer Science with a specialization in machine learning at Georgia Institute of Technology.
+    </td>
+  </tr>
+<table>
+
