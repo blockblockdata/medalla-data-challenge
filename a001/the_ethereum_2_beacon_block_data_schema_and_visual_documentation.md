@@ -19,7 +19,7 @@ Ethereum 1.0, the Ethereum blockchain that achieves consensus through proof-of-w
 The Ethereum Community and the Ethereum Foundation envison things to become much bigger. Exponentially bigger.
 
 Yet, there is a roadblock. 
-Ethereum 1.0 is also limited by the very PoW consensus protocol that makes it so much reliable and -almost unbreakably- robust: 
+Ethereum 1.0 is also limited by the very PoW consensus protocol that makes it so much secure, decentralized, reliable and -almost unbreakably- robust: 
 As of October 2020, the time of this article being written, transactions fees on the Ethereum blockchain network have become substantially higher than before, even doubling at one point the previous all-time-high (ATH) costs.
 The bottleneck is the proof-of-work (PoW) protocol.
 
