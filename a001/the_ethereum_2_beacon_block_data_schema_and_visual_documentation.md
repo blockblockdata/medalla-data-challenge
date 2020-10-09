@@ -2,6 +2,8 @@
 
 Gurdal Ertek, Joseph Kholodenko
 
+![](./images/beacon-block-artistic-photo.png)
+
 **Summary:** Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks will be added) is to be achieved through proof-of-stake (PoS). 
 Coordination of consensus and many other processes in Ethereum 2.0 will be carried out by a chain referred to as the "beacon chain".
 There exists numerous comprehensive technical documentations of Ethereum 2.0 and the beacon chain. 
