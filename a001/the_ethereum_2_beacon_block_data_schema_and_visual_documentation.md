@@ -37,6 +37,7 @@ As of October 2020, Ethereum 2.0 is being tested on the Medalla testnet, which i
 Before understanding of the data within the beacon block, we find it essential to share how it fits within Ethereum 2.0's architectural design. Figure 1 illustrates the beacon chain in relation to the other chains in Ethereum 2.0.
 
 <a href="https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1" target="_blank"><img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables"></a>
+
 [Figure 1. Interactive 3D visualization of chains and sharding in Ethereum 2.0.](https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1)
 
 The Beacon chain can be thought of "the chain that rules them all", it is the chain within Ethereum 2.0 which is central to the system and its processes. 
@@ -62,6 +63,7 @@ For the sake of simplicity, all bigint data types of Ethereum 2.0 have been repr
 ## Beacon Block Data Schema
 
 <a href="https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295" target="_blank"><img src="./images/dbdiagram-data-schema.png" alt="Beacon Block Tables"></a>
+
 [Figure 2. Interactive data schema diagram (dbdiagram) for Ethereum 2.0 Beacon Block.](https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295)
 
 The data schema visualization is interactive and is especially ideal for exploring the relations between the tables through foreign keys. 
@@ -70,6 +72,7 @@ The next visualization is a zoomable presentation, which shows different groups 
 This presentation can help understand better the different groups of tables and the data fields in each table.
 
 <a href="https://prezi.com/p/z5sf3nyicten/?present=1" target="_blank"><img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables"></a>
+
 [Figure 3. Zoomable data schema diagram for Ethereum 2.0 Beacon Block with sample data.](https://prezi.com/p/z5sf3nyicten/?present=1)
 
 
