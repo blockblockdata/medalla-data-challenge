@@ -14,7 +14,7 @@ As a methodological and pedagogical contribution, our article demonstrates how i
 
 
 ## Ethereum and Ethereum 2.0
-Ethereum is the first [triple-entry ledger system](https://hackernoon.com/why-everyone-missed-the-most-important-invention-in-the-last-500-years-c90b0151c169) in human history to serve as an enabling platform for smart contracts and decentralized applications (dapps).
+The Ethereum blockchain is the first [triple-entry ledger system](https://hackernoon.com/why-everyone-missed-the-most-important-invention-in-the-last-500-years-c90b0151c169) in human history to serve as an enabling platform for smart contracts.
 Ethereum 1.0, the Ethereum blockchain that achieves consensus through proof-of-work (PoW), is already the second most powerful computing platform on the face of earth.
 The Ethereum Community and the Ethereum Foundation envison things to become much bigger. Exponentially bigger.
 
