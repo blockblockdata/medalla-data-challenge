@@ -98,7 +98,7 @@ Figure. Zoomable data schema diagram with sample data.
 
 ### Beacon Block 
 
-``` yaml 
+``` javascript 
 //***********************************************************
 // sample block data from Medalla Testnet is block @ slot 139
 Table beacon_block as bb {
@@ -123,7 +123,7 @@ signature              TINYTEXT                                     [note: 'ex: 
 
 While the Lighthouse http API enables the extraction of detailed data about validators, the `/beacon/block/` endnode does not give any information.
 
-``` yaml 
+``` javascript 
 //***********************************************************
 // for now, validator is presented only as a value, the proposer to block @ slot 139 is taken as example
 Table validator {
@@ -136,7 +136,7 @@ https://www.dbml.org/docs/
 ### Proposer Slashings
 
 
-``` yaml 
+``` javascript 
 //***********************************************************
 // sample block data from Medalla Testnet is block @ slot 139
 Table proposer_slashings {
@@ -164,7 +164,7 @@ signature              TINYTEXT                                     [note: 'ex: 
 
 ### Attester Slashings
 
-``` yaml 
+``` javascript 
 //***********************************************************
 // sample block data from Medalla Testnet is block @ slot 688
 Table attester_slashings {
@@ -201,7 +201,7 @@ validator              INT(255) [ref: > validator.id,                note: 'ex: 
 
 ### Attestations
 
-``` yaml 
+``` javascript 
 //***********************************************************
 // sample block data from Medalla Testnet is block @ slot 688
 Table attestations {
@@ -225,7 +225,7 @@ signature              TINYTEXT                                      [note: 'ex:
 
 ### Deposits
 
-``` yaml 
+``` javascript 
 //***********************************************************
 // sample block data from Medalla Testnet is block @ slot 1005
 Table deposits {
@@ -252,7 +252,7 @@ proof_hash            TINYTEXT                                      [note: 'ex: 
 
 ### Voluntary Exits
 
-``` yaml 
+``` javascript 
 //***********************************************************
 // sample block data from Medalla Testnet is block @ slot 29758
 Table voluntary_exits {
