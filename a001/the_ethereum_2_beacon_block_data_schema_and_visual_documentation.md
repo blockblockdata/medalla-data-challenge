@@ -14,7 +14,7 @@ As a methodological and pedagogical contribution, our article demonstrates how i
 
 
 ## Ethereum and Ethereum 2.0
-The Ethereum blockchain is the first [triple-entry ledger system](https://hackernoon.com/why-everyone-missed-the-most-important-invention-in-the-last-500-years-c90b0151c169) in human history to serve as an enabling platform for smart contracts.
+The Ethereum blockchain, initially envisioned by [Vitalik Buterin](https://medium.com/@VitalikButerin), is the first [triple-entry ledger system](https://hackernoon.com/why-everyone-missed-the-most-important-invention-in-the-last-500-years-c90b0151c169) in human history to serve as an enabling platform for smart contracts.
 Ethereum 1.0, the Ethereum blockchain that achieves consensus through proof-of-work (PoW), is already the second most powerful computing platform on the face of earth.
 The Ethereum Community and the Ethereum Foundation envison things to become much bigger. Exponentially bigger.
 
@@ -31,10 +31,10 @@ The focus of this article is the Beacon Block, a block on the beacon chain of Et
 Beacon chain is at the center of the Ethereum 2.0 network. Understanding the beacon chain is a critical step for any organization, team, or individual who plans to develop applications on Ethereum 2.0 or interact with it at code level.
 Specifically, the article holds the magnifier on the beacon chain block, 
 
-As of October 2020, Ethereum 2.0 is being tested on the Medalla testnet, which is to run for about three months, as well as other testnets that run over few days.
+As of October 2020, Ethereum 2.0 is being tested on the *Medalla testnet*, which is to run for about three months, as well as other testnets that run over few days. This article provides a user-friendly introduction to Ethereum 2.0's Beacon Block and the data therewithin, through interactive 3D visualization, data schema diagram, and zoomable presentations. While the descriptions and visualizations illustrate the concepts and data within Ethereum 2.0 Phase 0, the visualization methods, tools, and presentation styles are designed to serve as an example of how such information can be communicated for any current or future blockchain to orient blockchain developers and data scientists.
 
 ## Beacon Chain and Beacon Block
-Before understanding of the data within the beacon block, we find it essential to share how it fits within Ethereum 2.0's architectural design. Drawn based on a 2D illustration of Ethereum 2.0 architecture by [Hsiao-Wei Wang](https://docs.google.com/presentation/d/1G5UZdEL71XAkU5B2v-TC3lmGaRIu2P6QSeF8m3wg6MU/edit#slide=id.p4), Figure 1 illustrates the beacon chain in relation to the other chains in Ethereum 2.0. 
+Before understanding of the data within the beacon block, we find it essential to share how it fits within Ethereum 2.0's architectural design. Drawn based on a 2D illustration of Ethereum 2.0 architecture by [Hsiao-Wei Wang](https://docs.google.com/presentation/d/1G5UZdEL71XAkU5B2v-TC3lmGaRIu2P6QSeF8m3wg6MU/edit#slide=id.p4), Figure 1 illustrates the beacon chain in relation to the other chains in Ethereum 2.0. An excellent list of definitions for the various Ethereum 2.0 terms are provided by [Alethio here](https://medium.com/alethio/ethereum-2-a-validators-journey-through-the-beacon-chain-843f70aaab2e).
 
 <a href="https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1" target="_blank"><img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables"></a>
 
@@ -44,13 +44,15 @@ The Beacon chain can be thought of "the chain that rules them all", it is the ch
 As analogy, similar to how the spine of a human connects and holds together the body, the beacon chain will connect and hold together the many chains in Ethereum 2.0. 
 Yet, unlike the spine of a human, which remains static, the beacon chain will over epochs of time, together with the other chains and components of the system.
 
-Consensus on the Ethereum 2.0 blockchain will be achieved through the participation of *validators*, which are in essence client software running in parallel on a distributed network of computers. The journey of a validator begins by the installation of the client software, deposit of at least 32 ETH (Ethereum) coins to the node's wallet, and joining a waiting queue to be admitted. The atomic time unit in Ethereum 2.0 is a *slot*, which is issued every 12 seconds. Every 32 slots (about 6,5 minutes) constitute an *epoch*.  Once a validator is admitted, at each slot, there are two main roles that it may be assigned to by the network, namely role of *proposer* and the role of *attester*. A proposer (a validator with the proposer hat on) proposes blocks to be added to the blockchain. An attester (a validator with the attestor hat on) votes on whether the block is valid and should be appended to the network, as the proposer suggests. Attesters vote within one of multiple *committees*, where committees are formed freshly at every epoch. Each validator is invited every epoch exactly once to serve in one of the many committees. While many details exits, we refer interested readers to two fascinating articles by (Ben Edgington)](https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129) and []() which describe the working mechanics of the beacon chain and Ethereum 2.0 overall. 
+Consensus on the Ethereum 2.0 blockchain will be achieved through the participation of *validators*, which are in essence client software running in parallel on a distributed network of computers. The (journey of a validator)[https://medium.com/alethio/ethereum-2-a-validators-journey-through-the-beacon-chain-843f70aaab2e] begins by the installation of the client software, deposit of at least 32 ETH (Ethereum) coins to the node's wallet, and joining a waiting queue to be admitted. The atomic time unit in Ethereum 2.0 is a *slot*, which is issued every 12 seconds. Every 32 slots (about 6,5 minutes) constitute an *epoch*.  Once a validator is admitted, at each slot, there are two main roles that it may be assigned to by the network, namely role of *proposer* and the role of *attester*. A proposer (a validator with the proposer hat on) proposes blocks to be added to the blockchain. An attester (a validator with the attestor hat on) votes on whether the block is valid and should be appended to the network, as the proposer suggests. Attesters vote within one of multiple *committees*, where committees are formed freshly at every epoch. Each validator is invited every epoch exactly once to serve in one of the many committees. While many details exits, we refer interested readers to two fascinating articles by [Ben Edgington](https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129) and [Jim McDonald](https://www.attestant.io/posts/understanding-the-validator-lifecycle/) which describe the working mechanics of the beacon chain and Ethereum 2.0 overall. 
+
+The system incentivizes compliant behavior on the part of the validators through various [rewards and penalties](https://codefi.consensys.net/blog/rewards-and-penalties-on-ethereum-20-phase-0), while keeping them in the network. Yet, if a validator, in the role of proposer *or* attester, is proven to commit fraud, it is *slashed*, meaning that it is involuntarily and forcefully removed by the system from the network. Slashed validator are *not* allowed to participate in the network again.
 
 Beacon chain is the focus and the ultimate deliverable of Phase 0 of Ethereum 2.0. In the latter Phases 1 and 2, other components of the system will be added. 
 Yet, for other systems to operate successfully and integrate to the whole, the Beacon chain must be functioning flawlessly. 
 
-
 When Ethereum 2.0 becomes fully active, Beacon chain will perform the following critical functions:
+
 
 ## Medalla Testnet
 Medalla is the final long-lasting testnet of Ethereum 2.0 Phase 0. 
