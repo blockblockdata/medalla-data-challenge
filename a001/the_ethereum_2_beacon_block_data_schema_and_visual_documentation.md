@@ -122,6 +122,8 @@ id                     INT(255) [pk,                                 note: 'ex: 
 
 https://www.dbml.org/docs/
 
+<hr>
+
 ![](./images/02b-Proposer-Slashings-icon.png)
 ### Proposer Slashings
 
@@ -154,6 +156,8 @@ body_root              TINYTEXT [ref: > beacon_block.root,           note: 'ex: 
 signature              TINYTEXT                                     [note: 'ex: 0xa5e55750045079ee500ce6176c3ea83ae1ceb415357e6019a43641cf15a961bc7cc799923a1b0d019be0a6c6138b89e7025a57cedabbd262ceefe44931052b083e99d92624a91ace8f16acd6647f7234391df2e3e3f77a68816072793e8a718d']
 }
 ```
+
+<hr>
 
 ![](./images/03b-Attester-Slashings-icon.png)
 ### Attester Slashings
@@ -196,6 +200,8 @@ validator              INT(255) [ref: > validator.id,                note: 'ex: 
 }
 ``` 
 
+<hr>
+
 ![](./images/04b-Attestations-icon.png)
 ### Attestations
 
@@ -223,6 +229,8 @@ target_root            TINYTEXT [ref: > beacon_block.root,            note: 'ex:
 signature              TINYTEXT                                      [note: 'ex: 0x877743855735e76201f9bfd539140ea49240d9d532f89b6024f3b62fc235a62efecb1642a12698654c09b433a4f4212b01f294b6bc12f9f59450acef2540596a3f3749b4617acceee1641105dd4060139768b5b7b776a773d6ed71dd0d45c958']
 }
 ``` 
+
+<hr>
 
 ![](./images/05b-Deposits-icon.png)
 ### Deposits
@@ -255,6 +263,8 @@ proof_index           INT(255) [pk,                                  note: 'ex: 
 proof_hash            TINYTEXT                                      [note: 'ex: 0x1a681904fc274c629c0fe89054b8e15db5717e54bad61bed3ef2b0cced8772f3']
 }
 ``` 
+
+<hr>
 
 ![](./images/06b-Voluntary-Exits-icon.png)
 ### Voluntary Exits
