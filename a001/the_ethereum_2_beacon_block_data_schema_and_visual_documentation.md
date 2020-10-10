@@ -60,8 +60,9 @@ The database schema also provides the [data types for MySQL](https://www.javatpo
 the key attributes of each table, and the foreign keys that relate the tables to each other.
 For the sake of simplicity, all bigint data types of Ethereum 2.0 have been represented as INT(255) and all hash strings -while many of them require much less memory- have been represented as TINYTEXT.
 
-![](./images/01b-Beacon-Block-icon.png)
+
 ## Beacon Block Data Schema
+![](./images/01b-Beacon-Block-icon.png)
 
 <a href="https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295" target="_blank"><img src="./images/dbdiagram-data-schema.png" alt="Beacon Block Tables"></a>
 
