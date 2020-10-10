@@ -79,8 +79,7 @@ This presentation can help understand better the different groups of tables and 
 
 ## Data Tables and Fields within Beacon Block
 
-### Beacon Block 
-![](./images/01b-Beacon-Block-icon.png)
+### Beacon Block ![](./images/01b-Beacon-Block-icon.png)
 
 
 ![](./images/01-Beacon-Block-Data-Table.png)
