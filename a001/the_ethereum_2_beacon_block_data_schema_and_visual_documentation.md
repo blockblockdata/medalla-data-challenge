@@ -36,7 +36,7 @@ As of October 2020, Ethereum 2.0 is being tested on the Medalla testnet, which i
 ## Beacon Chain and Beacon Block
 Before understanding of the data within the beacon block, we find it essential to share how it fits within Ethereum 2.0's architectural design. Figure 1 illustrates the beacon chain in relation to the other chains in Ethereum 2.0.
 
-<a href="https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1" target="_blank"><img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables" style="border:5px solid black"></a>
+<a href="https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1" target="_blank"><img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables"></a>
 
 [Figure 1. Interactive 3D visualization of chains and sharding in Ethereum 2.0.](https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1)
 
