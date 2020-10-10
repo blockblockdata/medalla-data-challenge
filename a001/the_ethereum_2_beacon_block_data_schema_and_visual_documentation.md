@@ -57,7 +57,7 @@ When Ethereum 2.0 becomes fully active, Beacon chain will perform the following 
 ## Medalla Testnet
 Medalla is the final long-lasting testnet of Ethereum 2.0 Phase 0. 
 
-The [technical specification document under Ethereum's GitHub repository](https://github.com/ethereum/eth2.0-specs/blob/v0.12.1/specs/phase0/beacon-chain.md) is a primary document in the community that lists the specifications of Ethereum 2.0. Furthermore, the [annotated technical specification for the Beacon Chain by (Ben Edgington)](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) provides the descriptions of the data fields in the beacon chain and the processes executed on the chain. Both these documentations sources, as well as those listed under the latter are quite comprehensive in scope. Yet, since the mentioned documents are mainly in text format, our article aims to provide a visual communication of the speficiations with sample data from the Medalla testnet.
+The [technical specification document under Ethereum's GitHub repository](https://github.com/ethereum/eth2.0-specs/blob/v0.12.1/specs/phase0/beacon-chain.md) is a primary document in the community that lists the specifications of Ethereum 2.0. Furthermore, the [annotated technical specification for the Beacon Chain by (Ben Edgington)](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) provides the descriptions of the data fields in the beacon chain and the processes executed on the chain. Both these documentations sources, as well as those listed under the [latter]((https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody)) are quite comprehensive in scope. Yet, since the mentioned documents are mainly in text format, our article aims to provide a visual communication of the speficiations with sample data from the Medalla testnet.
 
 The data schema that we present here represents the data that can be retrieved by [Lighthose https API](https://lighthouse-book.sigmaprime.io/http.html). 
 While the Lighthouse API allows the retrieval of an extensive array of data, our focus in this article is the ['/beacon/block/ endpoint'](https://lighthouse-book.sigmaprime.io/http/beacon.html#beaconblock).
@@ -86,6 +86,11 @@ This presentation can help understand better the different groups of tables and 
 
 ## Data Tables and Fields within Beacon Block
 
+In this section of the article, we provide the details of the data schema presented earlier, focusing on each section of the diagram, listing the data fields for each table, describing the primary and foreign keys, and providing sample data for each field (where possible). 
+
+The [json files](./code/) corresponding to the full data extracted from the mentioned beacon blocks are available under the [GitHub repository](./code/). The Database Markup Language (DBML) is used to describe the schema and each of its tables. The [dbdiagram.io](http://dbdiagram.io) service by [holistics.io](http://holistics.io) conveniently converts the schema code written in DBML into an interactive data schema, as in Figure 2 in this article.
+
+In the DBML specification of the schema, TINYTEXT and INT(255) are the two data types for string/hash and big integer, assuming that the data will be imported to MySQL. `pk` refers to primary key(s), whereas `-`, `<`, and `>` respectively refer to one-to-one, one-to-many, and many-to-one relations. `note`s provide example data from different actual beacon blocks from the Medalla testnet. Beacon block in slot 139 is used to illustrate the beacon block body and proposer slashings. Beacon block in slot 688 is used to illustrate attester slashings and attestations. Beacon block in slot 1005 is used to illustrate deposits and beacon block in slot 29758 are used to illustrate voluntary exits. These blocks are also where the respective events of proposer slashing, attester slashing, deposit, and voluntary exit took place for the first time.
 
 ### Beacon Block 
 
