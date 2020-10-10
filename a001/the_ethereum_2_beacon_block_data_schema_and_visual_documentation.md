@@ -79,7 +79,8 @@ This presentation can help understand better the different groups of tables and 
 
 ## Data Tables and Fields within Beacon Block
 
-### Beacon Block ![](./images/01b-Beacon-Block-icon.png)
+![](./images/01b-Beacon-Block-icon.png)
+### Beacon Block 
 
 
 ![](./images/01-Beacon-Block-Data-Table.png)
@@ -119,8 +120,9 @@ id                     INT(255) [pk,                                 note: 'ex: 
 
 https://www.dbml.org/docs/
 
-### Proposer Slashings
 ![](./images/02b-Proposer-Slashings-icon.png)
+### Proposer Slashings
+
 
 
 ![](./images/02-Proposer-Slashings-Data-Table.png)
@@ -151,8 +153,9 @@ signature              TINYTEXT                                     [note: 'ex: 
 }
 ```
 
-### Attester Slashings
 ![](./images/03b-Attester-Slashings-icon.png)
+### Attester Slashings
+
 
 ![](./images/03-Attester-Slashings-Data-Table.png)
 
@@ -191,8 +194,8 @@ validator              INT(255) [ref: > validator.id,                note: 'ex: 
 }
 ``` 
 
-### Attestations
 ![](./images/04b-Attestations-icon.png)
+### Attestations
 
 ![](./images/04-Attestations-Data-Table.png)
 
@@ -219,8 +222,8 @@ signature              TINYTEXT                                      [note: 'ex:
 }
 ``` 
 
-### Deposits
 ![](./images/05b-Deposits-icon.png)
+### Deposits
 
 
 ![](./images/05-Deposits-Data-Table.png)
@@ -251,8 +254,8 @@ proof_hash            TINYTEXT                                      [note: 'ex: 
 }
 ``` 
 
-### Voluntary Exits
 ![](./images/06b-Voluntary-Exits-icon.png)
+### Voluntary Exits
 
 
 ![](./images/06-Voluntary-Exits-Data-Table.png)
