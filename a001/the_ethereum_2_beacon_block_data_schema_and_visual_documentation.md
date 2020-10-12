@@ -36,9 +36,9 @@ As of October 2020, Ethereum 2.0 is being tested on the Medalla testnet, which i
 ## Beacon Chain and Beacon Block
 Before understanding of the data within the beacon block, we find it essential to share how it fits within Ethereum 2.0's architectural design. Drawn based on a 2D illustration of Ethereum 2.0 architecture by [Hsiao-Wei Wang](https://docs.google.com/presentation/d/1G5UZdEL71XAkU5B2v-TC3lmGaRIu2P6QSeF8m3wg6MU/edit#slide=id.p4), Figure 1 illustrates the beacon chain in relation to the other chains in Ethereum 2.0. An excellent list of definitions for the various Ethereum 2.0 terms are provided by [Alethio here](https://medium.com/alethio/ethereum-2-a-validators-journey-through-the-beacon-chain-843f70aaab2e). 
 
-<a href="https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1" target="_blank"><img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables"></a>
+<a href="https://grabcad.com/library/ethereum-2-0-sharding-3d-visualization-1" target="_blank"><img src="./images/Ethereum-2.0-Sharding-System-Architecture.png" alt="Beacon Block Tables"></a>
 
-[Figure 1. Interactive 3D visualization of chains and sharding in Ethereum 2.0.](https://grabcad.com/library/ethereum-2-0-blockchain-design-3d-visualization-v03m-1) [(Source: Ben Edgington)](https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129). 
+[Figure 1. Interactive 3D visualization of chains and sharding in Ethereum 2.0.](https://grabcad.com/library/ethereum-2-0-sharding-3d-visualization-1) [(Source: Ben Edgington)](https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129). 
 
 The Beacon chain can be thought of "the chain that rules them all", it is the chain within Ethereum 2.0 which is central to the system and its processes. 
 As analogy, similar to how the spine of a human connects and holds together the body, the beacon chain will connect and hold together the many chains in Ethereum 2.0. 
