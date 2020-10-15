@@ -159,22 +159,14 @@ ON
 
 ![](./images/formula-1.png)
 
-``` math
 y = -0.000359748 x^3 + 0.00293036 x^2 + -0.0531494 x + 11.027
-``` 
 
 
 ![](./images/InclusionDistance-vs-NoOfCommittees.png)
 
 ![](./images/formula-2.png)
 
-``` math
 y = -3.324e-07 x^3 + 0.000627697 x^2 + -0.337291 x + 78.0857
-``` 
-
-
-## Software Stack
-
 
 
 ## Acknowledgements
@@ -194,4 +186,25 @@ Wethank the authors of all the resources used in the article, as well as the Eth
     <td><b>Gürdal Ertek</b> is an Associate Professor at UAE University (UAEU), Al Ain, UAE. He received his Ph.D. from Georgia Institute of Technology, Atlanta, GA, in 2001. Dr. Ertek served in educational and research organizations in Turkey, USA, Singapore, Kuwait and UAE, as well as an on-site reviewer for 50+ industrial R&D projects. His research and teaching areas include applied data science, business analytics, supply chain management, project management, and R&D management.</td>
   </tr>
 </table>
+
+
+## APPENDIX: Software Stack & Tools
+
+- Data Extraction
+  - [PostgreSQL](https://www.postgresql.org/) for opening the database dumb provided by Jim McDonald
+  - [SQL](https://www.amazon.com/Learning-SQL-Generate-Manipulate-Retrieve/dp/1492057614) language for querying the data in PostgreSQL and exporting csv files
+
+- Data Preparation
+  - [MS Excel](https://www.youtube.com/channel/UCJtUOos_MwJa_Ewii-R3cJA) for merging data from multiple SQL queries, cleaning, adding new derived attributes, jittering, and pivot analysis
+
+- Univariate Analysis & Correlations
+  - [Orange](https://orange.biolab.si/) data mining software
+
+- Patterns Over Epochs & Relationships Between Attributes
+  - [Tableau](https://www.tableau.com) visual analytics software for generating visualizations and computing best-fitting nonlinear regression function (polynomial functional form)
+
+- Other
+  - [Codecogs.com](https://www.codecogs.com/latex/eqneditor.php) Online LaTeX Equation Editor for generating formula images from LaTex code
+  - [Paint.net](https://www.getpaint.net/index.html) image editor for editing the images
+  - [Markdown language](https://guides.github.com/features/mastering-markdown/) within GitHub for generating the html code for the web
 
