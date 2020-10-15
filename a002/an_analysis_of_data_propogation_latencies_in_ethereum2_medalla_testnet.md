@@ -195,7 +195,8 @@ Wethank the authors of all the resources used in the article, as well as the Eth
   - [SQL](https://www.amazon.com/Learning-SQL-Generate-Manipulate-Retrieve/dp/1492057614) language for querying the data in PostgreSQL and exporting csv files
 
 - Data Preparation
-  - [MS Excel](https://www.youtube.com/channel/UCJtUOos_MwJa_Ewii-R3cJA) for merging data from multiple SQL queries, cleaning, adding new derived attributes, jittering, and pivot analysis
+  - [Google Sheets](https://www.google.com/sheets/about/) for merging data from multiple SQL queries scalably on the cloud
+  - [MS Excel](https://www.youtube.com/channel/UCJtUOos_MwJa_Ewii-R3cJA) for cleaning, adding new derived attributes, adding new attributes with jittering, and pivot analysis
 
 - Univariate Analysis & Correlations
   - [Orange](https://orange.biolab.si/) data mining software
