@@ -50,12 +50,96 @@ The database schema also provides the [data types for MySQL](https://www.javatpo
 the key attributes of each table, and the foreign keys that relate the tables to each other.
 For the sake of simplicity, all bigint data types of Ethereum 2.0 have been represented as INT(255) and all hash strings -while many of them require much less memory- have been represented as TINYTEXT.
 
+## Data Extraction
+
+``` SQL
+SELECT
+  f_slot,
+  COUNT(f_inclusion_index) AS cnt_attesters_in_slot,
+  MIN(f_inclusion_slot) AS min_inc_slot_over_committees,
+  MAX(f_inclusion_slot) AS max_inc_slot_over_committees,
+  MAX(f_inclusion_slot) - f_slot AS slot_diff_over_committees,
+  MIN(f_source_epoch) AS min_src_epoch,  
+  MAX(f_target_epoch) AS max_targ_epoch,
+  MAX(f_target_epoch) - MIN(f_source_epoch) AS epoch_diff_over_committees
+FROM
+  t_attestations
+GROUP BY
+  1
+;
+``` 
 
 
 ``` SQL
-
-
+SELECT
+  f_proposer_index,
+  f_root,
+  f_slot,
+  CASE WHEN f_slot IN (SELECT f_inclusion_slot FROM t_proposer_slashings) THEN 1 ELSE 0 END AS proposer_slashings,
+  CASE WHEN f_slot IN (SELECT f_inclusion_slot FROM t_attester_slashings) THEN 1 ELSE 0 END AS attester_slashings,
+  CASE WHEN f_slot IN (SELECT f_inclusion_slot FROM t_voluntary_exits) THEN 1 ELSE 0 END AS voluntary_exits,
+  ps.f_header_1_slot AS ps_header_1_slot,
+  ps.f_header_1_proposer_index AS header_1_proposer_index,
+  ps.f_header_2_slot AS ps_f_header_2_slot,
+  ps.f_header_2_proposer_index AS header_2_proposer_index,
+  b.f_slot - ps.f_header_1_slot AS delay_reporting_proposer_slashings,
+  atts.f_attestation_1_slot AS atts_slot_1,
+  atts.f_attestation_2_slot AS atts_slot_2,
+  atts.f_attestation_2_slot - atts.f_attestation_1_slot AS delay_atts_committees,
+  b.f_slot - atts.f_attestation_1_slot AS delay_reporting_atts_1_slashings,
+  b.f_slot - atts.f_attestation_2_slot AS delay_reporting_atts_2_slashings,
+  atts.f_attestation_1_source_epoch AS atts_1_source_epoch,
+  atts.f_attestation_1_target_epoch AS atts_1_target_epoch,
+  atts.f_attestation_2_source_epoch AS atts_2_source_epoch,
+  atts.f_attestation_2_target_epoch AS atts_2_target_epoch,
+  ve.f_validator_index AS ve_index,
+  ve.f_epoch AS ve_epoch,
+  ve.f_inclusion_slot AS ve_slots,
+  b.f_slot - ve.f_inclusion_slot AS delay_reporting_ve
+FROM
+  t_blocks b
+LEFT JOIN
+  t_proposer_slashings ps
+ON
+  b.f_slot = ps.f_inclusion_slot
+LEFT JOIN
+  t_attester_slashings atts
+ON
+  b.f_slot = atts.f_inclusion_slot
+LEFT JOIN
+  t_voluntary_exits ve
+ON
+  b.f_slot = ve.f_inclusion_slot
+;
 ``` 
+
+## Data Preparation
+
+
+
+## Analytics Methodology
+
+
+
+## Univariate Analysis
+
+
+
+## Correlations
+
+
+
+## Patterns Over Epochs
+
+
+
+## Relationships Between Attributes
+
+
+
+## Software Stack
+
+
 
 ## Acknowledgements
 
