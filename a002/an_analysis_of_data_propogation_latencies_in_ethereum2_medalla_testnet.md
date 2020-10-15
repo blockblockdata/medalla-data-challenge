@@ -157,12 +157,16 @@ ON
 
 ![](./images/InclusionDistance-Avg-vs-StdDev-2.png)
 
+![](./images/formula-1.png)
+
 ``` math
 y = -0.000359748 x^3 + 0.00293036 x^2 + -0.0531494 x + 11.027
 ``` 
 
 
 ![](./images/InclusionDistance-vs-NoOfCommittees.png)
+
+![](./images/formula-2.png)
 
 ``` math
 y = -3.324e-07 x^3 + 0.000627697 x^2 + -0.337291 x + 78.0857
