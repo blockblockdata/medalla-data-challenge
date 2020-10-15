@@ -24,7 +24,7 @@ Upon the completion of the three Phases of Ethereum 2.0, namely Phase 0, Phase 1
 
 The focus of this article is the delays in inclusion of attestation aggregations in the Ethereum 2.0 network on the Beacon Chain. *Beacon chain* is the primary chain in Ethereum 2.0, which will go live with Phase 0. For Ethereum 2.0 core development, this was shared to be a [high priority](https://www.notion.so/Wishlist-The-Eth2-Medalla-Data-Challenge-69fe10ffe83748bc87faa0e2586ba857) analysis, that can help improve the performance of the network. 
 
-Our analysis is built on data from the Medalla testnet extracted using [´chaind´ API](https://github.com/wealdtech/chaind) and shared in the form of an PostgreSQL dump, whose latest version can be [accessed from here](http://mdc.mcdee.net/chain-487600.dmp). The data was kindly shared by [Jim McDonald](https://github.com/mcdee?tab=overview&from=2014-12-01&to=2014-12-31) on [ethstaker Discord channel, under #medalla-data-challenge hashtag](https://discord.com/channels/694822223575384095/752638638189445220). 
+Our analysis is built on data from the Medalla testnet extracted using [`chaind` API](https://github.com/wealdtech/chaind) and shared in the form of an PostgreSQL dump, whose latest version can be [accessed from here](http://mdc.mcdee.net/chain-487600.dmp). The data was kindly shared by [Jim McDonald](https://github.com/mcdee?tab=overview&from=2014-12-01&to=2014-12-31) on [ethstaker Discord channel, under #medalla-data-challenge hashtag](https://discord.com/channels/694822223575384095/752638638189445220). 
 
 While the analysis in this article focuses on data from the Medalla testnet of Ethereum 2.0, the presented visual analytics methodology, together with [other analysis methodologies,](https://github.com/bluepintail/medalla_analysis/blob/master/medalla_analysis.ipynb) can serve as a guiding example of how blockchain network data can be analyzed by blockchain engineers and data scientists.
 
@@ -157,16 +157,16 @@ ON
 
 ![](./images/InclusionDistance-Avg-vs-StdDev-2.png)
 
-´´´ math
+``` math
 $y = -0.000359748 x^3 + 0.00293036 x^2 + -0.0531494 x + 11.027$
-´´´
+``` 
 
 
 ![](./images/InclusionDistance-vs-NoOfCommittees.png)
 
-´´´ math
+``` math
 $y = -3.324e-07 x^3 + 0.000627697 x^2 + -0.337291 x + 78.0857$
-´´´
+``` 
 
 
 ## Software Stack
