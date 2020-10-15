@@ -296,25 +296,6 @@ signature              TINYTEXT                                     [note: 'ex: 
 }
 ``` 
 
-## Software Stack & Tools
-- 3D Visualization (Figure 1): 
-  - [Paletton.com](http://Paletton.com) to select a triad color palette
-  - [Solidworks](http://solidworks.com) for 3D modeling and rendering
-  - [grabcad.com](http://grabcad.com) for online viewing of the 3D model
-
-- Interactive Data Schema Diagram (Figure 2)
-  - [dbdiagram.io](dbdiagram.io) for editing the DBML code and converting the code into an online interactive diagram, which was later exported to pdf
-
-- Zoomable Presentation (Figure 3)
-  - [Pdf-XChange Viewer](https://www.tracker-software.com/product/pdf-xchange-viewer) pdf editor for generating high resolution images from the pdf output of the data schema diagram
-  - [Notepad++](https://notepad-plus-plus.org/) for visualizing the json files with coloring
-  - [thenounproject.com](http://thenounproject.com) for icons (copyrights granted under educational license)
-  - [Prezi.com](http://prezi.com) for creating and visualizing the interactive zoomable presentation
-
-- Other
-  - [Paint.net](https://www.getpaint.net/index.html) image editor for editing the images
-  - [Markdown language](https://guides.github.com/features/mastering-markdown/) within GitHub for generating the html code for the web
-
 ## Acknowledgements
 
 The authors thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. The authors also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
@@ -332,3 +313,24 @@ The authors thank the authors of all the resources used in the article, as well 
     </td>
   </tr>
 </table>
+
+
+## APPENDIX: Software Stack & Tools
+- 3D Visualization (Figure 1): 
+  - [Paletton.com](http://Paletton.com) to select a triad color palette
+  - [Solidworks](http://solidworks.com) for 3D modeling and rendering
+  - [grabcad.com](http://grabcad.com) for online viewing of the 3D model
+
+- Interactive Data Schema Diagram (Figure 2)
+  - [dbdiagram.io](dbdiagram.io) for editing the DBML code and converting the code into an online interactive diagram, which was later exported to pdf
+
+- Zoomable Presentation (Figure 3)
+  - [Pdf-XChange Viewer](https://www.tracker-software.com/product/pdf-xchange-viewer) pdf editor for generating high resolution images from the pdf output of the data schema diagram
+  - [Notepad++](https://notepad-plus-plus.org/) for visualizing the json files with coloring
+  - [thenounproject.com](http://thenounproject.com) for icons (copyrights granted under educational license)
+  - [Prezi.com](http://prezi.com) for creating and visualizing the interactive zoomable presentation
+
+- Other
+  - [Paint.net](https://www.getpaint.net/index.html) image editor for editing the images
+  - [Markdown language](https://guides.github.com/features/mastering-markdown/) within GitHub for generating the html code for the web
+  
