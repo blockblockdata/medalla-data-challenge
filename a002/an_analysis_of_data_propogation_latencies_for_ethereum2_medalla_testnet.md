@@ -30,10 +30,11 @@ While the analysis in this article focuses on data from the Medalla testnet of E
 ## Beacon Chain and Attestations
 Central to Ethereum 2.0's architectural design is the beacon chain, which coordinates the Proof-of-Staking (PoS) consensus protocol. An [insightful article by Ben Edgington](https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129) explains the functionality and working mechanism of the beacon chain. Our earlier article we prepared for submission to the [Medalla Data Challenge](https://blockblockdata.github.io/medalla-data-challenge/a001/the_ethereum_2_beacon_block_data_schema_and_visual_documentation.html) provides a visual documentation of the data produced and stored for each beacon block on the beacon chain. As further reference, an excellent list of definitions for the various Ethereum 2.0 terms are provided by [Alethio here](https://medium.com/alethio/ethereum-2-a-validators-journey-through-the-beacon-chain-843f70aaab2e). 
 
-Consensus on the Ethereum 2.0 blockchain will be achieved through the participation of *validators*, which are in essence client software running in parallel on a distributed network of computers. The (journey of a validator)[https://medium.com/alethio/ethereum-2-a-validators-journey-through-the-beacon-chain-843f70aaab2e] begins by the installation of the client software, deposit of at least 32 ETH (Ethereum) coins to the node's wallet, and joining a waiting queue to be admitted. The atomic time unit in Ethereum 2.0 is a *slot*, which is issued every 12 seconds. Every 32 slots (about 6,5 minutes) constitute an *epoch*.  Once a validator is admitted, at each slot, there are two main roles that it may be assigned to by the network, namely role of *(block) proposer* and the role of *(block) attester*. A proposer (a validator with the proposer hat on) proposes blocks to be added to the blockchain. An attester (a validator with the attestor hat on) votes on whether the block is valid and should be appended to the network, as the proposer suggests. Attesters vote within one of multiple *committees*, where committees are formed freshly at every epoch. Each validator is invited every epoch exactly once to serve in one of the many committees. As many details exist, we refer interested readers to two fascinating articles by [Ben Edgington](https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129) and [Jim McDonald](https://www.attestant.io/posts/understanding-the-validator-lifecycle/) which describe the working mechanics of the beacon chain and Ethereum 2.0 overall. 
+Consensus on the Ethereum 2.0 blockchain will be achieved through the participation of *validators*, which are in essence client software running in parallel on a distributed network of computers. The [journey of a validator](https://medium.com/alethio/ethereum-2-a-validators-journey-through-the-beacon-chain-843f70aaab2e) begins by the installation of the client software, deposit of at least 32 ETH (Ethereum) coins to the node's wallet, and joining a waiting queue to be admitted. The atomic time unit in Ethereum 2.0 is a *slot*, which is issued every 12 seconds. Every 32 slots (about 6,5 minutes) constitute an *epoch*.  Once a validator is admitted, at each slot, there are two main roles that it may be assigned to by the network, namely role of *(block) proposer* and the role of *(block) attester*. A proposer (a validator with the proposer hat on) proposes blocks to be added to the blockchain. An attester (a validator with the attestor hat on) votes on whether the block is valid and should be appended to the network, as the proposer suggests. Attesters vote within one of multiple *committees*, where committees are formed freshly at every epoch. Each validator is invited every epoch exactly once to serve in one of the many committees. As many details exist, we refer interested readers to two fascinating articles by [Ben Edgington](https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129) and [Jim McDonald](https://www.attestant.io/posts/understanding-the-validator-lifecycle/) which describe the working mechanics of the beacon chain and Ethereum 2.0 overall. 
 
 The system incentivizes compliant behavior on the part of the validators through various [rewards and penalties](https://codefi.consensys.net/blog/rewards-and-penalties-on-ethereum-20-phase-0), while keeping them in the network. Yet, if a validator, in the role of proposer *or* attester, is proven to commit fraud, it is *slashed*, meaning that it is involuntarily and forcefully removed by the system from the network. Slashed validator are *not* allowed to participate in the network again.
 
+Ethereum 2.0's Proof-of-Stake (PoS) consensus protocol includes blocks on the blockchain not simultaneously, but only after evaluating *attestations*, which are aggregated as *attestation aggregations*. For each slot, the attestations from different committees are *included* in the blockchain only after a certain delay, which can be referred to as *inclusion distance, inclusion delay, inclusion latency*, or other another similar term. In this article, to have consistency with the [amazing analysis and article by bluepintail](https://github.com/bluepintail/medalla_analysis/blob/master/medalla_analysis.ipynb), from now on, we will refer to this latency as *inclusion distance*. The block for a slot can be immutably written/registered only after *all* the attestations for that slot have been included. Therefore, for each slot, the eventual inclusion distance is the maximum inclusion distance over all attestation aggregations over all committees who participated in the consensus for that slot.
 
 
 ## Medalla Testnet
@@ -50,237 +51,15 @@ the key attributes of each table, and the foreign keys that relate the tables to
 For the sake of simplicity, all bigint data types of Ethereum 2.0 have been represented as INT(255) and all hash strings -while many of them require much less memory- have been represented as TINYTEXT.
 
 
-## Beacon Block Data Schema
 
-<a href="https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295" target="_blank"><img src="./images/dbdiagram-data-schema.png" alt="Beacon Block Tables"></a>
-
-[Figure 2. Interactive data schema diagram (dbdiagram) for Ethereum 2.0 Beacon Block.](https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295)
-
-The data schema visualization is interactive and is especially ideal for exploring the relations between the tables through foreign keys. 
-
-The next visualization is a zoomable presentation, which shows different groups of related tables as a part of the whole. 
-This presentation can help understand better the different groups of tables and the data fields in each table.
-
-<a href="https://prezi.com/p/z5sf3nyicten/?present=1" target="_blank"><img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables"></a>
-
-[Figure 3. Zoomable data schema diagram for Ethereum 2.0 Beacon Block with sample data.](https://prezi.com/p/z5sf3nyicten/?present=1)
+``` SQL
 
 
-## Data Tables and Fields within Beacon Block
-
-In this section of the article, we provide the details of the data schema presented earlier, focusing on each section of the diagram, listing the data fields for each table, describing the primary and foreign keys, and providing sample data for each field (where possible). 
-
-The [json files](./code/) corresponding to the full data extracted from the mentioned beacon blocks are available under the [GitHub repository](./code/). The Database Markup Language (DBML) is used to describe the schema and each of its tables. The [dbdiagram.io](http://dbdiagram.io) service by [holistics.io](http://holistics.io) conveniently converts the schema code written in DBML into an interactive data schema, as in Figure 2 in this article.
-
-In the DBML specification of the schema, TINYTEXT and INT(255) are the two data types for string/hash and big integer, assuming that the data will be imported to MySQL. `pk` refers to primary key(s), whereas `-`, `<`, and `>` respectively refer to one-to-one, one-to-many, and many-to-one relations. `note`s provide example data from different actual beacon blocks from the Medalla testnet. Beacon block in slot 139 is used to illustrate the beacon block body and proposer slashings. Beacon block in slot 688 is used to illustrate attester slashings and attestations. Beacon block in slot 1005 is used to illustrate deposits and beacon block in slot 29758 are used to illustrate voluntary exits. These blocks are also where the respective events of proposer slashing, attester slashing, deposit, and voluntary exit took place for the first time.
-
-### Beacon Block 
-
-![](./images/01b-Beacon-Block-icon.png)
-
-![](./images/01-Beacon-Block-Data-Table.png)
-
-``` javascript 
-//***********************************************************
-// sample block data from Medalla Testnet is block @ slot 139
-Table beacon_block as bb {
-root                   TINYTEXT  [pk, unique,                        note: 'ex: 0x2d424c3838d2b49d9c8da4e8297471f375b872ea4b250a75127e89175b44ba70']
-slot                   INT(255)  [                                   note: 'ex: 139']
-proposer_index         INT(255)  [ref: - validator.id,               note: 'ex: 2185']
-parent_root            TINYTEXT  [ref: - beacon_block.root,          note: 'ex: 0x19c7252f6150f964fa62cc94e7ff9df79b74c552bf3d134b1f7a317c01662c1d']
-state_root             TINYTEXT                                     [note: 'ex: 0xb9739996c890b47251eecab6643b7400ff992bf76ed75b26f0b04146ea4cd640']
-randao_reveal          TINYTEXT                                     [note: 'ex: 0x820574e5514420659826e18b183d7d0478389bce4a08464427168c97e67884c5d38839675313688d4ada52259becb1a40b8ee7ccaf983c9ae56d69c0000a7114006c6bb640a515075b7610b8bdf21506d4146787550ddd89a5ed8956ce470bb6']
-deposit_root           TINYTEXT                                     [note: 'ex: 0x53d90f778f975dcca3f30e072b5c1a85cfd7a1b977b78620d94f143d06432f9b']
-deposit_count          TINYTEXT                                     [note: 'ex: 22637']
-block_hash             TINYTEXT                                     [note: 'ex: 0xe0c057333355956e8fb8d88382f5676bbe083fbf8b978f0db719b4d02ae70777']
-graffiti               TINYTEXT                                     [note: 'ex: 0x53746566616e2333393137000000000000000000000000000000000000000000']
-proposer_slashings_id  INT(255) [ref: < proposer_slashings.id,       note: 'ex: '] 
-attester_slashings_id  INT(255) [ref: < attester_slashings.id,       note: 'ex: '] 
-attestations_id        INT(255) [ref: < attestations.id,             note: 'ex: ']
-deposits_id            INT(255) [ref: < deposits.id,                 note: 'ex: ']
-voluntary_exits_id     INT(255) [ref: < voluntary_exits.id,          note: 'ex: ']
-signature              TINYTEXT                                     [note: 'ex: 0xaa4bba19b1c185002f446cc79e24bcf917808569394669b4fea9b855f2f49e6f76c2408384d8ded3d151ed5ab238951a137a777958525bdf58c6fa75d6418ae4f5e67177747040919f81a86a1065355b2d1abb1553bc94630a6c06e4a67e5fe4']
-}
-``` 
-
-While the Lighthouse http API enables the extraction of detailed data about validators, the `/beacon/block/` endnode does not give any information.
-
-``` javascript 
-//***********************************************************
-// for now, validator is presented only as a value, the proposer to block @ slot 139 is taken as example
-Table validator {
-id                     INT(255) [pk,                                 note: 'ex: 2185']
-}
-```
-
-https://www.dbml.org/docs/
-
-
-### Proposer Slashings
-
-![](./images/02b-Proposer-Slashings-icon.png)
-
-![](./images/02-Proposer-Slashings-Data-Table.png)
-
-``` javascript 
-//***********************************************************
-// sample block data from Medalla Testnet is block @ slot 139
-Table proposer_slashings {
-id                     INT(255) [pk, increment,                      note: 'ex: ']
-proposer_slashing_index  INT(255) [pk,                               note: 'ex: 1']
-proposer_slashing_id     INT(255) [ref: - proposer_slashing.id,      note: 'ex: ']
-}
-
-Table proposer_slashing {
-id                     INT(255) [pk, increment,                      note: 'ex: ']
-signed_header_1        INT(255) [ref: - signed_header.id,            note: 'ex: ']
-signed_header_2        INT(255) [ref: - signed_header.id,            note: 'ex: ']
-}
-
-Table signed_header {
-id                     INT(255) [pk, increment,                      note: 'ex: ']
-slot                   INT(255) [ref: > beacon_block.slot,           note: 'ex: 138']
-proposer_index         INT(255) [ref: > validator.id,                note: 'ex: 2329']
-parent_root            TINYTEXT [ref: > beacon_block.root,           note: 'ex: 0x9ad72edd1303a10d292bf8ad84360d30b309a85fd0ee9f4143821f5a3ec01da1']
-state_root             TINYTEXT                                     [note: 'ex: 0x1b067135c44e9b472608a58499f7e13561dbc0f4fd9ae3ebd9f6ddae298cebbe']
-body_root              TINYTEXT [ref: > beacon_block.root,           note: 'ex: 0xa9905d68bfe2f4bde96020c4a5b66b62ef575b8c5096bbf5d042ee4795f13f80']
-signature              TINYTEXT                                     [note: 'ex: 0xa5e55750045079ee500ce6176c3ea83ae1ceb415357e6019a43641cf15a961bc7cc799923a1b0d019be0a6c6138b89e7025a57cedabbd262ceefe44931052b083e99d92624a91ace8f16acd6647f7234391df2e3e3f77a68816072793e8a718d']
-}
-```
-
-### Attester Slashings
-
-![](./images/03b-Attester-Slashings-icon.png)
-
-![](./images/03-Attester-Slashings-Data-Table.png)
-
-``` javascript 
-//***********************************************************
-// sample block data from Medalla Testnet is block @ slot 688
-Table attester_slashings {
-id                     INT(255) [pk, increment,                      note: 'ex: ']
-attester_slashing_index  INT(255) [pk,                               note: 'ex: ']
-attester_slashing_id     INT(255) [ref: - attester_slashing.id,      note: 'ex: ']
-}
-
-Table attester_slashing {
-id                     INT(255) [pk, increment,                      note: 'ex: ']
-attestation_1          INT(255) [ref: < attestation.id,              note: 'ex: ']
-attestation_2          INT(255) [ref: < attestation.id,              note: 'ex: ']
-}
-
-Table attestation {
-id                     INT(255) [pk, increment,                      note: 'ex: ']
-attesting_indices_id   INT(255) [pk, ref: < attesting_indices.id,    note: 'ex: ']
-slot                   INT(255) [ref: - beacon_block.slot,           note: 'ex: 654']
-index                  INT(255)                                     [note: 'ex: 0']
-beacon_block_root      TINYTEXT [ref: > beacon_block.root,           note: 'ex: 0x69f3e09fa4fdc8b6e6162588a488606175069c396d215d44f0a8fb7565d911e4']
-source_epoch           INT(255)                                     [note: 'ex: 19']
-source_root            TINYTEXT [ref: > beacon_block.root,           note: 'ex: 0xf7f25edf9ead6eaf17d1dfaa4c3259dcc3d4897986fa4141577695793b90240f']
-target_epoch           INT(255)                                     [note: 'ex: 20']
-target_root            TINYTEXT [ref: > beacon_block.root,           note: 'ex: 0x9f3af8c4ef4b38e82617e1d82ca868f785d015a2de45e112a398f6748ea4d6dc']
-signature              TINYTEXT                                     [note: 'ex: 0xb2883dffd3fd8668e410d55915ee5e72dd08a423a2c28033adec54f0178062ea9ac3f47fa0ef952ae50494c9705b911215d8c5c9da5619760004f59c09a58077eb0ba6fb2fd2135265b465d27be536eeabd40bb61df4742a438c7e6723b6c18a']
-}
-
-Table attesting_indices {
-id                     INT(255) [pk, increment,                      note: 'ex: ']
-attesting_indices_index  INT(255) [pk,                               note: 'ex: 1']
-validator              INT(255) [ref: > validator.id,                note: 'ex: 183']
-}
-``` 
-
-### Attestations
-
-![](./images/04b-Attestations-icon.png)
-
-![](./images/04-Attestations-Data-Table.png)
-
-
-``` javascript 
-//***********************************************************
-// sample block data from Medalla Testnet is block @ slot 688
-Table attestations {
-id                     INT(255) [pk, increment,                       note: 'ex: ']
-aggregation_index      INT(255) [pk,                                  note: 'ex: 1']
-aggregation_bits_hash  TINYTEXT [ref: - aggregation_bits.hash,        note: 'ex: 0xb37e736f29efcf36febf7dd2defde6f1f38d5e2d']
-}
-
-Table aggregation_bits {
-hash                   TINYTEXT [pk, unique,                          note: 'ex: 0xb37e736f29efcf36febf7dd2defde6f1f38d5e2d']
-slot                   INT(255) [ref: > beacon_block.slot,            note: 'ex: 671']
-index                  INT(255) [pk,                                  note: 'ex: 1']
-beacon_block_root      TINYTEXT [ref: > beacon_block.root,            note: 'ex: 0x99ad36b7c857c00c461987fca2230723a31606fb8deb7686f7ba861f0bd0761c']
-source_epoch           INT(255) [                                     note: 'ex: 19']      
-source_root            TINYTEXT [ref: > beacon_block.root,            note: 'ex: 0xf7f25edf9ead6eaf17d1dfaa4c3259dcc3d4897986fa4141577695793b90240f']    
-target_epoch           INT(255) [                                     note: 'ex: 20']  
-target_root            TINYTEXT [ref: > beacon_block.root,            note: 'ex: 0x9f3af8c4ef4b38e82617e1d82ca868f785d015a2de45e112a398f6748ea4d6dc']
-signature              TINYTEXT                                      [note: 'ex: 0x877743855735e76201f9bfd539140ea49240d9d532f89b6024f3b62fc235a62efecb1642a12698654c09b433a4f4212b01f294b6bc12f9f59450acef2540596a3f3749b4617acceee1641105dd4060139768b5b7b776a773d6ed71dd0d45c958']
-}
-``` 
-
-<hr>
-
-### Deposits
-
-![](./images/05b-Deposits-icon.png)
-
-![](./images/05-Deposits-Data-Table.png)
-
-
-``` javascript 
-//***********************************************************
-// sample block data from Medalla Testnet is block @ slot 1005
-Table deposits {
-id                    INT(255) [pk, increment,                       note: 'ex: ']
-deposit_index         INT(255) [pk,                                  note: 'ex: ']
-deposit_id            INT(255) [ref: - deposit.id,                   note: 'ex: ']
-}
-
-Table deposit {
-id                    INT(255) [pk, increment,                       note: 'ex: ']
-proofs_id             INT(255) [ref: < proofs.id,                    note: 'ex: ']
-pubkey                TINYTEXT                                      [note: 'ex: 0xa0d46f3e977da3c53d46dcff9a4f7e6b4895cf9fb66ea76d82fd5462d3ed32c378d733017640dfaa2a9012de7a71d9b9'] 
-withdrawal_credentials  TINYTEXT                                    [note: 'ex: 0x00f51a03211451f1cbb0a6b609cfefdb777b837e33442141cae67ff4b9297a6f'] 
-amount                INT(255) [ref: < proofs.id,                    note: 'ex: 32000000000']
-signature             TINYTEXT                                      [note: 'ex: 0x96155845317fcd242b38051dc873b6614601daf997691454c28d882df5b2086dde861b2357b773d2f2a9a8487296306f03269fade98b4610dbabfdbc70aba26485fa2519b55c22629aad4e93e7dd1bb1e16a80d1dc9c896134f01029540bfa69']
-}
-
-Table proofs {
-id                    INT(255) [pk, increment,                       note: 'ex: ']
-proof_index           INT(255) [pk,                                  note: 'ex: 1']
-proof_hash            TINYTEXT                                      [note: 'ex: 0x1a681904fc274c629c0fe89054b8e15db5717e54bad61bed3ef2b0cced8772f3']
-}
-``` 
-
-<hr>
-
-
-### Voluntary Exits
-
-![](./images/06b-Voluntary-Exits-icon.png)
-
-![](./images/06-Voluntary-Exits-Data-Table.png)
-
-``` javascript 
-//***********************************************************
-// sample block data from Medalla Testnet is block @ slot 29758
-Table voluntary_exits {
-id                     INT(255) [pk, increment,                      note: 'ex: ']
-voluntary_exit_index   INT(255) [pk,                                 note: 'ex: 1']
-voluntary_exit_id      INT(255) [ref: < voluntary_exit.id,           note: 'ex: ']
-}
-
-Table voluntary_exit {
-id                     INT(255) [pk, increment,                      note: 'ex: ']
-epoch                  INT(255) [                                    note: 'ex: 929']
-validator_index        INT(255) [ref: > validator.id,                note: 'ex: 5194']
-signature              TINYTEXT                                     [note: 'ex: 0x93f39045a23a8fd9818cbc0514a678415d8af96fb8f81322d4615c7398efc8a0835576aa7924be089a424ea0be1ea6470e732c3c62ac71c600981c90f7a1fe6d2856b7fa18afb46559fc449f0237bd6b07c368fefcf31ed6c5118aaefbaa7b47']
-}
 ``` 
 
 ## Acknowledgements
 
-The authors thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. The authors also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
+The authors thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. The authors especially thank [Ben Eddington](https://www.linkedin.com/in/benedgington/) for his rigorous documentation, [Jim McDonald](https://www.linkedin.com/in/jimgmcdonald/) for sharing the data used in the article, and [bluepintail](https://github.com/bluepintail) for openly sharing his/her analysis with the ethstaker community. The authors also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
 
 ## Authors
 
