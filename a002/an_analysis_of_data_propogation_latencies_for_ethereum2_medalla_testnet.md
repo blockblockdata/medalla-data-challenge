@@ -2,7 +2,8 @@
 
 Joseph Kholodenko, Gurdal Ertek
 
-![](./images/beacon-block-artistic-photo.png)
+![](./images/hourglass.png)
+Photo by <a href="https://unsplash.com/@aronvisuals?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Aron Visuals</a> on <a href="https://unsplash.com/s/photos/time?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 
 **Summary:** Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks will be added) is to be achieved through proof-of-stake (PoS). 
 Coordination of consensus and many other processes in Ethereum 2.0 will be carried out by a chain referred to as the "beacon chain".
@@ -115,26 +116,50 @@ ON
 
 ## Data Preparation
 
-
+![](./images/dataset.png)
 
 ## Analytics Methodology
 
+![](./images/pearson-correlation-matrix.png)
 
 
 ## Univariate Analysis
 
+![](./images/histograms.png)
 
 
 ## Correlations
 
+![](./images/pearson-correlation-matrix.png)
 
 
 ## Patterns Over Epochs
 
+![](./images/NoOfCommittees.png)
+
+
+![](./images/InclusionDistance.png)
+
+
+![](./images/AttesterSlashings.png)
+
+
+![](./images/VoluntaryExits.png)
+
+
+![](./images/MissingBlocks.png)
 
 
 ## Relationships Between Attributes
 
+
+![](./images/InclusionDistance-Avg-vs-StdDev.png)
+
+
+![](./images/InclusionDistance-Avg-vs-StdDev-2.png)
+
+
+![](./images/InclusionDistance-vs-NoOfCommittees.png)
 
 
 ## Software Stack
@@ -143,7 +168,7 @@ ON
 
 ## Acknowledgements
 
-The authors thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. The authors especially thank [Ben Eddington](https://www.linkedin.com/in/benedgington/) for his rigorous documentation, [Jim McDonald](https://www.linkedin.com/in/jimgmcdonald/) for sharing the data used in the article, and [bluepintail](https://github.com/bluepintail) for openly sharing his/her analysis with the ethstaker community. The authors also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
+The authors thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. The authors especially thank [Ben Eddington](https://www.linkedin.com/in/benedgington/) for his rigorous documentation, [Jim McDonald](https://www.linkedin.com/in/jimgmcdonald/) for sharing the data used in the article and answering our many questions, [bluepintail](https://github.com/bluepintail) for openly sharing his/her analysis with the ethstaker community, and [Butta.eth](https://twitter.com/Butta_eth) for supporting our work. The authors also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
 
 ## Authors
 
