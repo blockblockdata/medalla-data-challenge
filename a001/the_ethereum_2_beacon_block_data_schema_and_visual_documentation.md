@@ -2,10 +2,6 @@
 
 **Gurdal Ertek, Joseph Kholodenko**
 
-![](./images/beacon-block-artistic-photo.png)
-
-Photo by <a href="https://unsplash.com/@scarlett_jedi?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Carol Kennedy</a> on <a href="https://unsplash.com/@Scarlett_jedi?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
-
 **Summary:** Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks will be added) is to be achieved through proof-of-stake (PoS). 
 Coordination of consensus and many other processes in Ethereum 2.0 will be carried out by a chain referred to as the "beacon chain".
 There exists numerous comprehensive technical documentations of Ethereum 2.0 and the beacon chain. 
@@ -14,6 +10,9 @@ As a methodological and pedagogical contribution, our article demonstrates how i
 
 > *"When I came up with Ethereum, my first first thought was, 'Okay, this thing is too good to be true.' As it turned out, the core Ethereum idea was good - fundamentally, completely sound."* ***Vitalik Buterin***
 
+![](./images/beacon-block-artistic-photo.png)
+
+Photo by <a href="https://unsplash.com/@scarlett_jedi?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Carol Kennedy</a> on <a href="https://unsplash.com/@Scarlett_jedi?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 
 ## Ethereum and Ethereum 2.0
 The Ethereum blockchain, initially envisioned by [Vitalik Buterin](https://medium.com/@VitalikButerin), is the first [triple-entry ledger system](https://hackernoon.com/why-everyone-missed-the-most-important-invention-in-the-last-500-years-c90b0151c169) in human history to serve as an enabling platform for smart contracts.
