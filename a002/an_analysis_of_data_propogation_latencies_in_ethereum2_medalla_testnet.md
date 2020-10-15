@@ -1,9 +1,6 @@
 # An Analysis of Data Propogation Latencies in Ethereum 2.0 Medalla Testnet
 
-Joseph Kholodenko, Gurdal Ertek
-
-![](./images/hourglass.png)
-Photo by <a href="https://unsplash.com/@aronvisuals?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Aron Visuals</a> on <a href="https://unsplash.com/s/photos/time?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+**Joseph Kholodenko, Gurdal Ertek**
 
 **Summary:** Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks will be added) is to be achieved through proof-of-stake (PoS). 
 Coordination of consensus and many other processes in Ethereum 2.0 will be carried out by a chain referred to as the "beacon chain".
@@ -13,6 +10,9 @@ As a methodological contribution, our article demonstrates how network data can 
 
 > *Every second is of infinite value."* ***Johann Wolfgang von Goethe***
 
+![](./images/hourglass.png)
+
+Photo by <a href="https://unsplash.com/@aronvisuals?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Aron Visuals</a> on <a href="https://unsplash.com/s/photos/time?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 
 ## Ethereum and Ethereum 2.0
 The Ethereum blockchain, initially envisioned by [Vitalik Buterin](https://medium.com/@VitalikButerin), is the first [triple-entry ledger system](https://hackernoon.com/why-everyone-missed-the-most-important-invention-in-the-last-500-years-c90b0151c169) in human history to serve as an enabling platform for smart contracts.
