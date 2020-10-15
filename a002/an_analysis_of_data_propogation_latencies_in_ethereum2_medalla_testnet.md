@@ -120,7 +120,6 @@ ON
 
 ## Analytics Methodology
 
-![](./images/pearson-correlation-matrix.png)
 
 
 ## Univariate Analysis
