@@ -298,22 +298,22 @@ signature              TINYTEXT                                     [note: 'ex: 
 
 ## Software Stack & Tools
 - 3D Visualization (Figure 1): 
-  - Paletton.com to select a triad color palette
-  - Solidworks for 3D modeling and rendering
-  - grabcad.com for online viewing of the 3D model
+  - [Paletton.com](http://Paletton.com) to select a triad color palette
+  - [Solidworks](http://solidworks.com) for 3D modeling and rendering
+  - [grabcad.com](http://grabcad.com) for online viewing of the 3D model
 
-Interactive Data Schema Diagram (Figure 2)
-dbdiagram.io for editing the DBML code and converting the code into an online interactive diagram, which can be exported to pdf
+- Interactive Data Schema Diagram (Figure 2)
+  - [dbdiagram.io](dbdiagram.io) for editing the DBML code and converting the code into an online interactive diagram, which was later exported to pdf
 
-Zoomable Presentation (Figure 3)
-Pdf-XChanger editor for generating high resolution images from the data schema diagram
-Notepad++ for visualizing the json files with coloring
-thenounproject.com for icons (copyrights granted under educational licenses)
-Prezi.com for creating and visualizing the interactive zoomable presentation
+- Zoomable Presentation (Figure 3)
+  - [Pdf-XChange Viewer](https://www.tracker-software.com/product/pdf-xchange-viewer) pdf editor for generating high resolution images from the pdf output of the data schema diagram
+  - [Notepad++](https://notepad-plus-plus.org/) for visualizing the json files with coloring
+  - [thenounproject.com](http://thenounproject.com) for icons (copyrights granted under educational license)
+  - [Prezi.com](http://prezi.com) for creating and visualizing the interactive zoomable presentation
 
-Other
-Paint.net image editor for editing the images
-Markdown language within GitHub for generating the html code for the web
+- Other
+  - [Paint.net](https://www.getpaint.net/index.html) image editor for editing the images
+  - [Markdown language](https://guides.github.com/features/mastering-markdown/) within GitHub for generating the html code for the web
 
 ## Acknowledgements
 
