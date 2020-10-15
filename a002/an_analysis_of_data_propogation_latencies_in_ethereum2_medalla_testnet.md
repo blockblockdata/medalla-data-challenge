@@ -8,7 +8,7 @@ The Medalla testnet provides ample data on the Ethereum 2.0 network, which can b
 This article presents a visual analysis of data propogation latencies (delays) in the Medalla testnet, focusing on the average inclusion distance in each epoch. 
 As a methodological contribution, our article demonstrates how network data can be visually analyzed, with a focus on latencies with respect to including attestations, i.e, *inclusion distances (delays)*. The data analytics methodology presented here can be applied not only in analyzing data from the Ethereum 2.0 mainnet, but also for analyzing data from any blockchain network.
 
-> *Every second is of infinite value."* ***Johann Wolfgang von Goethe***
+> *"Every second is of infinite value."* ***Johann Wolfgang von Goethe***
 
 ![](./images/hourglass.png)
 
