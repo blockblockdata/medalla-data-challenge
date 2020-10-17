@@ -67,7 +67,7 @@ Yet, for other systems to operate successfully and integrate to the whole, the B
 
 ## Beacon Block Data Schema
 
-The [technical specification document under Ethereum's GitHub repository](https://github.com/ethereum/eth2.0-specs/blob/v0.12.1/specs/phase0/beacon-chain.md) is a primary document in the community that lists the specifications of Ethereum 2.0. Furthermore, the [annotated technical specification for the Beacon Chain by (Ben Edgington)](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) provides the descriptions of the data fields in the beacon chain and the processes executed on the chain. Both these documentations sources, as well as those listed under the [latter]((https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody)) are quite comprehensive in scope. Since the mentioned documents are mainly in text format, we aim in this our article to visually communicate of the data specifications with actual sample data.
+The [technical specification document under Ethereum's GitHub repository](https://github.com/ethereum/eth2.0-specs/blob/v0.12.1/specs/phase0/beacon-chain.md) is a primary document in the community that lists the specifications of Ethereum 2.0. Furthermore, the [annotated technical specification for the Beacon Chain by (Ben Edgington)](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) provides the descriptions of the data fields in the beacon chain and the processes executed on the chain. Both these documentations sources, as well as those listed under the [latter](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) are quite comprehensive in scope. Since the mentioned documents are mainly in text format, we aim in this our article to visually communicate of the data specifications with actual sample data.
 
 The data schema that we present in the remainder of the article, beginning with Figure 2, represents the data that can be retrieved by [Eth2 Beacon Node API](https://ethereum.github.io/eth2.0-APIs/). 
 While this API allows the retrieval of an extensive array of data, our focus in this article is the [`/eth/v1/beacon/`](https://ethereum.github.io/eth2.0-APIs/#/Beacon) endpoint.
@@ -78,7 +78,7 @@ The database schema also provides the [data types for MySQL](https://www.javatpo
 the key attributes of each table, and the foreign keys that relate the tables to each other.
 For the sake of simplicity, all bigint data types of Ethereum 2.0 have been represented as INT(255) and all hash strings -while many of them require much less memory- have been represented as TINYTEXT. 
 
-The Database Markup Language (DBML) is used to describe the schema and each of its tables. The [dbdiagram.io](http://dbdiagram.io) service by [holistics.io](http://holistics.io) conveniently converts the schema code written in DBML into an interactive data schema, as in Figure 2 in this article.
+[The Database Markup Language (DBML)](https://www.dbml.org/docs/) is used to describe the schema and each of its tables. The [dbdiagram.io](http://dbdiagram.io) service by [holistics.io](http://holistics.io) conveniently converts the schema code written in DBML into an interactive data schema, as in Figure 2 in this article.
 
 The data schema diagram in Figure 2 is interactive and is ideal for exploring the relations between the tables through foreign keys. 
 
@@ -101,7 +101,7 @@ In this section of the article, we provide the details of the data schema presen
 
 The [json files](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code) corresponding to the full data extracted from the mentioned beacon blocks are available under the [GitHub repository](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code). 
 
-In the DBML specification of the schema, 
+In the [DBML](https://www.dbml.org/docs/) specification of the schema, 
 - TINYTEXT and INT(255) are the two data types for string/hash and big integer, assuming that the data will be imported to MySQL. 
 - `pk` refers to primary key(s), whereas 
 - `-`, `<`, and `>` respectively refer to one-to-one, one-to-many, and many-to-one relations. 
@@ -406,7 +406,7 @@ We thank the authors of all the resources used in the article, as well as the Et
   - [grabcad.com](http://grabcad.com) for online viewing of the 3D model
 
 - Interactive Data Schema Diagram (Figure 2)
-  - [dbdiagram.io](http://dbdiagram.io) for editing the DBML code and converting the code into an online interactive diagram, which was later exported to pdf
+  - [dbdiagram.io](http://dbdiagram.io) for editing the [DBML](https://www.dbml.org/docs/) code and converting the code into an online interactive diagram, which was later exported to pdf
 
 - Zoomable Presentation (Figure 3)
   - [Pdf-XChange Viewer](https://www.tracker-software.com/product/pdf-xchange-viewer) pdf editor for generating high resolution images from the pdf output of the data schema diagram
