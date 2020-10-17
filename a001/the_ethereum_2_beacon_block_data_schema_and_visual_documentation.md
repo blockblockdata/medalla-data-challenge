@@ -69,9 +69,9 @@ Yet, for other systems to operate successfully and integrate to the whole, the B
 
 The [technical specification document under Ethereum's GitHub repository](https://github.com/ethereum/eth2.0-specs/blob/v0.12.1/specs/phase0/beacon-chain.md) is a primary document in the community that lists the specifications of Ethereum 2.0. Furthermore, the [annotated technical specification for the Beacon Chain by (Ben Edgington)](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) provides the descriptions of the data fields in the beacon chain and the processes executed on the chain. Both these documentations sources, as well as those listed under the [latter]((https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody)) are quite comprehensive in scope. Since the mentioned documents are mainly in text format, we aim in this our article to visually communicate of the data specifications with actual sample data.
 
-The data schema that we present in the remainder of the article, beginning with Figure 2, represents the data that can be retrieved by [Lighthouse https API](https://lighthouse-book.sigmaprime.io/http.html). 
-While the Lighthouse API allows the retrieval of an extensive array of data, our focus in this article is the [`/beacon/block/ endpoint`](https://lighthouse-book.sigmaprime.io/http/beacon.html#beaconblock).
-The Lighthouse API documentation also provides sample data, yet the provided sample data can be extended to more fields. In our discussion, we provide extensive actual data from the [Medalla testnet](https://github.com/goerli/medalla), the final long-lasting testnet of Ethereum 2.0 Phase 0.
+The data schema that we present in the remainder of the article, beginning with Figure 2, represents the data that can be retrieved by [Eth2 Beacon Node API](https://ethereum.github.io/eth2.0-APIs/). 
+While this API allows the retrieval of an extensive array of data, our focus in this article is the [`/eth/v1/beacon/`](https://ethereum.github.io/eth2.0-APIs/#/Beacon) endpoint.
+The [Eth2 Beacon Node API](https://ethereum.github.io/eth2.0-APIs/) documentation also provides sample data, yet the provided sample data can be extended to more fields. In our discussion, we provide extensive actual data from the [Medalla testnet](https://github.com/goerli/medalla), the final long-lasting testnet of Ethereum 2.0 Phase 0.
 
 As presented in Figure 2, a notable contribution of our article is the structured parsing of the data in the `/beacon/block/` end node API into tables of a relational database.
 The database schema also provides the [data types for MySQL](https://www.javatpoint.com/sql-data-types#:~:text=SQL%20Data%20Types%201%20String%20Data%20types%202,Data%20types%203%20Date%20and%20time%20Data%20types), 
@@ -150,7 +150,7 @@ signature              TINYTEXT                                     [note: 'ex: 
 }
 ``` 
 
-While the Lighthouse http API enables the extraction of detailed data about validators, the `/beacon/block/` endnode does not provide any information regarding the validators, and hence we represent the validators as a table with only the validator's `id`.
+While the [Eth2 Beacon Node API](https://ethereum.github.io/eth2.0-APIs/#/Beacon) enables the extraction of detailed data about validators, the `/eth/v1/beacon/` endnodes do not provide any information regarding the validators, and hence we represent the validators as a table with only the validator's `id`.
 
 ``` javascript 
 //***********************************************************
