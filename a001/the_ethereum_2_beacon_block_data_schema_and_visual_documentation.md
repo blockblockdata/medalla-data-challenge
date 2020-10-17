@@ -71,7 +71,7 @@ The [technical specification document under Ethereum's GitHub repository](https:
 
 The data schema that we present in the remainder of the article, beginning with Figure 2, represents the data that can be retrieved by [Eth2 Beacon Node API](https://ethereum.github.io/eth2.0-APIs/). 
 While this API allows the retrieval of an extensive array of data, our focus in this article is the [`/eth/v1/beacon/`](https://ethereum.github.io/eth2.0-APIs/#/Beacon) endpoint.
-The [Eth2 Beacon Node API](https://ethereum.github.io/eth2.0-APIs/) documentation also provides sample data, yet the provided sample data can be extended to more fields. In our discussion, we provide extensive actual data from the [Medalla testnet](https://github.com/goerli/medalla), the final long-lasting testnet of Ethereum 2.0 Phase 0.
+The [Eth2 Beacon Node API](https://ethereum.github.io/eth2.0-APIs/) documentation also provides sample data, yet the provided data is not mapped to actual data from a testnet. In our discussion, we provide extensive actual data from the [Medalla testnet](https://github.com/goerli/medalla), the final long-lasting testnet of Ethereum 2.0 Phase 0.
 
 As presented in Figure 2, a notable contribution of our article is the structured parsing of the data in the `/beacon/block/` end node API into tables of a relational database.
 The database schema also provides the [data types for MySQL](https://www.javatpoint.com/sql-data-types#:~:text=SQL%20Data%20Types%201%20String%20Data%20types%202,Data%20types%203%20Date%20and%20time%20Data%20types), 
