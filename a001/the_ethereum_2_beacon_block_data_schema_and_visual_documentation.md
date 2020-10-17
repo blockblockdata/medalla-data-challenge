@@ -113,11 +113,19 @@ Regarding the sample data:
 - Beacon block in slot 1005 is used to illustrate deposits and beacon block in slot 29758 are used to illustrate voluntary exits. 
 - These blocks are also where the respective events of proposer slashing, attester slashing, deposit, and voluntary exit took place for the first time in the Medalla testnet.
 
+The six sections of the data schema (Figures 2 and 3) are described next, one by one. We recommend readers to open the [technical specification document under Ethereum's GitHub repository](https://github.com/ethereum/eth2.0-specs/blob/v0.12.1/specs/phase0/beacon-chain.md) and the [annotated technical specification for the Beacon Chain by (Ben Edgington)](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) to complement the descriptions provided here.
+
 ### Beacon Block 
 
 ![](./images/01b-Beacon-Block-icon.png)
 
+- The `beacon_block` table starts with the hash string that represents the root of the Merkle tree in that block. 
+- The block resides on a given `slot` and the id for the proposer of the block is stored in the `proposer_index` field. 
+- The table contains foreign keys to other tables through the `proposer_slashings_id`, `attester_slashings_id`, `attestations_id`, `deposits_id`, and `voluntary_exits` foreign key fields.
+
 ![](./images/01-Beacon-Block-Data-Table.png)
+
+The following [DBML](https://www.dbml.org/docs/) code snippet lists the fields, specifies primary and foreign keys, and provides sample data (from block on slot 139 of the Medalla testnet) for the `beacon_bloc` table:
 
 ``` javascript 
 //***********************************************************
@@ -142,7 +150,7 @@ signature              TINYTEXT                                     [note: 'ex: 
 }
 ``` 
 
-While the Lighthouse http API enables the extraction of detailed data about validators, the `/beacon/block/` endnode does not give any information.
+While the Lighthouse http API enables the extraction of detailed data about validators, the `/beacon/block/` endnode does not provide any information regarding the validators, and hence we represent the validators as a table with only the validator's `id`.
 
 ``` javascript 
 //***********************************************************
@@ -151,8 +159,6 @@ Table validator {
 id                     INT(255) [pk,                                 note: 'ex: 2185']
 }
 ```
-
-https://www.dbml.org/docs/
 
 
 ### Proposer Slashings
