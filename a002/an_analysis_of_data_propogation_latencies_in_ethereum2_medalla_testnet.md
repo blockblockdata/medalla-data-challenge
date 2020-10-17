@@ -168,12 +168,17 @@ ON
 
 <!-- y = -3.324e-07 x^3 + 0.000627697 x^2 + -0.337291 x + 78.0857  -->
 
+![](./images/inclusion-distance-avg-boxplot.png)
+
+
 
 ![](./images/InclusionDistanceStdDev-vs-NoOfCommittees.png)
 
 ![](./images/formula-3.png)
 
 <!-- y = -6.00002 \times 10^{-08} \times x^3 -0.000107452 x^2 + 0.107372 x -14.8328  -->
+
+![](./images/inclusion_distance-stddev-boxplot.png)
 
 
 
