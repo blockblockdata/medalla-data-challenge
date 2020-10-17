@@ -99,7 +99,7 @@ This presentation can help understand better the different groups of tables and 
 
 In this section of the article, we provide the details of the data schema presented earlier, focusing on each section of the diagram one by one. We list the data fields for each table, identify the primary and foreign keys, and provide sample data for each field (where applicable). 
 
-The [json files](./code/) corresponding to the full data extracted from the mentioned beacon blocks are available under the [GitHub repository](./code/). 
+The [json files](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code) corresponding to the full data extracted from the mentioned beacon blocks are available under the [GitHub repository](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code). 
 
 In the DBML specification of the schema, 
 - TINYTEXT and INT(255) are the two data types for string/hash and big integer, assuming that the data will be imported to MySQL. 
@@ -150,6 +150,8 @@ signature              TINYTEXT                                     [note: 'ex: 
 }
 ``` 
 
+The [json file](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code) for block on slot 139 can be downloaded from the article's [GitHub repository](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code). 
+
 While the [Eth2 Beacon Node API](https://ethereum.github.io/eth2.0-APIs/#/Beacon) enables the extraction of detailed data about validators, the `/eth/v1/beacon/` endnodes do not provide any information regarding the validators, and hence we represent the validators as a table with only the validator's `id`.
 
 ``` javascript 
@@ -199,6 +201,8 @@ signature              TINYTEXT                                     [note: 'ex: 
 ```
 
 As mentioned earlier, block on slot 139 is the first block in the Medalla testnet where a proposer slashing is written/reported. 
+
+The [json file](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code) for block on slot 139 can be downloaded from the article's [GitHub repository](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code). 
 
 A very important point is that the reported proposer slashing is *not* for the slot that the source beacon block resides on, but for the block that resides on the slot provided in the `slot` field of the `signed_header` table. In other words, the reported slashing is not for the block on the current slot, but is on the block residing at an earlier slot. For example, for block on slot 139, as given above, the `slot` field of the `signed_header` table shows 138, meaning that the slashing is that of proposer (with `proposer_index` 2329) who had proposed the block for slot 138. The beacon block on slot 139 is reporting a proposer slashing for the block on slot 138.
 
@@ -255,6 +259,8 @@ validator              INT(255) [ref: > validator.id,                note: 'ex: 
 
 As mentioned earlier, block on slot 688 is the first block in the Medalla testnet where a proposer slashing is written/reported. 
 
+The [json file](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code) for block on slot 688 can be downloaded from the article's [GitHub repository](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code). 
+
 Similar to the case with proposer slashings, the reported attester slashing is *not* for the slot that the source beacon block resides on, but for the block that resides on the slot provided in the `slot` field of the `attestation` table. In other words, the reported slashing is not for the block on the current slot, but is on the block residing at an earlier slot. For example, for block on slot 688, as given above, the `slot` field of the `attestation` table shows 654, meaning that the slashing is that of proposer (with `validator` id 183) who had voted regarding slot 654. The beacon block on slot 688 is reporting an attestor slashing for the block on slot 654.
 
 
@@ -291,6 +297,8 @@ target_root            TINYTEXT [ref: > beacon_block.root,            note: 'ex:
 signature              TINYTEXT                                      [note: 'ex: 0x877743855735e76201f9bfd539140ea49240d9d532f89b6024f3b62fc235a62efecb1642a12698654c09b433a4f4212b01f294b6bc12f9f59450acef2540596a3f3749b4617acceee1641105dd4060139768b5b7b776a773d6ed71dd0d45c958']
 }
 ``` 
+
+The [json file](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code) for block on slot 688 can be downloaded from the article's [GitHub repository](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code). 
 
 
 ### Deposits
@@ -332,6 +340,7 @@ proof_hash            TINYTEXT                                      [note: 'ex: 
 
 As mentioned earlier, block on slot 1005 is the first block in the Medalla testnet where deposits are written/reported. 
 
+The [json file](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code) for block on slot 1055 can be downloaded from the article's [GitHub repository](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code). 
 
 ### Voluntary Exits
 
@@ -364,6 +373,7 @@ signature              TINYTEXT                                     [note: 'ex: 
 
 As mentioned earlier, block on slot 29758 is the first block in the Medalla testnet where voluntary exits are written/reported. 
 
+The [json file](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code) for block on slot 29758 can be downloaded from the article's [GitHub repository](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code). 
 
 ## Final Words
 
@@ -396,7 +406,7 @@ We thank the authors of all the resources used in the article, as well as the Et
   - [grabcad.com](http://grabcad.com) for online viewing of the 3D model
 
 - Interactive Data Schema Diagram (Figure 2)
-  - [dbdiagram.io](dbdiagram.io) for editing the DBML code and converting the code into an online interactive diagram, which was later exported to pdf
+  - [dbdiagram.io](http://dbdiagram.io) for editing the DBML code and converting the code into an online interactive diagram, which was later exported to pdf
 
 - Zoomable Presentation (Figure 3)
   - [Pdf-XChange Viewer](https://www.tracker-software.com/product/pdf-xchange-viewer) pdf editor for generating high resolution images from the pdf output of the data schema diagram
