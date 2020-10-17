@@ -67,23 +67,27 @@ Yet, for other systems to operate successfully and integrate to the whole, the B
 
 ## Beacon Block Data Schema
 
-The [technical specification document under Ethereum's GitHub repository](https://github.com/ethereum/eth2.0-specs/blob/v0.12.1/specs/phase0/beacon-chain.md) is a primary document in the community that lists the specifications of Ethereum 2.0. Furthermore, the [annotated technical specification for the Beacon Chain by (Ben Edgington)](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) provides the descriptions of the data fields in the beacon chain and the processes executed on the chain. Both these documentations sources, as well as those listed under the [latter]((https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody)) are quite comprehensive in scope. Since the mentioned documents are mainly in text format, our article aims to provide a visual communication of the speficiations with sample data from the Medalla testnet.
+The [technical specification document under Ethereum's GitHub repository](https://github.com/ethereum/eth2.0-specs/blob/v0.12.1/specs/phase0/beacon-chain.md) is a primary document in the community that lists the specifications of Ethereum 2.0. Furthermore, the [annotated technical specification for the Beacon Chain by (Ben Edgington)](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) provides the descriptions of the data fields in the beacon chain and the processes executed on the chain. Both these documentations sources, as well as those listed under the [latter]((https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody)) are quite comprehensive in scope. Since the mentioned documents are mainly in text format, we aim in this our article to visually communicate of the data specifications with actual sample data.
 
-The data schema that we present here represents the data that can be retrieved by [Lighthose https API](https://lighthouse-book.sigmaprime.io/http.html). 
-While the Lighthouse API allows the retrieval of an extensive array of data, our focus in this article is the ['/beacon/block/ endpoint'](https://lighthouse-book.sigmaprime.io/http/beacon.html#beaconblock).
-The Lighthouse API documentation also provides sample data, yet sample data is not complete for all the fields and data types.
-A useful information available in our diagram is the parsing of the data in /beacon/block/ into tables of a relational database. 
+The data schema that we present in the remainder of the article, beginning with Figure 2, represents the data that can be retrieved by [Lighthouse https API](https://lighthouse-book.sigmaprime.io/http.html). 
+While the Lighthouse API allows the retrieval of an extensive array of data, our focus in this article is the [`/beacon/block/ endpoint`](https://lighthouse-book.sigmaprime.io/http/beacon.html#beaconblock).
+The Lighthouse API documentation also provides sample data, yet the provided sample data can be extended to more fields. In our discussion, we provide extensive actual data from the [Medalla testnet](https://github.com/goerli/medalla), the final long-lasting testnet of Ethereum 2.0 Phase 0.
+
+As presented in Figure 2, a notable contribution of our article is the structured parsing of the data in the `/beacon/block/` end node API into tables of a relational database.
 The database schema also provides the [data types for MySQL](https://www.javatpoint.com/sql-data-types#:~:text=SQL%20Data%20Types%201%20String%20Data%20types%202,Data%20types%203%20Date%20and%20time%20Data%20types), 
 the key attributes of each table, and the foreign keys that relate the tables to each other.
-For the sake of simplicity, all bigint data types of Ethereum 2.0 have been represented as INT(255) and all hash strings -while many of them require much less memory- have been represented as TINYTEXT.
+For the sake of simplicity, all bigint data types of Ethereum 2.0 have been represented as INT(255) and all hash strings -while many of them require much less memory- have been represented as TINYTEXT. 
+
+The Database Markup Language (DBML) is used to describe the schema and each of its tables. The [dbdiagram.io](http://dbdiagram.io) service by [holistics.io](http://holistics.io) conveniently converts the schema code written in DBML into an interactive data schema, as in Figure 2 in this article.
+
+The data schema diagram in Figure 2 is interactive and is ideal for exploring the relations between the tables through foreign keys. 
 
 <a href="https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295" target="_blank"><img src="./images/dbdiagram-data-schema.png" alt="Beacon Block Tables"></a>
 
 [Figure 2. Interactive data schema diagram (dbdiagram) for Ethereum 2.0 Beacon Block.](https://dbdiagram.io/d/5f6653cb7da1ea736e2e8295)
 
-The data schema visualization is interactive and is especially ideal for exploring the relations between the tables through foreign keys. 
 
-The next visualization is a zoomable presentation, which shows different groups of related tables as a part of the whole. 
+The next visualization is a zoomable presentation (Figure 3), which shows different groups of related tables as a part of the whole. 
 This presentation can help understand better the different groups of tables and the data fields in each table.
 
 <a href="https://prezi.com/p/z5sf3nyicten/?present=1" target="_blank"><img src="./images/zoomable-presentation-prezi.png" alt="Beacon Block Tables"></a>
@@ -93,11 +97,21 @@ This presentation can help understand better the different groups of tables and 
 
 ## Data Tables and Fields within Beacon Block
 
-In this section of the article, we provide the details of the data schema presented earlier, focusing on each section of the diagram, listing the data fields for each table, describing the primary and foreign keys, and providing sample data for each field (where possible). 
+In this section of the article, we provide the details of the data schema presented earlier, focusing on each section of the diagram one by one. We list the data fields for each table, identify the primary and foreign keys, and provide sample data for each field (where applicable). 
 
-The [json files](./code/) corresponding to the full data extracted from the mentioned beacon blocks are available under the [GitHub repository](./code/). The Database Markup Language (DBML) is used to describe the schema and each of its tables. The [dbdiagram.io](http://dbdiagram.io) service by [holistics.io](http://holistics.io) conveniently converts the schema code written in DBML into an interactive data schema, as in Figure 2 in this article.
+The [json files](./code/) corresponding to the full data extracted from the mentioned beacon blocks are available under the [GitHub repository](./code/). 
 
-In the DBML specification of the schema, TINYTEXT and INT(255) are the two data types for string/hash and big integer, assuming that the data will be imported to MySQL. `pk` refers to primary key(s), whereas `-`, `<`, and `>` respectively refer to one-to-one, one-to-many, and many-to-one relations. `note`s provide example data from different actual beacon blocks from the Medalla testnet. Beacon block in slot 139 is used to illustrate the beacon block body and proposer slashings. Beacon block in slot 688 is used to illustrate attester slashings and attestations. Beacon block in slot 1005 is used to illustrate deposits and beacon block in slot 29758 are used to illustrate voluntary exits. These blocks are also where the respective events of proposer slashing, attester slashing, deposit, and voluntary exit took place for the first time.
+In the DBML specification of the schema, 
+- TINYTEXT and INT(255) are the two data types for string/hash and big integer, assuming that the data will be imported to MySQL. 
+- `pk` refers to primary key(s), whereas 
+- `-`, `<`, and `>` respectively refer to one-to-one, one-to-many, and many-to-one relations. 
+- `note`s provide example data from different actual beacon blocks from the Medalla testnet. 
+
+Regarding the sample data:
+- Beacon block in slot 139 is used to illustrate the beacon block body and proposer slashings. 
+- Beacon block in slot 688 is used to illustrate attester slashings and attestations. 
+- Beacon block in slot 1005 is used to illustrate deposits and beacon block in slot 29758 are used to illustrate voluntary exits. 
+- These blocks are also where the respective events of proposer slashing, attester slashing, deposit, and voluntary exit took place for the first time in the Medalla testnet.
 
 ### Beacon Block 
 
