@@ -8,7 +8,7 @@ This article presents interactive visualizations and sample data to facilitate t
 Such an understanding is critical for any technical participant in the Ethereum 2.0 ecosystem, including developers, auditors, validators, and data engineers/scientists.
 As a methodological and pedagogical contribution, our article demonstrates how interactive 3D visualizations, data schema diagrams, and zoomable presentations can be applied to describe and communicate blockchain concepts and meta-data, not only for Ethereum, but for any blockchain.
 
-> *"When I came up with Ethereum, my first first thought was, 'Okay, this thing is too good to be true.' As it turned out, the core Ethereum idea was good - fundamentally, completely sound."* ***Vitalik Buterin***
+> *"When I came up with Ethereum, my first thought was, 'Okay, this thing is too good to be true.' As it turned out, the core Ethereum idea was good - fundamentally, completely sound."* ***Vitalik Buterin***
 
 ![](./images/beacon-block-artistic-photo.png)
 
@@ -165,7 +165,7 @@ id                     INT(255) [pk,                                 note: 'ex: 
 
 ![](./images/02b-Proposer-Slashings-icon.png)
 
-- The `proposer_slashings` table contains a foreign key to a list of slashing data objects, where data for individual slashings is stored in the `proposer_slashing` table.
+- The `proposer_slashings` table relates -with a foreign key- to a set slashing data records, where data for individual slashings is stored in the `proposer_slashing` table.
 - Each `proposer_slashing` refers to two `signed_header`s, which provide the `slot` for which the slashing is reported, `proposer_index` of the slashed proposer, and other fields.
 
 ![](./images/02-Proposer-Slashings-Data-Table.png)
@@ -207,9 +207,9 @@ A very important point is that the reported proposer slashing is *not* for the s
 
 ![](./images/03b-Attester-Slashings-icon.png)
 
-- The `attester_slashings` table contains a foreign key to a list of slashing data objects, where source data for individual slashings is stored in the `attester_slashing` table.
+- The `attester_slashings` table relates -with a foreign key- to an ordered set of slashing data records, where data for individual slashings is stored in the `attester_slashing` table.
 - Each `attester_slashing` refers to two `attestation` data objects
-- Each `attestation` refers to a list of attestors, stored in `attesting_indices` table
+- Each `attestation` refers to an ordered set of attestors, stored in `attesting_indices` table
 - The intersection of t `validator` ids in the two `attestation` data objects gives the attestors (validators with the role of attesters) to be slashed.
 
 A critical point to remember is that the slashed attestors for an `attester_slashing` are those that are listed in both `attesting_indices` lists of `attestation_1` and `attestation_2`.
@@ -262,8 +262,13 @@ Similar to the case with proposer slashings, the reported attester slashing is *
 
 ![](./images/04b-Attestations-icon.png)
 
+- The tables related to the registry/recording/writing of attestations are `attestations` and `aggregation_bits`. These tables are *not* necessarily for the blocks where slashings are reported, but possibly for *all* blocks. 
+- The `attestations` table relates to an ordered set of records in the `aggregation_bits` table through `aggregation_bits_hash`. 
+- These aggregation bits aggregate/summarize the votes of attestors for the `slot` referred to in the `aggregation_bits` table.
+
 ![](./images/04-Attestations-Data-Table.png)
 
+The following [DBML](https://www.dbml.org/docs/) code snippet lists the fields, specifies the primary and foreign keys, and provides sample data (from block on slot 688 of the Medalla testnet)  for the tables related to attestations:
 
 ``` javascript 
 //***********************************************************
@@ -287,14 +292,18 @@ signature              TINYTEXT                                      [note: 'ex:
 }
 ``` 
 
-<hr>
 
 ### Deposits
 
 ![](./images/05b-Deposits-icon.png)
 
+- The deposits of validators who join the Ethernet 2.0 network are stored in the three tables shown below. 
+- `deposits` table relates to an ordered set of deposit records in the `deposit` table, which stores data on individual deposits.
+- `proofs` table stores the proofs for the deposits listed in the `deposit` table.
+
 ![](./images/05-Deposits-Data-Table.png)
 
+The following [DBML](https://www.dbml.org/docs/) code snippet lists the fields, specifies the primary and foreign keys, and provides sample data (from block on slot 1005 of the Medalla testnet) for the tables related to deposits:
 
 ``` javascript 
 //***********************************************************
@@ -321,14 +330,20 @@ proof_hash            TINYTEXT                                      [note: 'ex: 
 }
 ``` 
 
-<hr>
+As mentioned earlier, block on slot 1005 is the first block in the Medalla testnet where deposits are written/reported. 
 
 
 ### Voluntary Exits
 
 ![](./images/06b-Voluntary-Exits-icon.png)
 
+- The final group of tables in the data schema is related to voluntary exits of validators. There are two ways in which a validator leaves the Ethereum 2.0 network, either involuntary exit through slashing, or voluntary exit upon the validator's own choice. This section is related to the latter.
+- `voluntary_exits` table relates to an ordered set of records in the `voluntary_exit` table.
+- Each record in the `voluntary_exit` table reports a validator with the id `validator_index` leaving the system at a given `epoch`.
+
 ![](./images/06-Voluntary-Exits-Data-Table.png)
+
+The following [DBML](https://www.dbml.org/docs/) code snippet lists the fields, specifies the primary and foreign keys, and provides sample data (from block on slot 29758 of the Medalla testnet) for the tables related to voluntary exits:
 
 ``` javascript 
 //***********************************************************
@@ -347,9 +362,17 @@ signature              TINYTEXT                                     [note: 'ex: 
 }
 ``` 
 
+As mentioned earlier, block on slot 29758 is the first block in the Medalla testnet where voluntary exits are written/reported. 
+
+
+## Final Words
+
+In this article, for the first time to the best of our knowledge, we provide interactive visualizations for Ethereum 2.0's beacon chain and data stored within. These visualizations, the underlying data schema, and sample data for each table in the schema may help blockchain communities to efficiently develop better understanding of the beacon block and chain. Our hope is that our work also contributes to the faster and robust growth of Ethereum and blockchain technology at large.
+
+
 ## Acknowledgements
 
-The authors thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. The authors also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
+We thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. We especially thank [Jim McDonald](https://www.linkedin.com/in/jimgmcdonald/) for sharing the data used in the article and answering our many questions, [Ben Eddington](https://www.linkedin.com/in/benedgington/) for his rigorous documentation, [bluepintail](https://github.com/bluepintail) for openly sharing his/her analysis with the ethstaker community, and [Butta.eth](https://twitter.com/Butta_eth) for answering our questions on ethstaker. We also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
 
 ## Authors
 
