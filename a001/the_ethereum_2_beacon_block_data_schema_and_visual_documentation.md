@@ -111,7 +111,7 @@ Regarding the sample data:
 - Beacon block in slot 139 is used to illustrate the beacon block body and proposer slashings. 
 - Beacon block in slot 688 is used to illustrate attester slashings and attestations. 
 - Beacon block in slot 1005 is used to illustrate deposits and beacon block in slot 29758 are used to illustrate voluntary exits. 
-- These blocks are also where the respective events of proposer slashing, attester slashing, deposit, and voluntary exit took place for the first time in the Medalla testnet.
+- These blocks are also where the respective events of proposer slashing, attester slashing, deposit, and voluntary exits are written/reported for the first time in the Medalla testnet.
 
 The six sections of the data schema (Figures 2 and 3) are described next, one by one. We recommend readers to open the [technical specification document under Ethereum's GitHub repository](https://github.com/ethereum/eth2.0-specs/blob/v0.12.1/specs/phase0/beacon-chain.md) and the [annotated technical specification for the Beacon Chain by (Ben Edgington)](https://benjaminion.xyz/eth2-annotated-spec/phase0/beacon-chain/#beaconblockbody) to complement the descriptions provided here.
 
@@ -125,7 +125,7 @@ The six sections of the data schema (Figures 2 and 3) are described next, one by
 
 ![](./images/01-Beacon-Block-Data-Table.png)
 
-The following [DBML](https://www.dbml.org/docs/) code snippet lists the fields, specifies primary and foreign keys, and provides sample data (from block on slot 139 of the Medalla testnet) for the `beacon_bloc` table:
+The following [DBML](https://www.dbml.org/docs/) code snippet lists the fields, specifies the primary and foreign keys, and provides sample data (from block on slot 139 of the Medalla testnet) for the `beacon_block` table:
 
 ``` javascript 
 //***********************************************************
@@ -165,7 +165,12 @@ id                     INT(255) [pk,                                 note: 'ex: 
 
 ![](./images/02b-Proposer-Slashings-icon.png)
 
+- The `proposer_slashings` table contains a foreign key to a list of slashing data objects, where data for individual slashings is stored in the `proposer_slashing` table.
+- Each `proposer_slashing` refers to two `signed_header`s, which provide the `slot` for which the slashing is reported, `proposer_index` of the slashed proposer, and other fields.
+
 ![](./images/02-Proposer-Slashings-Data-Table.png)
+
+The following [DBML](https://www.dbml.org/docs/) code snippet lists the fields, specifies the primary and foreign keys, and provides sample data (from block on slot 139 of the Medalla testnet) for the tables related to proposer slashings:
 
 ``` javascript 
 //***********************************************************
@@ -193,11 +198,25 @@ signature              TINYTEXT                                     [note: 'ex: 
 }
 ```
 
+As mentioned earlier, block on slot 139 is the first block in the Medalla testnet where a proposer slashing is written/reported. 
+
+A very important point is that the reported proposer slashing is *not* for the slot that the source beacon block resides on, but for the block that resides on the slot provided in the `slot` field of the `signed_header` table. In other words, the reported slashing is not for the block on the current slot, but is on the block residing at an earlier slot. For example, for block on slot 139, as given above, the `slot` field of the `signed_header` table shows 138, meaning that the slashing is that of proposer (with `proposer_index` 2329) who had proposed the block for slot 138. The beacon block on slot 139 is reporting a proposer slashing for the block on slot 138.
+
+
 ### Attester Slashings
 
 ![](./images/03b-Attester-Slashings-icon.png)
 
+- The `attester_slashings` table contains a foreign key to a list of slashing data objects, where source data for individual slashings is stored in the `attester_slashing` table.
+- Each `attester_slashing` refers to two `attestation` data objects
+- Each `attestation` refers to a list of attestors, stored in `attesting_indices` table
+- The intersection of t `validator` ids in the two `attestation` data objects gives the attestors (validators with the role of attesters) to be slashed.
+
+A critical point to remember is that the slashed attestors for an `attester_slashing` are those that are listed in both `attesting_indices` lists of `attestation_1` and `attestation_2`.
+
 ![](./images/03-Attester-Slashings-Data-Table.png)
+
+The following [DBML](https://www.dbml.org/docs/) code snippet lists the fields, specifies the primary and foreign keys, and provides sample data (from block on slot 688 of the Medalla testnet)  for the tables related to attester slashings:
 
 ``` javascript 
 //***********************************************************
@@ -233,6 +252,11 @@ attesting_indices_index  INT(255) [pk,                               note: 'ex: 
 validator              INT(255) [ref: > validator.id,                note: 'ex: 183']
 }
 ``` 
+
+As mentioned earlier, block on slot 688 is the first block in the Medalla testnet where a proposer slashing is written/reported. 
+
+Similar to the case with proposer slashings, the reported attester slashing is *not* for the slot that the source beacon block resides on, but for the block that resides on the slot provided in the `slot` field of the `attestation` table. In other words, the reported slashing is not for the block on the current slot, but is on the block residing at an earlier slot. For example, for block on slot 688, as given above, the `slot` field of the `attestation` table shows 654, meaning that the slashing is that of proposer (with `validator` id 183) who had voted regarding slot 654. The beacon block on slot 688 is reporting an attestor slashing for the block on slot 654.
+
 
 ### Attestations
 
