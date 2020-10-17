@@ -2,7 +2,7 @@
 
 **Gurdal Ertek, Joseph Kholodenko**
 
-**Summary:** *Ethereum 2.0* is the new version of the Ethereum blockchain, where consensus (agreement on which data and blocks will be appended to the blockchain) is to be achieved through theproof-of-stake (PoS) protocol. 
+**Summary:** *Ethereum 2.0* is the new version of the Ethereum blockchain, where consensus (agreement on which data and blocks will be appended to the blockchain) is to be achieved through a proof-of-stake (PoS) protocol. 
 Coordination of consensus and many other processes in Ethereum 2.0 will be carried out by a critical chain within the Ethereum 2.0 architecture, the *beacon chain*.
 This article presents interactive visualizations and sample data to facilitate the understanding of data in the *beacon block*, the block which is the building block of the beacon chain. 
 Such an understanding is critical for any technical participant in the Ethereum 2.0 ecosystem, including developers, auditors, validators, and data engineers/scientists.
@@ -76,7 +76,7 @@ The [Eth2 Beacon Node API](https://ethereum.github.io/eth2.0-APIs/) documentatio
 As presented in Figure 2, a notable contribution of our article is the structured parsing of the data in the `/beacon/block/` end node API into tables of a relational database.
 The database schema also provides the [data types for MySQL](https://www.javatpoint.com/sql-data-types#:~:text=SQL%20Data%20Types%201%20String%20Data%20types%202,Data%20types%203%20Date%20and%20time%20Data%20types), 
 the key attributes of each table, and the foreign keys that relate the tables to each other.
-For the sake of simplicity, all bigint data types of Ethereum 2.0 have been represented as INT(255) and all hash strings -while many of them require much less memory- have been represented as TINYTEXT. 
+For the sake of simplicity, all bigint data types of Ethereum 2.0 have been represented as `INT(255)` and all hash strings -while many of them require much less memory- have been represented as `TINYTEXT`. 
 
 [The Database Markup Language (DBML)](https://www.dbml.org/docs/) is used to describe the schema and each of its tables. The [dbdiagram.io](http://dbdiagram.io) service by [holistics.io](http://holistics.io) conveniently converts the schema code written in DBML into an interactive data schema, as in Figure 2 in this article.
 
@@ -102,7 +102,7 @@ In this section of the article, we provide the details of the data schema presen
 The [json files](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code) corresponding to the full data extracted from the mentioned beacon blocks are available under the [GitHub repository](https://github.com/blockblockdata/medalla-data-challenge/tree/master/a001/code). 
 
 In the [DBML](https://www.dbml.org/docs/) specification of the schema, 
-- TINYTEXT and INT(255) are the two data types for string/hash and big integer, assuming that the data will be imported to MySQL. 
+- `TINYTEXT` and `INT(255)` are the two data types for string/hash and big integer, assuming that the data will be imported to MySQL. 
 - `pk` refers to primary key(s), whereas 
 - `-`, `<`, and `>` respectively refer to one-to-one, one-to-many, and many-to-one relations. 
 - `note`s provide example data from different actual beacon blocks from the Medalla testnet. 
