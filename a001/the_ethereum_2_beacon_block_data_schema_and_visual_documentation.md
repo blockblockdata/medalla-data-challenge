@@ -379,10 +379,17 @@ The [json file](https://github.com/blockblockdata/medalla-data-challenge/tree/ma
 
 In this article, for the first time to the best of our knowledge, we provide interactive visualizations for Ethereum 2.0's beacon chain and data stored within. These visualizations, the underlying data schema, and sample data for each table in the schema may help blockchain communities to efficiently develop better understanding of the beacon block and chain. Our hope is that our work also contributes to the faster and robust growth of Ethereum and blockchain technology at large.
 
-
 ## Acknowledgements
 
 We thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. We especially thank [Jim McDonald](https://www.linkedin.com/in/jimgmcdonald/) for sharing the data used in our articles and answering our many questions, [Ben Eddington](https://www.linkedin.com/in/benedgington/) for his rigorous documentation, [bluepintail](https://github.com/bluepintail) for openly sharing his/her analysis with the ethstaker community, and [Butta.eth](https://twitter.com/Butta_eth) for answering our questions on ethstaker. We also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
+
+# Sign up to receive updates and analyses from us in the future:
+
+<form action="https://formspree.io/f/xleojqvv" method="post">
+  <label for="email">Your Email</label>
+  <input name="Email" id="email" type="email">
+  <button type="submit">Submit</button>
+</form>
 
 ## Authors
 
