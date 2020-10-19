@@ -299,6 +299,7 @@ We thank the authors of all the resources used in the article, as well as the Et
   - [Stats Kingdom](https://www.statskingdom.com) online service for conducting Shapiro-Wilk test of normality and Mann-Whitney two sample test
 
 - Other
+  - [Pdf-XChange Viewer](https://www.tracker-software.com/product/pdf-xchange-viewer) pdf editor for generating high resolution images from the pdf output of the data schema diagram
   - [Codecogs.com](https://www.codecogs.com/latex/eqneditor.php) Online LaTeX Equation Editor for generating formula images from LaTex code
   - [Paint.net](https://www.getpaint.net/index.html) image editor for editing the images
   - [Markdown language](https://guides.github.com/features/mastering-markdown/) within GitHub for generating the html code for the web
