@@ -1,13 +1,18 @@
-# An Analysis of Data Propogation Latencies in Ethereum 2.0 Medalla Testnet
+# An Analysis of Data Propogation Latencies in the Ethereum 2.0 Medalla Testnet
 
 **Joseph Kholodenko, Gurdal Ertek**
 
-**Summary:** Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks are to be be added) is to be achieved through proof-of-stake (PoS) consensys protocol. 
+**Summary:** 
+
+Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks are to be be added) is to be achieved through proof-of-stake (PoS) consensys protocol. 
 Coordination of consensus and many other processes in Ethereum 2.0 will be carried out by a chain referred to as the *beacon chain*. The beacon chain which processes and immutable writes on the blockchain various types of data, including proposers, attestations, slashings, deposits, and voluntary exits.
 The Medalla testnet of the the Ethereum 2.0 network provides ample data, which can be analyzed for measuring and improving the performance of the network.
+
 An important performance metric category is *data propogation latency*, which refers to the latency (delay) in propogating data on the network, as the  immutably including/writing/recording of the data on the chain as the final output.
 This article presents a visual analysis of data propogation latencies (delays) in the Medalla testnet, focusing on the *average inclusion distances (delays, latencies)* in each epoch for attestations. 
+
 As a methodological contribution, our article demonstrates how latency data can be visually and statistically analyzed. The data analytics methodology presented here can be applied not only in analyzing data from the Ethereum 2.0 mainnet, but also for analyzing data from any blockchain network.
+
 As a practical contribution, our research reveals several insights (at epoch granularity) that can be further investigated for improving the data propogation performance of Ethereum 2.0: (1) The average vs. standard deviation of attestation inclusion distance are inversely related. (2) Committee size is associated with average inclusion distance. (3) Voluntary exits are associated with increased average inclusion distance. 
 
 > *"Every second is of infinite value."* ***Johann Wolfgang von Goethe***
@@ -49,7 +54,7 @@ Before proceeding further, let us review some basic terminology for Ethereum 2.0
 
 While many details exits, we refer interested readers to two fascinating articles by [Ben Edgington](https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129) and [Jim McDonald](https://www.attestant.io/posts/understanding-the-validator-lifecycle/) which describe the working mechanics of the beacon chain and Ethereum 2.0 overall. 
 
-Ethereum 2.0's Proof-of-Stake (PoS) consensus protocol includes/writes/records blocks on the blockchain not simultaneously, but only after evaluating *attestations*, which are aggregated as *attestation aggregations*. For each slot, the attestations from different committees are *included* in the blockchain only after a certain delay, which can be referred to as *inclusion distance (inclusion delay, inclusion latency, or other similar term)*. In this article, to have consistency with the [amazing analysis and article by bluepintail](https://pintail.xyz), from now on, we will refer to this latency as *inclusion distance*. The block for a slot can be immutably written/registered only after *all* the attestations for that slot have been included. Therefore, for each slot, the eventual inclusion distance is the maximum inclusion distance over all attestation aggregations, and over all committees that participated in the voting for that slot.
+Ethereum 2.0's Proof-of-Stake (PoS) consensus protocol includes/writes/records blocks on the blockchain not simultaneously, but only after evaluating *attestations*, which are aggregated as *attestation aggregations*. For each slot, the attestations from different committees are *included* in the blockchain only after a certain delay, which can be referred to as *inclusion distance (inclusion delay, inclusion latency, or other similar term)*. In this article, to have consistency with the [amazing analysis and articles by bluepintail](https://pintail.xyz), from now on, we will refer to this latency as *inclusion distance*. The block for a slot can be immutably written/registered only after *all* the attestations for that slot have been included. Therefore, for each slot, the eventual inclusion distance is the maximum inclusion distance over all attestation aggregations, and over all committees that participated in the voting for that slot.
 
 ## Data Extraction
 
