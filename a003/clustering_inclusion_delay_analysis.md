@@ -1,4 +1,4 @@
-# Clustering and Profiling Slots in the Ethereum 2.0 Medalla Testnet
+# Clustering and Profiling Slots in Ethereum 2.0
 
 **Joseph Kholodenko, Gurdal Ertek**
 
