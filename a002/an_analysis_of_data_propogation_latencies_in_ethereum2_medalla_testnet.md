@@ -236,7 +236,7 @@ The figure illustrates two visible patterns:
 - When there are one or more voluntary exits within an epoch, the average inclusion distance `InclusionDistanceAvg` seems to take larger values, mostly *above* the `Average` line. 
 - On the other hand, under same circumstances, the standard deviation of the inclusion distance `InclusionDistanceStdDeev` seems to take larger values, mostly *below* the `Average` line. 
 
-Our earlier analysis revealed an inverse relation between  `InclusionDistanceAvg` and  `InclusionDistanceStdDev`; therefore it is enough to focus only one of these results. Without loss of generality, we focus on the first observation and conduct formal statistical hypothesis testing.
+Our earlier analysis revealed an inverse relation between  `InclusionDistanceAvg` and  `InclusionDistanceStdDev`; thus, it is enough to focus only one of these results. Without loss of generality, we focus on the first observation and conduct formal statistical hypothesis testing.
 
 ## Acknowledgements
 
