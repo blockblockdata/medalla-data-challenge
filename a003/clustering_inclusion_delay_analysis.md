@@ -20,6 +20,8 @@ We gather the data based on aggregated slot level data:
 
 We use KMeans as our clustering method along with bar charts, box plots, and 3d visualization of attributes to illustrate heterogeneity among groups. Additionally, we use an approach to non-parametric statistical testing called the <a href="https://scikit-posthocs.readthedocs.io/en/latest/generated/scikit_posthocs.posthoc_dunn/>"Dunn test</a> to determine statisical differences between groups.
 
+For voluntary exits and attester slashings, we omit the box plot due to a limited amount of non 0 data. Rather we visualize the non-zero data using 
+
 For the accompanying code for this analysis, <a href="https://blockblockdata.github.io/medalla-data-challenge/a003/code/clustering.html">check out this link.</a>
 
 ## Clustering of Slots
@@ -30,18 +32,21 @@ We determined the number of k clusters by looking for the maximum <a href="https
 
 After selecting k=9, we looked at the counts of data per cluster. 7 of 9 clusters had 800-1000 points per cluster. 2 clusters had < 40 points per cluster, so we dropped those from the dataset.
 
-### Insights
+## Insights
 
-'InclusionDistanceAvg'
+### Inclusion Distance Average'
 Firstly, we analyze how the average inclusion distance varies across the different clusters of slots. 
 The bar chart provided below presents average inclusion distance for each cluster:
 
-![](images/barplot/barplot_mean_clusters_InclusionDistanceAvg.png)
-![](images/barplot/barplot_median_clusters_InclusionDistanceAvg.png)
-![](images/barplot/barplot_stdev_clusters_InclusionDistanceAvg.png)
+<p float="left">
+  <img src="images/barplots/barplot_mean_clusters_InclusionDistanceAvg.png" width="450"></img>
+  <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceAvg.png" width="450"></img>
+</p>
 
 Next, the box plot shows more information about each cluster (e.g. IQR, outliers). 
-- box plot
+<p float="left">
+  <img src="images/boxplots/boxplot_InclusionDistanceAvg_clusters.png"></img>
+</p>
 
 The box plot suggests differences across clusters with regards to average inclusion distance. 
 We used formal hypothesis testing to determine the statistical significance of pairwise cluster means.
@@ -50,46 +55,45 @@ To this end, we applied the non-parametric Dunn test with Bonferroni correction,
 In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes.
 - Dunn test (1/0, display table in screen)
 
-![](tests/dunn_test_clusters_output_InclusionDistanceAvg.csv)
+### Inclusion Distance Standard Deviation' 
+<p float="left">
+  <img src="images/barplots/barplot_mean_clusters_InclusionDistanceStdDev.png" width="450"></img>
+  <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceStdDev.png" width="450"></img>
+</p>
 
-'InclusionDistanceStdDev' 
-- Cluster profile
-- bar chart
-![](images/barplot/barplot_mean_clusters_InclusionDistanceStdDev.png)
-![](images/barplot/barplot_median_clusters_InclusionDistanceStdDev.png)
-![](images/barplot/barplot_stdev_clusters_InclusionDistanceStdDev.png)
+<p float="left">
+  <img src="images/boxplots/boxplot_InclusionDistanceStdDev_clusters.png"></img>
+</p>
 
-- box plot
 - Dunn test
 
-'AttesterSlashings'
-- Cluster profile
-- bar chart
-![](images/barplot/barplot_mean_clusters_AttesterSlashings.png)
-![](images/barplot/barplot_median_clusters_AttesterSlashings.png)
-![](images/barplot/barplot_stdev_clusters_AttesterSlashings.png)
+### Attester Slashings
+<p float="left">
+  <img src="images/barplots/barplot_mean_clusters_AttesterSlashings.png" width="450"></img>
+  <img src="images/barplots/barplot_stdev_clusters_AttesterSlashings.png" width="450"></img>
+</p>
 
-- box plot
+<p float="left">
+  <img src="images/boxplots/boxplot_InclusionDistanceAvg_clusters.png"></img>
+</p>- Dunn test
+
+### Voluntary Exits
+<p float="left">
+  <img src="images/barplots/barplot_mean_clusters_VoluntaryExits.png" width="450"></img>
+  <img src="images/barplots/barplot_stdev_clusters_VoluntaryExits.png" width="450"></img>
+</p>
+
 - Dunn test
 
-'VoluntaryExits'
-- Cluster profile
-- bar chart
-![](images/barplot/barplot_mean_clusters_VoluntaryExits.png)
-![](images/barplot/barplot_median_clusters_VoluntaryExits.png)
-![](images/barplot/barplot_stdev_clusters_VoluntaryExits.png)
+### Missing Blocks
+<p float="left">
+  <img src="images/barplots/barplot_mean_clusters_MissingBlocks.png" width="450"></img>
+  <img src="images/barplots/barplot_stdev_clusters_MissingBlocks.png" width="450"></img>
+</p>
 
-- box plot
-- Dunn test
-
-'MissingBlocks' 
-- Cluster profile
-- bar chart
-![](images/barplot/barplot_mean_clusters_MissingBlocks.png)
-![](images/barplot/barplot_median_clusters_MissingBlocks.png)
-![](images/barplot/barplot_stdev_clusters_MissingBlocks.png)
-
-- box plot
+<p float="left">
+  <img src="images/boxplots/boxplot_MissingBlocks_clusters.png"></img>
+</p>
 - Dunn test
 
 ## Final Words
