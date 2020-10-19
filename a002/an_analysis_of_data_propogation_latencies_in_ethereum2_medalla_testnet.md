@@ -11,7 +11,7 @@ The Medalla testnet of the the Ethereum 2.0 network provides ample data, which c
 An important performance metric category is *data propogation latency*, which refers to the latency (delay) in propogating data on the network, as the  immutably including/writing/recording of the data on the chain as the final output.
 This article presents a visual analysis of data propogation latencies (delays) in the Medalla testnet, focusing on the *average inclusion distances (delays, latencies)* in each epoch for attestations. 
 As a methodological contribution, our article demonstrates how latency data can be visually and statistically analyzed. The data analytics methodology presented here can be applied not only in analyzing data from the Ethereum 2.0 mainnet, but also for analyzing data from any blockchain network.
-As a practical contribution, our research reveals several insights (at epoch granularity) that can be further investigated for improving the data propogation performance of Ethereum 2.0: (1) The average vs. standard deviation of attestation inclusion distance are inversely related. (2) Committee size is associated with average inclusion distance. (3) Voluntary exits are associate with increased average inclusion distance. 
+As a practical contribution, our research reveals several insights (at epoch granularity) that can be further investigated for improving the data propogation performance of Ethereum 2.0: (1) The average vs. standard deviation of attestation inclusion distance are inversely related. (2) Committee size is associated with average inclusion distance. (3) Voluntary exits are associated with increased average inclusion distance. 
 
 > *"Every second is of infinite value."* ***Johann Wolfgang von Goethe***
 
@@ -236,7 +236,15 @@ The figure illustrates two visible patterns:
 - When there are one or more voluntary exits within an epoch, the average inclusion distance `InclusionDistanceAvg` seems to take larger values, mostly *above* the `Average` line. 
 - On the other hand, under same circumstances, the standard deviation of the inclusion distance `InclusionDistanceStdDeev` seems to take larger values, mostly *below* the `Average` line. 
 
-Our earlier analysis revealed an inverse relation between  `InclusionDistanceAvg` and  `InclusionDistanceStdDev`; thus, it is enough to focus only one of these results. Without loss of generality, we focus on the first observation and conduct formal statistical hypothesis testing.
+Our earlier analysis revealed an inverse relation between  `InclusionDistanceAvg` and  `InclusionDistanceStdDev`; thus, it is enough to focus only one of these results. Without loss of generality, we focused on the first observation and conduct formal statistical hypothesis testing. 
+
+In order to be able to decide whether we could use parametric tests, we conducted Shapiro-Wilk test of normality. At threshold *p*-value of 0.01, for one of the subsamples (corresponding to the case where there are one or more voluntary exits), the normality was rejected. Therefore, we continued with non-parametric Mann Whitney U test for comparison of sample means between two samples. Since *p*-value < 0.01, the null hypothesis was rejected.
+"The randomly selected `InclusionDistanceAvg` value of the first population (no voluntary exits) is considered to be *not* equal to the randomly selected `InclusionDistanceAvg` value of the second population (at least one voluntary exit). Therefore, we can conclude that Voluntary exits are associated with increased average inclusion distance.
+
+## Final Words
+
+Combining visual analytics and statistical methods, our research presented in this article brings fresh insights into data propogation delays,  specifically into *attestation inclusion distances*, in Ethereum 2.0's Medalla testnet. As a methodological contribution, our article demonstrates how latency data can be visually and statistically analyzed through an integrated workflow. The data analytics methodology presented here can be applied not only in analyzing data from the Ethereum 2.0 mainnet, but also for analyzing data from any blockchain network.
+As a practical contribution, our research reveals several insights (at epoch granularity) that can be further investigated for improving the data propogation performance of Ethereum 2.0.
 
 ## Acknowledgements
 
@@ -281,6 +289,7 @@ We thank the authors of all the resources used in the article, as well as the Et
 
 - Patterns Over Epochs & Relationships Between Attributes
   - [Tableau](https://www.tableau.com) visual analytics software for generating visualizations and computing best-fitting nonlinear regression function (polynomial functional form)
+  - [Stats Kingdom](https://www.statskingdom.com) online service was used to conduct Shapiro-Wilk test of normality and Mann-Whitney two sample test.
 
 - Other
   - [Codecogs.com](https://www.codecogs.com/latex/eqneditor.php) Online LaTeX Equation Editor for generating formula images from LaTex code
