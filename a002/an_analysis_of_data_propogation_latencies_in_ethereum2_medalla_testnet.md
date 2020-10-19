@@ -11,7 +11,7 @@ The Medalla testnet of the the Ethereum 2.0 network provides ample data, which c
 An important performance metric category is *data propogation latency*, which refers to the latency (delay) in propogating data on the network, as the  immutably including/writing/recording of the data on the chain as the final output.
 This article presents a visual analysis of data propogation latencies (delays) in the Medalla testnet, focusing on the *average inclusion distances (delays, latencies)* in each epoch for attestations. 
 As a methodological contribution, our article demonstrates how latency data can be visually and statistically analyzed. The data analytics methodology presented here can be applied not only in analyzing data from the Ethereum 2.0 mainnet, but also for analyzing data from any blockchain network.
-As a practical contribution, our research reveals several insights that can be further investigated for improving the data propogation performance of Ethereum 2.0: (1) The average and standard deviation of attestation inclusion distances are inversely related. (2) Committee size effects inclusion distances. (3) voluntary exits increase inclusion distances. 
+As a practical contribution, our research reveals several insights (at epoch granularity) that can be further investigated for improving the data propogation performance of Ethereum 2.0: (1) The average vs. standard deviation of attestation inclusion distance are inversely related. (2) Committee size is associated with average inclusion distance. (3) Voluntary exits are associate with increased average inclusion distance. 
 
 > *"Every second is of infinite value."* ***Johann Wolfgang von Goethe***
 
@@ -212,11 +212,15 @@ Since it may not be straightforward to visually observe stochastic dominance pat
 - Each discrete value of the categorical independent variable/attribute `NoOfCommittees` is shown by a node (rectangles).
 - Each value of 1 in the Dunn test results matrix is represented by an arc (arrow). 
 - Direction of the arc (arrow) denotes which subsample has higher mean values. If the value of 1 is in a light blue cell, than the direction of the arrow is from the subsample in the row to the subsample in the column.
+- After the graph is constructed, the hierarchical layout algorithm with mostly default parameters was run to generate the final graph visualization.
 
-After the graph is drawn, 
+The [yEd graph drawing software](https://www.yworks.com/products/yed) by [yWorks](http://yworks.com) was used to create the graph:
 
 ![](./images/dunn-test-results-graph-visualization.png)
 
+From the graph, it can be seen that when `NoOfCommittees` is 256, `InclusionDistanceAvg` takes the largest values with statistical significance. Therefore, ceteris parius (all else being unchanged), this value as the `NoOfCommittees` (which translates into 256/32=8 committees per slot throughout the epoch) does *not* seem favorable. On the other hand, `NoOfCommittees` being 352 (which translates into 11 committees per slot throughout the epoch) seems to give the least `InclusionDistanceAvg`. Therefore, the value of 11 seem favorable as the number of committees per slot, throughout the epoch. Yet, there are certain other considerations, such as the committee sizes and the epoch, to be taken into account before a solid recommendation. Aactually, these three are all tied to each other, because each validator is expected to serve as attester exactly once in each epoch. Yet, we *can* conclude that *committee size is associated with inclusion distance*.
+
+Similar to the analysis of `InclusionDistanceAvg` against the `NoOfCommittees`, a similar analysis was conducted for `InclusionDistanceStdDev`, whose scatter plot and  best-fit polynomial function are provided below. Due to space considerations, the full analysis on this is not included in the article.
 
 ![](./images/InclusionDistanceStdDev-vs-NoOfCommittees.png)
 
@@ -224,8 +228,9 @@ After the graph is drawn,
 
 <!-- y = -6.00002 \times 10^{-08} \times x^3 -0.000107452 x^2 + 0.107372 x -14.8328  -->
 
+The very last analysis of this article is for 
 
-
+![](./images/formula-3.png)
 
 ## Acknowledgements
 
