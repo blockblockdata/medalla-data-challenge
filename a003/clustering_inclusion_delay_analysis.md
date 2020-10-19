@@ -186,14 +186,14 @@ We thank the authors of all the resources used in the article, as well as the Et
 
 - Data Preparation
   - [Pandas](Python) https://pandas.pydata.org/docs/
-  - [Numpy](Python)https://numpy.org/doc/
+  - [Numpy](Python) https://numpy.org/doc/
   - [Google Sheets](https://www.google.com/sheets/about/) for merging data from multiple SQL queries scalably on the cloud
   - [MS Excel](https://www.youtube.com/channel/UCJtUOos_MwJa_Ewii-R3cJA) for cleaning, adding new derived attributes, adding new attributes with jittering, and pivot analysis
 
 - Clustering and Statistical Tests
-  - [Sklearn] (Python) https://scikit-learn.org/0.21/documentation.html
-  - [Scipy] (Python) https://www.scipy.org/docs.html
+  - [Sklearn](Python) https://scikit-learn.org/0.21/documentation.html
+  - [Scipy](Python) https://www.scipy.org/docs.html
 
 - Data Visualization
-  - [Seaborn] (Python) https://seaborn.pydata.org/api.html
-  - [Plotly] (Python) https://plotly.com/python-api-reference/
+  - [Seaborn](Python) https://seaborn.pydata.org/api.html
+  - [Plotly](Python) https://plotly.com/python-api-reference/
