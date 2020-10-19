@@ -32,12 +32,10 @@ We determined the number of k clusters by looking for the maximum <a href="https
 
 After selecting k=9, we looked at the counts of data per cluster. 7 of 9 clusters had 800-1000 points per cluster. 2 clusters had < 40 points per cluster, so we dropped those from the dataset.
 
-## Insights
+## Insights - How do metrics vary across clusters?
 
 ### Inclusion Distance Average'
-Firstly, we analyze how the average inclusion distance varies across the different clusters of slots. 
-The bar chart provided below presents average inclusion distance for each cluster:
-
+The bar charts provided below presents average inclusion distance for each cluster:
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_InclusionDistanceAvg.png" width="450"></img>
   <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceAvg.png" width="450"></img>
@@ -47,12 +45,18 @@ Next, the box plot shows more information about each cluster (e.g. IQR, outliers
 <p float="left">
   <img src="images/boxplots/boxplot_InclusionDistanceAvg_clusters.png"></img>
 </p>
-
 The box plot suggests differences across clusters with regards to average inclusion distance. 
 We used formal hypothesis testing to determine the statistical significance of pairwise cluster means.
 To this end, we applied the non-parametric Dunn test with Bonferroni correction, which yielded the following results.
 
 In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes.
+
+<ul>
+{% for date in site.data.Publication %}
+  <li>{{ date.Name" }}-{{ date.Published }}</li>
+{% endfor %}
+</ul>
+
 - Dunn test (1/0, display table in screen)
 
 ### Inclusion Distance Standard Deviation' 
