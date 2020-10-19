@@ -13,7 +13,7 @@ This article presents a visual analysis of data propogation latencies (delays) i
 
 As a methodological contribution, our article demonstrates how latency data can be visually and statistically analyzed. The data analytics methodology presented here can be applied not only in analyzing data from the Ethereum 2.0 mainnet, but also for analyzing data from any blockchain network.
 
-As a practical contribution, our research reveals several insights (at epoch granularity) that can be further investigated for improving the data propogation performance of Ethereum 2.0: (1) The average vs. standard deviation of attestation inclusion distance are inversely related. (2) Committee size is associated with average inclusion distance. (3) Voluntary exits are associated with increased average inclusion distance. 
+As a practical contribution, our research reveals several insights (at epoch granularity) that can be further investigated for improving the data propogation performance of Ethereum 2.0: (1) The average vs. standard deviation of attestation inclusion distance are inversely associated. (2) Committee size is associated with average inclusion distance. (3) Voluntary exits are positively associated with  average inclusion distance. 
 
 > *"Every second is of infinite value."* ***Johann Wolfgang von Goethe***
 
@@ -243,7 +243,7 @@ Our earlier analysis revealed an inverse relation between  `InclusionDistanceAvg
 In order to be able to decide whether we could use parametric tests, we conducted Shapiro-Wilk test of normality. At threshold *p*-value of 0.01, for one of the subsamples (corresponding to the case where there are one or more voluntary exits), the null hypothesis for normality was rejected. Therefore, we continued with non-parametric Mann Whitney U test for comparison of sample means between two samples. 
 
 Mann Whitney U test gave *p*-value < 0.01, thus the null hypothesis (that the two samples have the same mean) was rejected. 
-The randomly selected `InclusionDistanceAvg` value of the first population (no voluntary exits) is considered to be *not* equal to the randomly selected `InclusionDistanceAvg` value of the second population (at least one voluntary exit). Therefore, we can conclude that Voluntary exits are associated with increased average inclusion distance.
+The randomly selected `InclusionDistanceAvg` value of the first population (no voluntary exits) is considered to be *not* equal to the randomly selected `InclusionDistanceAvg` value of the second population (at least one voluntary exit). Therefore, we can conclude that *voluntary exits are positively associated with  average inclusion distance*.
 
 ## Final Words
 
