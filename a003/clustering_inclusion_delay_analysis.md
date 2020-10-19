@@ -18,7 +18,7 @@ We gather the data based on aggregated slot level data:
 
 ### Techniques Used and Implementation
 
-We use KMeans as our clustering method along with bar charts, box plots, and 3d visualization of attributes to illustrate heterogeneity among groups. Additionally, we use an approach to non-parametric statistical testing called the <a href="https://scikit-posthocs.readthedocs.io/en/latest/generated/scikit_posthocs.posthoc_dunn/>"Dunn test</a> to determine statisical differences between groups.
+We use KMeans as our clustering method along with bar charts, box plots, and 3d visualization of attributes to illustrate heterogeneity among groups. Additionally, we use an approach to non-parametric statistical testing called the <a href="https://scikit-posthocs.readthedocs.io/en/latest/generated/scikit_posthocs.posthoc_dunn/">Dunn test</a> to determine statisical differences between groups.
 
 For voluntary exits and attester slashings, we omit the box plot due to a limited amount of non 0 data. Rather we visualize the non-zero data using 
 
