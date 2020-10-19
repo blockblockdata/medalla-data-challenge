@@ -296,7 +296,7 @@ We thank the authors of all the resources used in the article, as well as the Et
   - [seaborn library for Python](https://seaborn.pydata.org/) for drawing the box plots
   - [scikit library for Python](https://scikit-posthocs.readthedocs.io/en/latest/generated/scikit_posthocs.posthoc_dunn/) for conducting the Dunn tests
   - [yEd graph drawing software](https://www.yworks.com/products/yed) by [yWorks](http://yworks.com) for creating and visualizing the graph that displays Dunn test results
-  - [Stats Kingdom](https://www.statskingdom.com) online service was used to conduct Shapiro-Wilk test of normality and Mann-Whitney two sample test.
+  - [Stats Kingdom](https://www.statskingdom.com) online service for conducting Shapiro-Wilk test of normality and Mann-Whitney two sample test
 
 - Other
   - [Codecogs.com](https://www.codecogs.com/latex/eqneditor.php) Online LaTeX Equation Editor for generating formula images from LaTex code
