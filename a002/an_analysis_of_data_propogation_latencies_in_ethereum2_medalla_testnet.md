@@ -228,9 +228,12 @@ Similar to the analysis of `InclusionDistanceAvg` against the `NoOfCommittees`, 
 
 <!-- y = -6.00002 \times 10^{-08} \times x^3 -0.000107452 x^2 + 0.107372 x -14.8328  -->
 
-The very last analysis of this article is for 
+The very last analysis of this article is for voluntary exits. For this analysis, firstly, we plotted `InclusionDistanceAvg` against `VoluntaryExits` (per epoch):
 
-![](./images/formula-3.png)
+![](./images/InclusionDistance-vs-Voluntary-Exits.png)
+
+This figure illustrates a peciluar pattern:  
+
 
 ## Acknowledgements
 
