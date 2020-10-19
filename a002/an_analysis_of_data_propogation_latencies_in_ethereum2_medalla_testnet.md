@@ -156,25 +156,30 @@ The next analysis, where the number of committees is plotted against epoch, show
 
 ![](./images/NoOfCommittees.png)
 
-
+The analysis of inclusion distance over epochs, as provided below, of time suggests that there may be trends overtime for both the average and standard deviation.
 
 ![](./images/InclusionDistance.png)
 
+The next figure, which shows the number of attestation slashings per epoch, suggests that there were a maximum of 5 attested slashings in an epoch, with most epochs (with slashings) having only one slashing. 
 
 ![](./images/AttesterSlashings.png)
 
+The next figure, which shows the number of voluntary exits per epoch, suggests that there were a maximum of 22 attested slashings in an epoch, with most epochs (with voluntary exits) having only *multiple* voluntary exits. It is also observeable from the figure that three time intervals (distinguished by tall stacks of circle glyphs) witness visibly more voluntary exits compared to the remaining time intervals where there were no voluntary exits (distinguished by thick horizontal stack of glyphs with 0 voluntary exits). This, in our opinion, is a phenomenon that deserves a careful attention. What could be the underlying reason for certain brief time intervals with many voluntary exits? What happened in each of those time intervals to cause such high number of voluntary exits?
 
 ![](./images/VoluntaryExits.png)
 
+The next figure, which shows the number of missing blocks per epoch, does not suggest any trend over time.
 
 ![](./images/MissingBlocks.png)
 
 
 ## Relationships Between Attributes
 
+The next figure, which plots inclusion distance standard deviation against inclusion distance average, clearly shows an inverse relationship between the two have attributes/metrics.
 
 ![](./images/InclusionDistance-Avg-vs-StdDev.png)
 
+The next figure, which plots only the observations with average inclusion distance average greater than 14. The scatter plot and the successive trend analysis  suggest a polynomial functional form that can model the relationship between the two attributes. The fitted polynomial function is provided right below the figure. *x* is the attribute (`InclusionDistanceAvg`) on the *x* axis and *y* is the attribute (`InclusionDistanceStdDev`) on the *y* axis.
 
 ![](./images/InclusionDistance-Avg-vs-StdDev-2.png)
 
@@ -182,6 +187,7 @@ The next analysis, where the number of committees is plotted against epoch, show
 
 <!-- y = -0.000359748 x^3 + 0.00293036 x^2 + -0.0531494 x + 11.027  -->
 
+The next figure, which plots average inclusion distance against number of committees. The values on the x axis are jittered to enable better insights. The scatter plot and the successive trend analysis suggest a polynomial functional form that can model the relationship between the two attributes. The fitted polynomial function is provided right below the figure. Yet, it should be noted that this curve, suggested by Tableau software, is based on the jittered values of `NoOfCommittees`, and hence is not accurate. *x* is the attribute (`NoOfCommittees-Jittered`) on the *x* axis and *y* is the attribute (`InclusionDistanceAvg`) on the *y* axis.
 
 ![](./images/InclusionDistance-vs-NoOfCommittees.png)
 
@@ -189,7 +195,7 @@ The next analysis, where the number of committees is plotted against epoch, show
 
 <!-- y = -3.324e-07 x^3 + 0.000627697 x^2 + -0.337291 x + 78.0857  -->
 
-
+The scatter plot and the fitted function in the above figure suggest differences in mean `InclusionDistanceAvg` values across different values of `NoOfCommittees`. To this end, formal hypothesis testing could and has been conducted. The null hypothesis is that the mean `InclusionDistanceAvg` values across different values of `NoOfCommittees` are equal across each pair of values of `NoOfCommittees` (ex: (256,288)). The alternative hypothesis is that there are statistically significant differences in means.
 
 ![](./images/InclusionDistanceStdDev-vs-NoOfCommittees.png)
 
