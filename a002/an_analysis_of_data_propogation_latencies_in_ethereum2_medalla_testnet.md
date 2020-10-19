@@ -215,7 +215,7 @@ The [yEd graph drawing software](https://www.yworks.com/products/yed) by [yWorks
 
 ![](./images/dunn-test-results-graph-visualization.png)
 
-From the graph, it can be seen that when `NoOfCommittees` is 256, `InclusionDistanceAvg` takes the largest values with statistical significance. Therefore, ceteris parius (all else being unchanged), this value as the `NoOfCommittees` (which translates into 256/32=8 committees per slot throughout the epoch) does *not* seem favorable. On the other hand, `NoOfCommittees` being 352 (which translates into 11 committees per slot throughout the epoch) seems to give the least `InclusionDistanceAvg`. Therefore, the value of 11 seem favorable as the number of committees per slot, throughout the epoch. Yet, there are certain other considerations, such as the committee sizes and the epoch, to be taken into account before a solid recommendation. Aactually, these three are all tied to each other, because each validator is expected to serve as attester exactly once in each epoch. Yet, we *can* conclude that *committee size is associated with inclusion distance*.
+From the graph, it can be seen that when `NoOfCommittees` is 256, `InclusionDistanceAvg` takes the largest values with statistical significance. Therefore, ceteris paribus (all else being unchanged), this value as the `NoOfCommittees` (which translates into 256/32=8 committees per slot throughout the epoch) does *not* seem favorable. On the other hand, `NoOfCommittees` being 352 (which translates into 11 committees per slot throughout the epoch) seems to give the least `InclusionDistanceAvg`. Therefore, the value of 11 seem favorable as the number of committees per slot, throughout the epoch. Yet, there are certain other considerations, such as the committee sizes and the epoch, to be taken into account before a solid recommendation. Actually, these three are all tied to each other, because each validator is expected to serve as attester exactly once in each epoch. Yet, we *can* conclude that *committee size is associated with inclusion distance*.
 
 Similar to the analysis of `InclusionDistanceAvg` against the `NoOfCommittees`, a similar analysis was conducted for `InclusionDistanceStdDev`, whose scatter plot and  best-fit polynomial function are provided below. Due to space considerations, the full analysis on this is not included in the article.
 
@@ -229,14 +229,16 @@ The very last analysis of this article is for voluntary exits. For this analysis
 
 ![](./images/InclusionDistance-vs-Voluntary-Exits.png)
 
-The figure illustrates two visible patterns: 
+The figure contians two visible patterns: 
 - When there are one or more voluntary exits within an epoch, the average inclusion distance `InclusionDistanceAvg` seems to take larger values, mostly *above* the `Average` line. 
-- On the other hand, under same circumstances, the standard deviation of the inclusion distance `InclusionDistanceStdDeev` seems to take larger values, mostly *below* the `Average` line. 
+- On the other hand, under same circumstances, the standard deviation of the inclusion distance `InclusionDistanceStdDev` seems to take larger values, mostly *below* the `Average` line. 
 
 Our earlier analysis revealed an inverse relation between  `InclusionDistanceAvg` and  `InclusionDistanceStdDev`; thus, it is enough to focus only one of these results. Without loss of generality, we focused on the first observation and conduct formal statistical hypothesis testing. 
 
-In order to be able to decide whether we could use parametric tests, we conducted Shapiro-Wilk test of normality. At threshold *p*-value of 0.01, for one of the subsamples (corresponding to the case where there are one or more voluntary exits), the normality was rejected. Therefore, we continued with non-parametric Mann Whitney U test for comparison of sample means between two samples. Since *p*-value < 0.01, the null hypothesis was rejected.
-"The randomly selected `InclusionDistanceAvg` value of the first population (no voluntary exits) is considered to be *not* equal to the randomly selected `InclusionDistanceAvg` value of the second population (at least one voluntary exit). Therefore, we can conclude that Voluntary exits are associated with increased average inclusion distance.
+In order to be able to decide whether we could use parametric tests, we conducted Shapiro-Wilk test of normality. At threshold *p*-value of 0.01, for one of the subsamples (corresponding to the case where there are one or more voluntary exits), the null hypothesis for normality was rejected. Therefore, we continued with non-parametric Mann Whitney U test for comparison of sample means between two samples. 
+
+Mann Whitney U test gave *p*-value < 0.01, thus the null hypothesis (that the two samples have the same mean) was rejected. 
+The randomly selected `InclusionDistanceAvg` value of the first population (no voluntary exits) is considered to be *not* equal to the randomly selected `InclusionDistanceAvg` value of the second population (at least one voluntary exit). Therefore, we can conclude that Voluntary exits are associated with increased average inclusion distance.
 
 ## Final Words
 
