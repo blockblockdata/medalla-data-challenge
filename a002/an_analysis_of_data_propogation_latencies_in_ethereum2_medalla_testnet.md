@@ -274,7 +274,7 @@ We thank the authors of all the resources used in the article, as well as the Et
 ## APPENDIX: Software Stack & Tools
 
 - Data Extraction
-  - [PostgreSQL](https://www.postgresql.org/) for opening the database dumb provided by Jim McDonald
+  - [PostgreSQL](https://www.postgresql.org/) for opening the database dump provided by Jim McDonald
   - [SQL](https://www.amazon.com/Learning-SQL-Generate-Manipulate-Retrieve/dp/1492057614) language for querying the data in PostgreSQL and exporting csv files
 
 - Data Preparation
