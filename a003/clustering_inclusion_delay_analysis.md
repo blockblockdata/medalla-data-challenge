@@ -68,6 +68,7 @@ In the table, a value of 1 denotes a statistically significant difference in mea
 </p>
 
 Results of Dunn Test:
+
 |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
 |---|---|---|---|---|---|---|---| 
 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 
@@ -90,6 +91,7 @@ Results of Dunn Test:
 </p>
 
 Results of Dunn Test:
+
 |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
 |---|---|---|---|---|---|---|---| 
 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
@@ -108,6 +110,7 @@ Results of Dunn Test:
 </p>
 
 Results of Dunn Test:
+
 |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
 |---|---|---|---|---|---|---|---| 
 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 
@@ -130,6 +133,7 @@ Results of Dunn Test:
 </p>
 
 Results of Dunn Test:
+
 |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
 |---|---|---|---|---|---|---|---| 
 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 
