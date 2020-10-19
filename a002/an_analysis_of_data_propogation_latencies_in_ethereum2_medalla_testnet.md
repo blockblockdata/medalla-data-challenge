@@ -1,8 +1,5 @@
 # An Analysis of Data Propogation Latencies in Ethereum 2.0 Medalla Testnet
 
-## This article is work-in-progress. 
-## Please check back on October 20 4pm US Eastern Time.
-
 **Joseph Kholodenko, Gurdal Ertek**
 
 **Summary:** Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks are to be be added) is to be achieved through proof-of-stake (PoS) consensys protocol. 
