@@ -49,15 +49,17 @@ The box plot suggests differences across clusters with regards to average inclus
 We used formal hypothesis testing to determine the statistical significance of pairwise cluster means.
 To this end, we applied the non-parametric Dunn test with Bonferroni correction, which yielded the following results.
 
-In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes.
+In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes. A 1 indicates statistical significance between groups. Here are the results:
 
-<ul>
-{% for date in site.data.Publication %}
-  <li>{{ date.Name" }}-{{ date.Published }}</li>
-{% endfor %}
-</ul>
-
-- Dunn test (1/0, display table in screen)
+|   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
+|---|---|---|---|---|---|---|---| 
+| 0 | 0 | 1 | 1 | 0 | 1 | 1 | 0 | 
+| 1 | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 
+| 2 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 
+| 3 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 
+| 4 | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 
+| 5 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 
+| 6 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 
 
 ### Inclusion Distance Standard Deviation' 
 <p float="left">
@@ -69,7 +71,17 @@ In the table, a value of 1 denotes a statistically significant difference in mea
   <img src="images/boxplots/boxplot_InclusionDistanceStdDev_clusters.png"></img>
 </p>
 
-- Dunn test
+Results of Dunn Test:
+|   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
+|---|---|---|---|---|---|---|---| 
+| 0 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 
+| 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 
+| 2 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 
+| 3 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 
+| 4 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 
+| 5 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 
+| 6 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 
+
 
 ### Attester Slashings
 <p float="left">
@@ -79,7 +91,19 @@ In the table, a value of 1 denotes a statistically significant difference in mea
 
 <p float="left">
   <img src="images/boxplots/boxplot_InclusionDistanceAvg_clusters.png"></img>
-</p>- Dunn test
+</p>
+
+Results of Dunn Test:
+|   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
+|---|---|---|---|---|---|---|---| 
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
+| 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
+| 2 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 
+| 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
+| 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
+| 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
+| 6 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 
+
 
 ### Voluntary Exits
 <p float="left">
@@ -87,7 +111,17 @@ In the table, a value of 1 denotes a statistically significant difference in mea
   <img src="images/barplots/barplot_stdev_clusters_VoluntaryExits.png" width="450"></img>
 </p>
 
-- Dunn test
+Results of Dunn Test:
+|   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
+|---|---|---|---|---|---|---|---| 
+| 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 
+| 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 
+| 2 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 
+| 3 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 
+| 4 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 
+| 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 
+| 6 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 
+
 
 ### Missing Blocks
 <p float="left">
@@ -98,7 +132,18 @@ In the table, a value of 1 denotes a statistically significant difference in mea
 <p float="left">
   <img src="images/boxplots/boxplot_MissingBlocks_clusters.png"></img>
 </p>
-- Dunn test
+
+Results of Dunn Test:
+|   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
+|---|---|---|---|---|---|---|---| 
+| 0 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 
+| 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 
+| 2 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 
+| 3 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 
+| 4 | 0 | 1 | 1 | 1 | 0 | 0 | 1 | 
+| 5 | 0 | 1 | 1 | 1 | 0 | 0 | 1 | 
+| 6 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 
+
 
 ## Final Words
 
