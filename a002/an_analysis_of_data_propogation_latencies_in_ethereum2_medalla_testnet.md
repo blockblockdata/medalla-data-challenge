@@ -5,11 +5,13 @@
 
 **Joseph Kholodenko, Gurdal Ertek**
 
-**Summary:** Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks will be added) is to be achieved through proof-of-stake (PoS). 
-Coordination of consensus and many other processes in Ethereum 2.0 will be carried out by a chain referred to as the "beacon chain".
-The Medalla testnet provides ample data on the Ethereum 2.0 network, which can be analyzed for measuring and improving the performance of the network.
-This article presents a visual analysis of data propogation latencies (delays) in the Medalla testnet, focusing on the average inclusion distance in each epoch. 
-As a methodological contribution, our article demonstrates how network data can be visually analyzed, with a focus on latencies with respect to including attestations, i.e, *inclusion distances (delays)*. The data analytics methodology presented here can be applied not only in analyzing data from the Ethereum 2.0 mainnet, but also for analyzing data from any blockchain network.
+**Summary:** Ethereum 2.0 is the new version of the Ethereum blockchain, where consensus (agreement of which data and blocks are to be be added) is to be achieved through proof-of-stake (PoS) consensys protocol. 
+Coordination of consensus and many other processes in Ethereum 2.0 will be carried out by a chain referred to as the *beacon chain*. The beacon chain which processes and immutable writes on the blockchain various types of data, including proposers, attestations, slashings, deposits, and voluntary exits.
+The Medalla testnet of the the Ethereum 2.0 network provides ample data, which can be analyzed for measuring and improving the performance of the network.
+An important performance metric category is *data propogation latency*, which refers to the latency (delay) in propogating data on the network, as the  immutably including/writing/recording of the data on the chain as the final output.
+This article presents a visual analysis of data propogation latencies (delays) in the Medalla testnet, focusing on the *average inclusion distances (delays, latencies)* in each epoch for attestations. 
+As a methodological contribution, our article demonstrates how latency data can be visually and statistically analyzed. The data analytics methodology presented here can be applied not only in analyzing data from the Ethereum 2.0 mainnet, but also for analyzing data from any blockchain network.
+As a practical contribution, our research reveals several insights that can be further investigated for improving the data propogation performance of Ethereum 2.0. 
 
 > *"Every second is of infinite value."* ***Johann Wolfgang von Goethe***
 
