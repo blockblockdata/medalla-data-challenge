@@ -59,7 +59,7 @@ We run 2 basic queries where is row in the extracted data corresponds to a slot.
 
 The first query is as follows:
 
-``` SQL
+``` javascript
 SELECT
   f_slot,
   MIN(f_inclusion_slot) AS min_inc_slot_over_committees,
@@ -82,7 +82,7 @@ Rows with `null` values for slashings were assumed to be slots with missing bloc
 
 The second query is as follows:
 
-``` SQL
+``` javascript
 SELECT
   f_proposer_index,
   f_root,
