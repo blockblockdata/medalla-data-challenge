@@ -1,30 +1,35 @@
 # Clustering Block Inclusion Delays in the Ethereum 2.0 Medalla Testnet
 
-## This article is work-in-progress. 
-## Please check back on October 19 noon US Eastern Time.
-
 **Joseph Kholodenko, Gurdal Ertek**
 
 Quote: timeline image.
 
-**Summary:** We begin this analysis by clustering a dataset based on aggregated epoch data. We used KMeans and chose 8 clusters based on the silhouette score metric.
-We then examine the output of the clustering and run the Dunn statistical significance test. We label the output p-vales <= 0.01 as True, else False.
-Then we use box plots and bar charts to make the differences more clear.
+**Summary:** In this article we provide insights regarding inclusion delay. 
 
 {% include figure.html %}
 
 ## Data Sourcing, Extraction and Preparation
-
-## Clustering of Slots
-
-- KMeans, k selection using Silhouette score.
+We gather the data based on aggregated slot level data:
+- Inclusion Distance Avg
+- Inclusion Distance Std Dev
+- Number of Committees
+- Attester Slashings
+- Voluntary Exits
+- Missing Blocks
 
 ### Techniques Used and Implementation
 
-- Box Plots
-- Bar Chart
-- 3d Viz
-- Dunn test
+We use KMeans as our clustering method along with bar charts, box plots, and 3d visualization of attributes to illustrate heterogeneity among groups. Additionally, we use an approach to non-parametric statistical testing called the <a href="https://scikit-posthocs.readthedocs.io/en/latest/generated/scikit_posthocs.posthoc_dunn/>"Dunn test</a> to determine statisical differences between groups.
+
+For the accompanying code for this analysis, <a href="https://blockblockdata.github.io/medalla-data-challenge/a003/code/clustering.html">check out this link.</a>
+
+## Clustering of Slots
+
+We determined the number of k clusters by looking for the maximum <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html">Silhouette score</a>.
+
+![](images/cluster_scores_per_k.png)
+
+After selecting k=9, we looked at the counts of data per cluster. 7 of 9 clusters had 800-1000 points per cluster. 2 clusters had < 40 points per cluster, so we dropped those from the dataset.
 
 ### Insights
 
@@ -69,8 +74,6 @@ In the table, a value of 1 denotes a statistically significant difference in mea
 
 ## Final Words
 
-
-
 ## Acknowledgements
 
 We thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. We especially thank [Jim McDonald](https://www.linkedin.com/in/jimgmcdonald/) for sharing the data used in the article and answering our many questions, [Ben Eddington](https://www.linkedin.com/in/benedgington/) for his rigorous documentation, [bluepintail](https://github.com/bluepintail) for openly sharing his/her analysis with the ethstaker community, and [Butta.eth](https://twitter.com/Butta_eth) for answering our questions on ethstaker. We also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
@@ -103,20 +106,17 @@ We thank the authors of all the resources used in the article, as well as the Et
 
 - Data Extraction
   - [PostgreSQL](https://www.postgresql.org/) for opening the database dumb provided by Jim McDonald
-  - [SQL](https://www.amazon.com/Learning-SQL-Generate-Manipulate-Retrieve/dp/1492057614) language for querying the data in PostgreSQL and exporting csv files
 
 - Data Preparation
+  - [Pandas](Python) https://pandas.pydata.org/docs/
+  - [Numpy](Python)https://numpy.org/doc/
   - [Google Sheets](https://www.google.com/sheets/about/) for merging data from multiple SQL queries scalably on the cloud
   - [MS Excel](https://www.youtube.com/channel/UCJtUOos_MwJa_Ewii-R3cJA) for cleaning, adding new derived attributes, adding new attributes with jittering, and pivot analysis
 
-- Univariate Analysis & Correlations
-  - [Orange](https://orange.biolab.si/) data mining software
+- Clustering and Statistical Tests
+  - [Sklearn] (Python) https://scikit-learn.org/0.21/documentation.html
+  - [Scipy] (Python) https://www.scipy.org/docs.html
 
-- Patterns Over Epochs & Relationships Between Attributes
-  - [Tableau](https://www.tableau.com) visual analytics software for generating visualizations and computing best-fitting nonlinear regression function (polynomial functional form)
-
-- Other
-  - [Codecogs.com](https://www.codecogs.com/latex/eqneditor.php) Online LaTeX Equation Editor for generating formula images from LaTex code
-  - [Paint.net](https://www.getpaint.net/index.html) image editor for editing the images
-  - [Markdown language](https://guides.github.com/features/mastering-markdown/) within GitHub for generating the html code for the web
-
+- Data Visualization
+  - [Seaborn] (Python) https://seaborn.pydata.org/api.html
+  - [Plotly] (Python) https://plotly.com/python-api-reference/
