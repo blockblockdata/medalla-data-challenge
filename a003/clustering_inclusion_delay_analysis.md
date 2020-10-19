@@ -42,6 +42,9 @@ Next, the box plot shows more information about each cluster (e.g. IQR, outliers
   <img src="images/boxplots/boxplot_InclusionDistanceAvg_clusters.png"/>
 </p>
 The box plot suggests differences across clusters with regards to average inclusion distance. 
+
+<img src="images/inc_dist_avg_across_cluster_distributions.png"/>
+
 We used formal hypothesis testing to determine the statistical significance of pairwise cluster means.
 To this end, we applied the non-parametric Dunn test with Bonferroni correction, which yielded the following results.
 
@@ -66,6 +69,8 @@ In the table, a value of 1 denotes a statistically significant difference in mea
 <p float="left">
   <img src="images/boxplots/boxplot_InclusionDistanceStdDev_clusters.png"/>
 </p>
+
+<img src="images/inc_dist_std_across_cluster_distributions.png"/>
 
 Results of Dunn Test:
 
@@ -131,6 +136,8 @@ Results of Dunn Test:
 <p float="left">
   <img src="images/boxplots/boxplot_MissingBlocks_clusters.png"/>
 </p>
+
+<img src="images/missing_blocks_across_cluster_distributions.png"/>
 
 Results of Dunn Test:
 
