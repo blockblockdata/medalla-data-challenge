@@ -12,7 +12,6 @@ Quote: timeline image.
 We gather the data based on aggregated slot level data:
 - Inclusion Distance Avg
 - Inclusion Distance Std Dev
-- Number of Committees
 - Attester Slashings
 - Voluntary Exits
 - Missing Blocks
@@ -36,7 +35,10 @@ After selecting k=9, we looked at the counts of data per cluster. 7 of 9 cluster
 'InclusionDistanceAvg'
 Firstly, we analyze how the average inclusion distance varies across the different clusters of slots. 
 The bar chart provided below presents average inclusion distance for each cluster:
-- bar chart
+
+![](images/barplot/barplot_mean_clusters_InclusionDistanceAvg.png)
+![](images/barplot/barplot_median_clusters_InclusionDistanceAvg.png)
+![](images/barplot/barplot_stdev_clusters_InclusionDistanceAvg.png)
 
 Next, the box plot shows more information about each cluster (e.g. IQR, outliers). 
 - box plot
@@ -48,27 +50,45 @@ To this end, we applied the non-parametric Dunn test with Bonferroni correction,
 In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes.
 - Dunn test (1/0, display table in screen)
 
+![](tests/dunn_test_clusters_output_InclusionDistanceAvg.csv)
+
 'InclusionDistanceStdDev' 
 - Cluster profile
 - bar chart
+![](images/barplot/barplot_mean_clusters_InclusionDistanceStdDev.png)
+![](images/barplot/barplot_median_clusters_InclusionDistanceStdDev.png)
+![](images/barplot/barplot_stdev_clusters_InclusionDistanceStdDev.png)
+
 - box plot
 - Dunn test
 
 'AttesterSlashings'
 - Cluster profile
 - bar chart
+![](images/barplot/barplot_mean_clusters_AttesterSlashings.png)
+![](images/barplot/barplot_median_clusters_AttesterSlashings.png)
+![](images/barplot/barplot_stdev_clusters_AttesterSlashings.png)
+
 - box plot
 - Dunn test
 
 'VoluntaryExits'
 - Cluster profile
 - bar chart
+![](images/barplot/barplot_mean_clusters_VoluntaryExits.png)
+![](images/barplot/barplot_median_clusters_VoluntaryExits.png)
+![](images/barplot/barplot_stdev_clusters_VoluntaryExits.png)
+
 - box plot
 - Dunn test
 
 'MissingBlocks' 
 - Cluster profile
 - bar chart
+![](images/barplot/barplot_mean_clusters_MissingBlocks.png)
+![](images/barplot/barplot_median_clusters_MissingBlocks.png)
+![](images/barplot/barplot_stdev_clusters_MissingBlocks.png)
+
 - box plot
 - Dunn test
 
