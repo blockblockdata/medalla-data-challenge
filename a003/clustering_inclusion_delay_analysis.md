@@ -1,21 +1,75 @@
-# Clustering Block Inclusion Delay in Ethereum 2.0 Medalla Testnet
+# Clustering Block Inclusion Delays in Ethereum 2.0 Medalla Testnet
 
 ## This article is work-in-progress. 
 ## Please check back on October 19 noon US Eastern Time.
 
 **Joseph Kholodenko, Gurdal Ertek**
 
+Quote: timeline image.
+
 **Summary:** We begin this analysis by clustering a dataset based on aggregated epoch data. We used KMeans and chose 8 clusters based on the silhouette score metric.
 We then examine the output of the clustering and run the Dunn statistical significance test. We label the output p-vales <= 0.01 as True, else False.
 Then we use box plots and bar charts to make the differences more clear.
 
-
-> *"Every second is of infinite value."* ***Johann Wolfgang von Goethe***
-
-![](./images/hourglass.png)
-
-
 {% include figure.html %}
+
+## Data Sourcing, Extraction and Preparation
+
+## Clustering of Slots
+
+- KMeans, k selection using Silhouette score.
+
+### Techniques Used and Implementation
+
+- Box Plots
+- Bar Chart
+- 3d Viz
+- Dunn test
+
+### Insights
+
+'InclusionDistanceAvg'
+Firstly, we analyze how the average inclusion distance varies across the different clusters of slots. 
+The bar chart provided below presents average inclusion distance for each cluster:
+- bar chart
+
+Next, the box plot shows more information about each cluster (e.g. IQR, outliers). 
+- box plot
+
+The box plot suggests differences across clusters with regards to average inclusion distance. 
+We used formal hypothesis testing to determine the statistical significance of pairwise cluster means.
+To this end, we applied the non-parametric Dunn test with Bonferroni correction, which yielded the following results.
+
+In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes.
+- Dunn test (1/0, display table in screen)
+
+'InclusionDistanceStdDev' 
+- Cluster profile
+- bar chart
+- box plot
+- Dunn test
+
+'AttesterSlashings'
+- Cluster profile
+- bar chart
+- box plot
+- Dunn test
+
+'VoluntaryExits'
+- Cluster profile
+- bar chart
+- box plot
+- Dunn test
+
+'MissingBlocks' 
+- Cluster profile
+- bar chart
+- box plot
+- Dunn test
+
+## Final Words
+
+
 
 ## Acknowledgements
 
