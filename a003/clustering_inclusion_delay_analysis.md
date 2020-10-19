@@ -33,8 +33,8 @@ After selecting k=9, we looked at the counts of data per cluster. 7 of 9 cluster
 ### Inclusion Distance Average'
 The bar charts provided below presents average inclusion distance for each cluster:
 <p float="left">
-  <img src="images/barplots/barplot_mean_clusters_InclusionDistanceAvg.png" width="450"/>
-  <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceAvg.png" width="450"/>
+  <img src="images/barplots/barplot_mean_clusters_InclusionDistanceAvg.png" width="400"/>
+  <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceAvg.png" width="400"/>
 </p>
 
 Next, the box plot shows more information about each cluster (e.g. IQR, outliers). 
@@ -59,8 +59,8 @@ In the table, a value of 1 denotes a statistically significant difference in mea
 
 ### Inclusion Distance Standard Deviation' 
 <p float="left">
-  <img src="images/barplots/barplot_mean_clusters_InclusionDistanceStdDev.png" width="450"/>
-  <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceStdDev.png" width="450"/>
+  <img src="images/barplots/barplot_mean_clusters_InclusionDistanceStdDev.png" width="400"/>
+  <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceStdDev.png" width="400"/>
 </p>
 
 <p float="left">
@@ -81,8 +81,8 @@ Results of Dunn Test:
 
 ### Attester Slashings
 <p float="left">
-  <img src="images/barplots/barplot_mean_clusters_AttesterSlashings.png" width="450"/>
-  <img src="images/barplots/barplot_stdev_clusters_AttesterSlashings.png" width="450"/>
+  <img src="images/barplots/barplot_mean_clusters_AttesterSlashings.png" width="400"/>
+  <img src="images/barplots/barplot_stdev_clusters_AttesterSlashings.png" width="400"/>
 </p>
 
 <p float="left">
@@ -103,8 +103,8 @@ Results of Dunn Test:
 
 ### Voluntary Exits
 <p float="left">
-  <img src="images/barplots/barplot_mean_clusters_VoluntaryExits.png" width="450"/>
-  <img src="images/barplots/barplot_stdev_clusters_VoluntaryExits.png" width="450"/>
+  <img src="images/barplots/barplot_mean_clusters_VoluntaryExits.png" width="400"/>
+  <img src="images/barplots/barplot_stdev_clusters_VoluntaryExits.png" width="400"/>
 </p>
 
 Results of Dunn Test:
@@ -121,8 +121,8 @@ Results of Dunn Test:
 
 ### Missing Blocks
 <p float="left">
-  <img src="images/barplots/barplot_mean_clusters_MissingBlocks.png" width="450"/>
-  <img src="images/barplots/barplot_stdev_clusters_MissingBlocks.png" width="450"/>
+  <img src="images/barplots/barplot_mean_clusters_MissingBlocks.png" width="400"/>
+  <img src="images/barplots/barplot_stdev_clusters_MissingBlocks.png" width="400"/>
 </p>
 
 <p float="left">
