@@ -232,7 +232,7 @@ The very last analysis of this article is for voluntary exits. For this analysis
 
 ![](./images/InclusionDistance-vs-Voluntary-Exits.png)
 
-This figure illustrates a peciluar pattern:  
+This figure illustrates a peculiar pattern:  
 
 
 ## Acknowledgements
