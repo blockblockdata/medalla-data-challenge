@@ -45,7 +45,7 @@ The box plot suggests differences across clusters with regards to average inclus
 We used formal hypothesis testing to determine the statistical significance of pairwise cluster means.
 To this end, we applied the non-parametric Dunn test with Bonferroni correction, which yielded the following results.
 
-In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes. A 1 indicates statistical significance between groups. Here are the results:
+In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes. Here are the results:
 
 |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
 |---|---|---|---|---|---|---|---| 
