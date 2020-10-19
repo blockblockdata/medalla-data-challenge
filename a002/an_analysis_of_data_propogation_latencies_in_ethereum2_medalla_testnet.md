@@ -151,9 +151,10 @@ The next analysis was the correlation matrix , where strong positive correlation
 
 ## Patterns Over Epochs
 
-
+The next analysis, where the number of committees is plotted against epoch, shows the number of committees in each epoch is a monotonically increasing step function of epochs. 
 
 ![](./images/NoOfCommittees.png)
+
 
 
 ![](./images/InclusionDistance.png)
