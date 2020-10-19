@@ -195,7 +195,7 @@ The next figure, which plots average inclusion distance `InclusionDistanceAvg` a
 
 <!-- y = -3.324e-07 x^3 + 0.000627697 x^2 + -0.337291 x + 78.0857  -->
 
-The scatter plot and the fitted function in the above figure suggest differences in mean `InclusionDistanceAvg` values across different values of `NoOfCommittees`. To this end, box plots have been drawn, where the dependent variable/attribute is `InclusionDistanceAvg` and the categorical independent variable/attribute is `NoOfCommittees`.
+The scatter plot and the fitted function in the above figure suggest differences in mean `InclusionDistanceAvg` values across different values of `NoOfCommittees`. To this end, box plots have been drawn, where the dependent variable/attribute is `InclusionDistanceAvg` and the categorical independent variable/attribute is `NoOfCommittees` (the box plot on the left hand side below).
 
 ![](./images/inclusion-distance-boxplots.png)
 
