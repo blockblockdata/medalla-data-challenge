@@ -75,7 +75,7 @@ GROUP BY
 ;
 ``` 
 
-The second query extracts data from multiple tables, namely `t_blocks `, `t_proposer_slashings `, `t_attester_slashings `, and `t_voluntary_exits `.
+The second query extracts data from multiple tables, namely `t_blocks`, `t_proposer_slashings`, `t_attester_slashings`, and `t_voluntary_exits`.
 Again, each record (row) corresponds to a slot. 
 The extracted records have as fields the proposer for that slot, as well as the binary attributes that denote the presence/absence of attestations, slashings, and voluntary exits. 
 Rows with `null` values for slashings were assumed to be slots with missing blocks.
