@@ -1,7 +1,7 @@
 # An Analysis of Data Propogation Latencies in Ethereum 2.0 Medalla Testnet
 
 ## This article is work-in-progress. 
-## Please check back on October 19 noon US Eastern Time.
+## Please check back on October 20 4pm US Eastern Time.
 
 **Joseph Kholodenko, Gurdal Ertek**
 
