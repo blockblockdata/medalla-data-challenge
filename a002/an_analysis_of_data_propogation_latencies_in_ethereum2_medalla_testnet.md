@@ -201,7 +201,7 @@ The scatter plot and the fitted function in the above figure suggest differences
 
 ![](./images/inclusion-distance-boxplots.png)
 
-Since the box plots make the differences in means even more visible, as the next step, formal hypothesis testing has been conducted. The null hypothesis is that the mean `InclusionDistanceAvg` values across different values of `NoOfCommittees` are equal across each pair of values of `NoOfCommittees` (ex: (256, 288)). The alternative hypothesis is that there are statistically significant differences in means. Since at least one of the subsamples is *not* normally distributed, the non-parametric [Dunn test with Bonferroni correction](https://www.statology.org/dunns-test/) is a suitable test. The table below shows the results of Dunn test, with a threshold *p*-value of 0.01. 
+Since the box plots make the differences in means even more visible, as the next step, formal hypothesis testing has been conducted. The null hypothesis is that the mean `InclusionDistanceAvg` values across different values of `NoOfCommittees` are equal across each pair of values of `NoOfCommittees` (ex: (256, 288)). The alternative hypothesis is that there are statistically significant differences in means. Since at least one of the subsamples is *not* normally distributed, the non-parametric [Dunn test with Bonferroni correction](https://www.statology.org/dunns-test/) is a suitable test. The table below shows the results of Dunn test obtained using [Python's scikit library](https://scikit-posthocs.readthedocs.io/en/latest/generated/scikit_posthocs.posthoc_dunn/), with a threshold *p*-value of 0.01. 
 
 - Any pairwise test result with *p*-value < 0.01 is indicated in the below matrix with a value of 1. 
 - Light blue color denotes the pairs where the subsample in the row has *higher* mean values of `InclusionDistanceAvg` than the subsample in the column. For example, when `NoOfCommittees` is 384, the mean `InclusionDistanceAvg` is greater than the mean for `NoOfCommittees` being 416. 
@@ -293,6 +293,8 @@ We thank the authors of all the resources used in the article, as well as the Et
 
 - Patterns Over Epochs & Relationships Between Attributes
   - [Tableau](https://www.tableau.com) visual analytics software for generating visualizations and computing best-fitting nonlinear regression function (polynomial functional form)
+  - [Python's scikit library](https://scikit-posthocs.readthedocs.io/en/latest/generated/scikit_posthocs.posthoc_dunn/) for conducting the Dunn tests
+  - [yEd graph drawing software](https://www.yworks.com/products/yed) by [yWorks](http://yworks.com) for creating and visualizing the graph that displays Dunn test results
   - [Stats Kingdom](https://www.statskingdom.com) online service was used to conduct Shapiro-Wilk test of normality and Mann-Whitney two sample test.
 
 - Other
