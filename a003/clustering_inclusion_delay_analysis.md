@@ -30,7 +30,7 @@ After selecting k=9, we looked at the counts of data per cluster. 7 of 9 cluster
 
 ## Insights - How do metrics vary across clusters?
 
-### Inclusion Distance Average'
+### Inclusion Distance Average
 The bar charts provided below presents average inclusion distance for each cluster:
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_InclusionDistanceAvg.png" width="400"/>
@@ -57,7 +57,7 @@ In the table, a value of 1 denotes a statistically significant difference in mea
 | 5 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 
 | 6 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 
 
-### Inclusion Distance Standard Deviation' 
+### Inclusion Distance Standard Deviation
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_InclusionDistanceStdDev.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceStdDev.png" width="400"/>
