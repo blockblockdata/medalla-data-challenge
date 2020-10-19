@@ -2,10 +2,6 @@
 
 **Joseph Kholodenko, Gurdal Ertek**
 
-Quote: timeline image.
-
-**Summary:** In this article we provide insights regarding inclusion delay. 
-
 {% include figure.html %}
 
 ## Data Sourcing, Extraction and Preparation
@@ -20,7 +16,7 @@ We gather the data based on aggregated slot level data:
 
 We use KMeans as our clustering method along with bar charts, box plots, and 3d visualization of attributes to illustrate heterogeneity among groups. Additionally, we use an approach to non-parametric statistical testing called the <a href="https://scikit-posthocs.readthedocs.io/en/latest/generated/scikit_posthocs.posthoc_dunn/">Dunn test</a> to determine statisical differences between groups.
 
-For voluntary exits and attester slashings, we omit the box plot due to a limited amount of non 0 data. Rather we visualize the non-zero data using 
+For voluntary exits and attester slashings, we omit the box plot due to a limited amount of non 0 data.
 
 For the accompanying code for this analysis, <a href="https://blockblockdata.github.io/medalla-data-challenge/a003/code/clustering.html">check out this link.</a>
 
