@@ -147,7 +147,7 @@ The figures below provide univariate histogram analyses of average inclusion dis
 
 ## Correlations
 
-The next analysis was the correlation matrix , where strong positive correlations were identified between multiple attribute pairs, with highest correlation values for (`InclusionDistanceAvg`, `Epoch`), (`InclusionDistanceAvg`, `NoOfCommittees`), and (`InclusionDistanceAvg`, `InclusionDistanceStdDev`).
+The next analysis was the correlation matrix , where strong positive correlations were identified between multiple attribute pairs, with highest correlation values for (`InclusionDistanceAvg`, `Epoch`), (`InclusionDistanceAvg`, `NoOfCommittees`), and (`InclusionDistanceAvg`, `InclusionDistanceStdDev`). Observing these high correlations guided our visual analysis, resulting in insights some of which are also statistically supported.
 
 ![](./images/pearson-correlation-matrix.png)
 
