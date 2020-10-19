@@ -228,12 +228,15 @@ Similar to the analysis of `InclusionDistanceAvg` against the `NoOfCommittees`, 
 
 <!-- y = -6.00002 \times 10^{-08} \times x^3 -0.000107452 x^2 + 0.107372 x -14.8328  -->
 
-The very last analysis of this article is for voluntary exits. For this analysis, firstly, we plotted `InclusionDistanceAvg` against `VoluntaryExits` (per epoch):
+The very last analysis of this article is for voluntary exits. For this analysis, firstly, we plotted `InclusionDistanceAvg` and `InclusionDistanceStdDev` against `VoluntaryExits` (per epoch):
 
 ![](./images/InclusionDistance-vs-Voluntary-Exits.png)
 
-This figure illustrates a peculiar pattern:  
+The figure illustrates two visible patterns: 
+- When there are one or more voluntary exits within an epoch, the average inclusion distance `InclusionDistanceAvg` seems to take larger values, mostly *above* the `Average` line. 
+- On the other hand, under same circumstances, the standard deviation of the inclusion distance `InclusionDistanceStdDeev` seems to take larger values, mostly *below* the `Average` line. 
 
+Our earlier analysis revealed an inverse relation between  `InclusionDistanceAvg` and  `InclusionDistanceStdDev`; therefore it is enough to focus only one of these results. Without loss of generality, we focus on the first observation and conduct formal statistical hypothesis testing.
 
 ## Acknowledgements
 
