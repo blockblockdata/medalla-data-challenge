@@ -1,4 +1,4 @@
-# Clustering Block Inclusion Delays in the Ethereum 2.0 Medalla Testnet
+# Clustering and Profiling Slots in the Ethereum 2.0 Medalla Testnet
 
 **Joseph Kholodenko, Gurdal Ertek**
 
