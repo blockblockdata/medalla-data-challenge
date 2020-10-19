@@ -128,27 +128,30 @@ ON
 ;
 ``` 
 
+## Data Preparation
+
 After the execution of the above two queries and extraction of data as records in two separate output tables, the results were then merged in a single table using a Google Sheet and the VLOOKUP function. We observed that analysis at the slot granularity could be misleading due to high variability. Therefore, we decided to continue with analyzing data at epoch granularity. Another observation was that for earlier epochs, inclusion distance and other data propogation metrics had reached to unreasonably high values. The same observation was reported in a [related research]( https://pintail.xyz/posts/medalla-network-stress/). In turn, we decided to remove earlier epochs from our analysis and only focus on epoch 5000 onwards. 
 
-## Data Preparation
+Eventually, the data used in our analysis was as follows:
 
 ![](./images/dataset.png)
 
-## Analytics Methodology
-
-
-
 ## Univariate Analysis
+
+The figures below provide univariate histogram analyses of average inclusion distance and number of missing blocks per epoch. Beta distribution was found to be a good fit for representing the statistical distribution of both attributes. In Ethereum 2.0, attestations for each slot must be completed within no later than 32 slots, implying that inclusion distance for each slot can be have a maximum value of 32 (slots). Therefore, given this upper limit for inclusion distance, the distribution of average inclusion distance is not symmetric. Regarding the number of missing blocks, it was insightful for us to observe that the distribution is centered around the value of 6, which translates into approximately 20% of slots in an epoch with no blocks written for. While Beta distribution closely fits the histogram, the distribution is fairly symmetric.
 
 ![](./images/histograms.png)
 
-
 ## Correlations
+
+The next analysis was the correlation matrix , where strong positive correlations were identified between multiple attribute pairs, with highest correlation values for (InclusionDistanceAvg, Epoch), (InclusionDistanceAvg, NoOfCommittees), and (InclusionDistanceAvg, InclusionDistanceStdDev).
 
 ![](./images/pearson-correlation-matrix.png)
 
 
 ## Patterns Over Epochs
+
+
 
 ![](./images/NoOfCommittees.png)
 
