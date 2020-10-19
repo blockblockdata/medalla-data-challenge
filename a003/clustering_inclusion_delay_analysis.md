@@ -1,4 +1,4 @@
-# Clustering Block Inclusion Delays in Ethereum 2.0 Medalla Testnet
+# Clustering Block Inclusion Delays in the Ethereum 2.0 Medalla Testnet
 
 ## This article is work-in-progress. 
 ## Please check back on October 19 noon US Eastern Time.
