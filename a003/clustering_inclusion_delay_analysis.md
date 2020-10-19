@@ -15,7 +15,7 @@ Then we use box plots and bar charts to make the differences more clear.
 ![](./images/hourglass.png)
 
 
-{% include code/inc_distance_plotplot.html.html %}
+{% include code/inc_distance_plotplot.html %}
 
 ## Acknowledgements
 
