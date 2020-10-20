@@ -58,27 +58,28 @@ The 3D vizualization constructed using Plotly, is interactive and allows the use
 ### Inclusion Distance (in slots, per epoch)
 We begin the profiling of clusters with average and standard deviation of inclusion distance per epoch,  namely `InclusionDistanceAvg` and `InclusionDistanceStdDev`, which is computed over the inclusion distances in all 32 slots within that epoch.
 
-The bar charts provided below present average and standard deviation of inclusion distance for each cluster:
-
 #### Inclusion Distance Average
+
+The bar charts provided below present statistics for (average and standard deviation) of averagen inclusion distance for each cluster:
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_InclusionDistanceAvg.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceAvg.png" width="400"/>
 </p>
 
-Next, the box plot shows more information about each cluster (e.g. IQR, outliers). 
+Next, the box plot shows more information about each cluster (e.g. inter-quartile range IQR, outliers). 
 <p float="left">
   <img src="images/boxplots/boxplot_InclusionDistanceAvg_clusters.png"/>
 </p>
-The box plot suggests differences across clusters with regards to average inclusion distance. 
+
+A similar analysis is the comparison of the best fit empirical distributions across clusters as given below.
 
 <img src="images/inc_dist_avg_across_cluster_distributions.png"/>
 
-We used formal hypothesis testing to determine the statistical significance of pairwise cluster means.
+Both the box plot and the best-fit empirical distributions above suggest differences across clusters with regards to the mean of `InclusionDistanceAvg`. 
+
+#### Dunn test
+Motivated by the heterogeneity of the clusters as shown above, the next step was to apply formal hypothesis testing to determine the statistical significance of pairwise cluster means.
 To this end, we applied the non-parametric Dunn test with Bonferroni correction, which yielded the following results.
-
-In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes. Here are the results:
-
 |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
 |---|---|---|---|---|---|---|---| 
 | 0 | 0 | 1 | 1 | 0 | 1 | 1 | 0 | 
@@ -88,6 +89,8 @@ In the table, a value of 1 denotes a statistically significant difference in mea
 | 4 | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 
 | 5 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 
 | 6 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 
+
+In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes.
 
 #### Inclusion Distance Standard Deviation
 <p float="left">
@@ -180,10 +183,16 @@ Results of Dunn Test:
 | 5 | 0 | 1 | 1 | 1 | 0 | 0 | 1 | 
 | 6 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 
 
+## Future Work
+In our future work we look to examine the following approaches:
+
+- Defining inclusion delay as an aggregation across validators, since an attestation can be part of several blocks.
+- Apply soft clustering techniques, e.g. Gaussian Mixture Modeling, to build a more nuanced profile from cluster to cluster.
+- Apply predictive modeling, e.g. classification to rank attributes as predictors of cluster labels.
+
 ## Acknowledgements
 
-We thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. We especially thank [Jim McDonald](https://www.linkedin.com/in/jimgmcdonald/) for sharing the data used in the article and answering our many questions, [Ben Eddington](https://www.linkedin.com/in/benedgington/) for his rigorous documentation, [bluepintail](https://github.com/bluepintail) for openly sharing his/her analysis with the ethstaker community, and [Butta.eth](https://twitter.com/Butta_eth) for answering our questions on ethstaker. We also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
-
+We thank the authors of all the resources used in the article, as well as the Ethereum Community and Foundation. We especially thank [Jim McDonald](https://www.linkedin.com/in/jimgmcdonald/) for sharing the data used in the article and answering our many questions, [Ben Eddington](https://www.linkedin.com/in/benedgington/) for his rigorous documentation, [pintail](https://pintail.xyz) for openly sharing his analysis with the ethstaker community, and [Butta.eth](https://twitter.com/Butta_eth) for answering our questions on ethstaker. We also thank [Ivan Liljeqvist](https://www.linkedin.com/in/ivan-liljeqvist-697824198/) and the [Ivan on Tech](https://academy.ivanontech.com/a/27786/pVrJMEtL) team for creating a thriving community and motivating blockchain content. 
 
 ## Sign up to receive updates and analyses from us in the future:
 
