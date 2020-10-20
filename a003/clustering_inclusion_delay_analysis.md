@@ -60,7 +60,7 @@ We begin the profiling of clusters with average and standard deviation of inclus
 
 The bar charts provided below present average and standard deviation of inclusion distance for each cluster:
 
-#### Average
+#### Inclusion Distance Average
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_InclusionDistanceAvg.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceAvg.png" width="400"/>
@@ -89,7 +89,7 @@ In the table, a value of 1 denotes a statistically significant difference in mea
 | 5 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 
 | 6 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 
 
-#### Standard Deviation
+#### Inclusion Distance Standard Deviation
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_InclusionDistanceStdDev.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceStdDev.png" width="400"/>
