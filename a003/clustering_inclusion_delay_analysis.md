@@ -20,7 +20,7 @@ Statistical plots enable the formulation of hypotheses about the data, and forma
 
 Our analysis is built on data from the Medalla testnet extracted using [`chaind` API](https://github.com/wealdtech/chaind) and shared in the form of an PostgreSQL dump, whose latest version can be [accessed from here](http://mdc.mcdee.net/chain-487600.dmp). The data was kindly shared by [Jim McDonald](https://github.com/mcdee?tab=overview&from=2014-12-01&to=2014-12-31) on [ethstaker Discord channel, under #medalla-data-challenge group](https://discord.com/channels/694822223575384095/752638638189445220). 
 
-The successive steps of data extraction and data preparation are described in our earlier article. [link to article 2]
+The successive steps of data extraction and data preparation are described in <a href="https://blockblockdata.github.io/medalla-data-challenge/a002/an_analysis_of_data_propogation_latencies_in_ethereum2_medalla_testnet.html">our earlier article</a>.
 
 As a result of data extraction and preparation, we form a dataset suitable for clustering and profiling, based on aggregated epoch level data consisting of the following fields:
 - Inclusion Distance Avg
@@ -98,6 +98,8 @@ To this end, we applied the non-parametric Dunn test with Bonferroni correction,
 In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes.
 
 #### Inclusion Distance Standard Deviation
+The below graphics describe the variation of Inclusion Distance Standard Deviation across clusters.
+
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_InclusionDistanceStdDev.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceStdDev.png" width="400"/>
@@ -123,6 +125,8 @@ Results of Dunn Test:
 
 
 ### Attester Slashings
+The below graphics describe the variation of Attester Slashings across clusters.
+
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_AttesterSlashings.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_AttesterSlashings.png" width="400"/>
@@ -146,6 +150,8 @@ Results of Dunn Test:
 
 
 ### Voluntary Exits
+The below graphics describe the variation of Voluntary Exits across clusters.
+
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_VoluntaryExits.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_VoluntaryExits.png" width="400"/>
@@ -165,6 +171,8 @@ Results of Dunn Test:
 
 
 ### Missing Blocks
+The below graphics describe the variation of Missing Blocks across clusters.
+
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_MissingBlocks.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_MissingBlocks.png" width="400"/>
@@ -191,8 +199,8 @@ Results of Dunn Test:
 ## Future Work
 In our future work we look to examine the following approaches:
 
-- Defining inclusion delay as an aggregation across validators, since an attestation can be part of several blocks.
-- Apply soft clustering techniques, e.g. Gaussian Mixture Modeling, to build a more nuanced profile from cluster to cluster.
+- Defining inclusion delay as an aggregation across validators [as in pintail's analysis](https://pintail.xyz), since an attestation can be part of numerous blocks.
+- Apply soft clustering techniques, e.g. [Gaussian Mixture Modeling](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html), to build a more nuanced profile from cluster to cluster.
 - Apply predictive modeling, e.g. classification to rank attributes as predictors of cluster labels.
 
 ## Acknowledgements
