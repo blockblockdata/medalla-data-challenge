@@ -60,7 +60,7 @@ To keep consistency with the [amazing analyses and articles by pintail](https://
 
 The block for a slot is immutably written/registered as soon as the first inclusion is done. Even though the Ethereum 2.0 network finalizes a block for a given slot (as soon as the first inclusion is completed), the computations still continue until the last inclusion slot. In our analysis, for each slot, the inclusion distance is defined as the *maximum* inclusion distance over all attestation aggregations, and over all committees that participated in the voting for that slot. In other words, our definition of "inclusion distance" is in a way equivalent to "maximum inclusion distance".
 
-While this metric is not directly measuring the time until the actual inclusion (which takes place with the first inclusion), it instead measures the time-wise inefficiency with respect to attestations anc inclusions.
+While this metric is not directly measuring the time until the actual inclusion (which takes place with the first inclusion), it instead measures the time-wise inefficiency with respect to attestations and inclusions.
 
 ## Data Extraction
 
