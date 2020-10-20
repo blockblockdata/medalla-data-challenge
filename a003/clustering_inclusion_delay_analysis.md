@@ -7,6 +7,11 @@ Illustration by Kjpargeter - [Freepik.com](https://www.freepik.com/free-vector/c
 
 In this article, we analyze the characteristics of different time epochs in the Ethereum 2.0 Medalla Testnet. Each epoch has different attributes such as the number of orphan slots (missing blocks), number of slashings and voluntary exits, and metrics regarding inclusion distance. Inclusion distance for a slot is defined as the number of slots passed until the block on that slot is included on the blockchain. Inclusion distance for an epoch is an aggregation over inclusion distances over slots, which can be represented with the average and standard deviation.
 
+#### Definition of "Inclusion Distance"
+In this article, in contrast to the [amazing analyses and articles by pintail](https://pintail.xyz), from now on, we will refer to this latency as *inclusion distance*. The block for a slot is immutably written/registered as soon as the first inclusion is done. Even though the Ethereum 2.0 network finalizes a block for a given slot (as soon as the first inclusion is completed), the computations still continue until the last inclusion slot. In our analysis, for each slot, the inclusion distance is defined as the maximum inclusion distance over all attestation aggregations, and over all committees that participated in the voting for that slot. In other words, our definition of "inclusion distance" is in a way equivalent to "maximum inclusion distance".
+
+While this metric is not directly measuring the time until the actual inclusion (which takes place with the first inclusion), it instead measures the computational workload on the system spent on attestations and inclusions.
+
 We apply cluster analysis, in particular K-means method, to create clusters of time epochs where the epochs in each cluster are similar in terms of their attributes, yet different than time epochs other clusters. Furthermore, we profile the clusters and compare the distribution of attribute across clusters of time epochs.
 
 Statistical plots enable the formulation of hypotheses about the data, and formal hypothesis testing methods reveal the statistically significant differences for the means of attribute values accross clusters. 
