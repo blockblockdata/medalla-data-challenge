@@ -99,7 +99,7 @@ To this end, we applied the non-parametric Dunn test with Bonferroni correction,
 | 5 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 
 | 6 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 
 
-In the table, a value of 1 denotes a statistically significant difference in means between that pair of attributes.
+In the table, a value of 1 denotes a statistically significant difference (p-value <= 0.01) in means between that pair of attributes.
 
 #### Inclusion Distance Standard Deviation
 The below graphics describe the variation of Inclusion Distance Standard Deviation across clusters.
@@ -128,6 +128,8 @@ Results of Dunn Test:
 | 6 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 
 
 
+In the table, a value of 1 denotes a statistically significant difference (p-value <= 0.01) in means between that pair of attributes.
+
 ### Attester Slashings
 The below graphics describe the variation of Attester Slashings across clusters.
 
@@ -153,6 +155,8 @@ Results of Dunn Test:
 | 6 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 
 
 
+In the table, a value of 1 denotes a statistically significant difference (p-value <= 0.01) in means between that pair of attributes.
+
 ### Voluntary Exits
 The below graphics describe the variation of Voluntary Exits across clusters.
 
@@ -173,6 +177,8 @@ Results of Dunn Test:
 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 
 | 6 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 
 
+
+In the table, a value of 1 denotes a statistically significant difference (p-value <= 0.01) in means between that pair of attributes.
 
 ### Missing Blocks
 The below graphics describe the variation of Missing Blocks across clusters.
@@ -199,6 +205,9 @@ Results of Dunn Test:
 | 4 | 0 | 1 | 1 | 1 | 0 | 0 | 1 | 
 | 5 | 0 | 1 | 1 | 1 | 0 | 0 | 1 | 
 | 6 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 
+
+
+In the table, a value of 1 denotes a statistically significant difference (p-value <= 0.01) in means between that pair of attributes.
 
 ## Future Work
 In our future work we look to examine the following approaches:
