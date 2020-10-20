@@ -12,7 +12,7 @@ To keep consistency with the [amazing analyses and articles by pintail](https://
 
 The block for a slot is immutably written/registered as soon as the first inclusion is done. Even though the Ethereum 2.0 network finalizes a block for a given slot (as soon as the first inclusion is completed), the computations still continue until the last inclusion slot. In our analysis, for each slot, the inclusion distance is defined as the *maximum* inclusion distance over all attestation aggregations, and over all committees that participated in the voting for that slot. In other words, our definition of "inclusion distance" is in a way equivalent to "maximum inclusion distance".
 
-While this metric is not directly measuring the time until the actual inclusion (which takes place with the first inclusion), it instead measures the time-wise inefficiency with respect to attestations anc inclusions.
+While this metric is not directly measuring the time until the actual inclusion (which takes place with the first inclusion), it instead measures the time-wise inefficiency with respect to attestations and inclusions.
 
 We apply cluster analysis, in particular K-means method, to create clusters of time epochs where the epochs in each cluster are similar in terms of their attributes, yet different than time epochs other clusters. Furthermore, we profile the clusters and compare the distribution of attribute across clusters of time epochs.
 
@@ -77,7 +77,7 @@ Next, the box plot shows more information about each cluster (e.g. inter-quartil
 <p float="left">
   <img src="images/boxplots/boxplot_InclusionDistanceAvg_clusters.png"/>
 </p>
-The first two clusters in the box-plot seem to have visibly higher values of `InclusionDistanceAvg`, compared to the other clusters. This suggests these two clusters represent time epochs where there is inefficiency time-wise.
+The first two clusters (2 and 5) in the box-plot seem to have visibly higher values of `InclusionDistanceAvg`, compared to the other clusters. This suggests these two clusters represent time epochs where there is inefficiency time-wise. This insight is also confirmed in the next plot.
 
 A similar analysis is the comparison of the best fit empirical distributions across clusters as given below.
 
@@ -88,6 +88,7 @@ Both the box plot and the best-fit empirical distributions above suggest differe
 #### Dunn test
 Motivated by the heterogeneity of the clusters as shown above, the next step was to apply formal hypothesis testing to determine the statistical significance of pairwise cluster means.
 To this end, we applied the non-parametric Dunn test with Bonferroni correction, which yielded the following results.
+
 |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 
 |---|---|---|---|---|---|---|---| 
 | 0 | 0 | 1 | 1 | 0 | 1 | 1 | 0 | 
