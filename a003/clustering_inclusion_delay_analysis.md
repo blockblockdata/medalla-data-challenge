@@ -3,8 +3,7 @@
 **Joseph Kholodenko, Gurdal Ertek**
 
 <img src="images/collection-colorful-cubes.jpg"/>
-Kjpargeter - [Freepik.com](https://www.freepik.com/free-vector/collection-of-colorful-cubes_929235.htm)
-
+Illustration by Kjpargeter - [Freepik.com](https://www.freepik.com/free-vector/collection-of-colorful-cubes_929235.htm)
 
 In this article, we analyze the characteristics of different time epochs in the Ethereum 2.0 Medalla Testnet. Each epoch has different attributes such as the number of orphan slots (missing blocks), number of slashings and voluntary exits, and metrics regarding inclusion distance. Inclusion distance for a slot is defined as the number of slots passed until the block on that slot is included on the blockchain. Inclusion distance for an epoch is an aggregation over inclusion distances over slots, which can be represented with the average and standard deviation.
 
@@ -56,8 +55,10 @@ The 3D vizualization constructed using Plotly, is interactive and allows the use
 
 {% include figure.html %}
 
-### Inclusion Distance Average
-The bar charts provided below presents average inclusion distance for each cluster:
+### Inclusion Distance (in slots, per epoch)
+We begin the profiling of clusters with average and standard deviation of inclusion distance per epoch,  namely `InclusionDistanceAvg` and `InclusionDistanceStdDev`, which is computed over the inclusion distances in all 32 slots within that epoch.
+
+The bar charts provided below present average inclusion distance for each cluster:
 <p float="left">
   <img src="images/barplots/barplot_mean_clusters_InclusionDistanceAvg.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceAvg.png" width="400"/>
