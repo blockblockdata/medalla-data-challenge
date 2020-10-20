@@ -109,6 +109,8 @@ The below graphics describe the variation of Inclusion Distance Standard Deviati
   <img src="images/barplots/barplot_stdev_clusters_InclusionDistanceStdDev.png" width="400"/>
 </p>
 
+This time, clusters 2 and 5 seem to have visibly lower values compared to other clusters with respect to `InclusionDistanceStdDev`. 
+
 <p float="left">
   <img src="images/boxplots/boxplot_InclusionDistanceStdDev_clusters.png"/>
 </p>
@@ -137,6 +139,7 @@ The below graphics describe the variation of Attester Slashings across clusters.
   <img src="images/barplots/barplot_mean_clusters_AttesterSlashings.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_AttesterSlashings.png" width="400"/>
 </p>
+We can see clear separation among clusters 2 and 6 when it comes to Attester Slashings. This is confirmed by the Dunn test results below as well. It would be interesting to further examine the epochs in Cluster 2, as there are significantly higher numbers of Attester Slashings in those epochs.
 
 <p float="left">
   <img src="images/boxplots/boxplot_InclusionDistanceAvg_clusters.png"/>
@@ -164,6 +167,7 @@ The below graphics describe the variation of Voluntary Exits across clusters.
   <img src="images/barplots/barplot_mean_clusters_VoluntaryExits.png" width="400"/>
   <img src="images/barplots/barplot_stdev_clusters_VoluntaryExits.png" width="400"/>
 </p>
+The k-means clustering algorithm placed epochs with more voluntary exits into clusters 1 and 2.
 
 Results of Dunn Test:
 
