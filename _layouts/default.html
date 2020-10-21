@@ -25,7 +25,7 @@
   <body>
     <!-- <a id="skip-to-content" href="#content">Skip to the content.</a> -->
 
-    <!-- <header class="page-header" role="banner">
+    <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
@@ -35,10 +35,10 @@
         <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
         <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
       {% endif %}
-    </header> -->
+    </header>
     
     <!-- HEADER -->
-<nav id="navbar" class="collapse navbar-collapse">
+<!-- <nav id="navbar" class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
         {% assign links = site.data.navigation %}
         {% for link in links %}
@@ -68,7 +68,7 @@
             {% endif %}
         {% endfor %}
     </ul>
-</nav>
+</nav> -->
 
     <main id="content" class="main-content" role="main">
       {{ content }}
