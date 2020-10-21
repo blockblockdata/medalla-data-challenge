@@ -1,5 +1,3 @@
-# Medalla Data Challenge
-
 Analyses for the [Medalla Testnet Challenge](https://ethereum.org/en/eth2/get-involved/medalla-data-challenge/) (October 2020)
 
 - [**Article a001:** The Ethereum 2.0 Beacon Block Data Schema and Visual Documentation](/a001/the_ethereum_2_beacon_block_data_schema_and_visual_documentation.md)
