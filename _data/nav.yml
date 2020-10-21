@@ -1,0 +1,12 @@
+- title: "Medalla Data Challenge"
+  href: "/"
+
+- title: "Ethereum 2 Beacon Block Schema and Docs"
+  href: "/a001/the_ethereum_2_beacon_block_data_schema_and_visual_documentation.html"
+
+- title: "Snippets"
+  subcategories:
+    - subtitle: "Example1"
+      subhref: "#"
+    - subtitle: "Example2"
+      subhref: "#"
